@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<architecture>
+	<reconfiguration>
+		<id_mul>
+			<configData>0100</configData>
+			<last>0</last>
+			<sourceUnit>abu</sourceUnit>
+		</id_mul>
+		<imm>
+			<configData>0</configData>
+			<last>0</last>
+			<sourceUnit>id_abu</sourceUnit>
+		</imm>
+		<lsu>
+			<configData>0</configData>
+			<last>0</last>
+			<sourceUnit>imm</sourceUnit>
+		</lsu>
+		<id_lsu>
+			<configData>0000</configData>
+			<last>0</last>
+			<sourceUnit>lsu</sourceUnit>
+		</id_lsu>
+		<abu>
+			<configData>01</configData>
+			<last>0</last>
+			<sourceUnit>id_lsu</sourceUnit>
+		</abu>
+		<id_abu>
+			<configData>0011</configData>
+			<last>0</last>
+			<sourceUnit></sourceUnit>
+		</id_abu>
+		<id_alu>
+			<configData>0010</configData>
+			<last>0</last>
+			<sourceUnit>id_mul</sourceUnit>
+		</id_alu>
+		<alu>
+			<configData>001</configData>
+			<last>0</last>
+			<sourceUnit>id_alu</sourceUnit>
+		</alu>
+		<id_rf>
+			<configData>0001</configData>
+			<last>1</last>
+			<sourceUnit>alu</sourceUnit>
+		</id_rf>
+	</reconfiguration>
+	<Core>
+		<StateSwitch enabled="0"></StateSwitch>
+		<PerformanceCounters enabled="1"></PerformanceCounters>
+		<Branchslots slots="2"></Branchslots>
+		<DecodedInstructions width="16"></DecodedInstructions>
+		<Loader offset="C0000"></Loader>
+		<Memory type="">
+			<GM width="32" depth="8192" addresswidth="32" interface="DTL"></GM>
+			<LM width="32" depth="256" addresswidth="16"></LM>
+			<IM depth="256" addresswidth="16"></IM>
+			<SM width="32" depth="256" addresswidth="32"></SM>
+		</Memory>
+		<Interface width="32" addresswidth="32" max_blockwidth="5"></Interface>
+		<DataPath width="32"></DataPath>
+		<Peripherals>
+			<Peripheral type="Console" name="CON" addr_offset="32768"></Peripheral>
+		</Peripherals>
+	</Core>
+	<ISA>
+		<instructiontypes>
+			<NOP>
+				<mnemonic type="mnemonic"></mnemonic>
+				<unused0 type="unused" width="1"></unused0>
+				<unused1 type="unused" width="2"></unused1>
+				<unused2 type="unused" width="2"></unused2>
+			</NOP>
+			<T1>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1>
+			<T1_b>
+				<mnemonic type="mnemonic"></mnemonic>
+				<unused type="unused" width="1"></unused>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_b>
+			<T1_c>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<unused type="unused" width="2"></unused>
+			</T1_c>
+			<T1_d>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<unused type="unused" width="2"></unused>
+				<inputA type="input"></inputA>
+			</T1_d>
+			<T1_e>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<unused0 type="unused" width="2"></unused0>
+				<unused1 type="unused" width="2"></unused1>
+			</T1_e>
+			<T1_f>
+				<mnemonic type="mnemonic"></mnemonic>
+				<unused0 type="unused" width="1"></unused0>
+				<unused1 type="unused" width="2"></unused1>
+				<inputA type="input"></inputA>
+			</T1_f>
+			<T1_g>
+				<mnemonic type="mnemonic"></mnemonic>
+				<unused0 type="unused" width="1"></unused0>
+				<inputB type="input"></inputB>
+				<unused1 type="unused" width="2"></unused1>
+			</T1_g>
+			<T1_lsu_a>
+				<mnemonic type="mnemonic" width="5"></mnemonic>
+				<datatype type="datatype"></datatype>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_lsu_a>
+			<T1_lsu_b>
+				<mnemonic type="mnemonic" width="5"></mnemonic>
+				<datatype type="datatype"></datatype>
+				<unused type="unused" width="1"></unused>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_lsu_b>
+			<T1_lsu_c>
+				<mnemonic type="mnemonic" width="5"></mnemonic>
+				<datatype type="datatype"></datatype>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<unused type="unused" width="2"></unused>
+			</T1_lsu_c>
+			<T1_lsu_d>
+				<mnemonic type="mnemonic" width="5"></mnemonic>
+				<datatype type="datatype"></datatype>
+				<output type="output"></output>
+				<unused type="unused" width="2"></unused>
+				<inputA type="input"></inputA>
+			</T1_lsu_d>
+			<T1_lsu_e>
+				<mnemonic type="mnemonic" width="5"></mnemonic>
+				<datatype type="datatype"></datatype>
+				<output type="output"></output>
+				<unused0 type="unused" width="2"></unused0>
+				<unused1 type="unused" width="2"></unused1>
+			</T1_lsu_e>
+			<T1_lsu_f>
+				<mnemonic type="mnemonic" width="5"></mnemonic>
+				<datatype type="datatype"></datatype>
+				<unused0 type="unused" width="1"></unused0>
+				<unused1 type="unused" width="2"></unused1>
+				<inputA type="input"></inputA>
+			</T1_lsu_f>
+			<T1_alu_d>
+				<mnemonic type="mnemonic" width="4"></mnemonic>
+				<signtype type="signtype"></signtype>
+				<output type="output"></output>
+				<unused type="unused" width="2"></unused>
+				<inputA type="input"></inputA>
+			</T1_alu_d>
+			<T1_alu>
+				<mnemonic type="mnemonic" width="4"></mnemonic>
+				<signtype type="signtype"></signtype>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_alu>
+			<T1_alu_a>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_alu_a>
+			<T1_mul8>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_mul8>
+			<T1_mul16>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_mul16>
+			<T1_mul24>
+				<mnemonic type="mnemonic"></mnemonic>
+				<output type="output"></output>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T1_mul24>
+			<T2>
+				<mnemonic type="mnemonic" width="6"></mnemonic>
+				<destination type="register"></destination>
+				<inputA type="input"></inputA>
+			</T2>
+			<T2_b>
+				<mnemonic type="mnemonic" width="6"></mnemonic>
+				<destination type="register"></destination>
+				<unused type="unused" width="2"></unused>
+			</T2_b>
+			<T3>
+				<mnemonic type="mnemonic" width="2"></mnemonic>
+				<load_reg type="register"></load_reg>
+				<store_reg type="register"></store_reg>
+				<inputA type="input"></inputA>
+			</T3>
+			<T4>
+				<mnemonic type="mnemonic" width="8"></mnemonic>
+				<inputB type="input"></inputB>
+				<inputA type="input"></inputA>
+			</T4>
+			<T4_b>
+				<mnemonic type="mnemonic" width="8"></mnemonic>
+				<inputB type="input"></inputB>
+				<unused type="unused" width="2"></unused>
+			</T4_b>
+			<T5 width="33">
+				<mnemonic type="mnemonic" width="1"></mnemonic>
+				<imm type="immediate" width="32"></imm>
+			</T5>
+			<T5_b>
+				<mnemonic type="mnemonic" width="1"></mnemonic>
+				<unused type="unused" width="32"></unused>
+			</T5_b>
+			<T6>
+				<mnemonic type="mnemonic" width="4"></mnemonic>
+				<imm type="immediate" width="6"></imm>
+				<inputA type="input"></inputA>
+			</T6>
+			<T6_b>
+				<mnemonic type="mnemonic" width="4"></mnemonic>
+				<imm type="immediate" width="6"></imm>
+				<unused type="unused" width="2"></unused>
+			</T6_b>
+		</instructiontypes>
+		<instructionFieldTypes>
+			<mnemonic width="7" separator="\s+"></mnemonic>
+			<unused width="1"></unused>
+			<register width="4" regex="r([0-3]?[0-9])" separator=","></register>
+			<input width="2" regex="in\[?([0-3])\]?" separator=","></input>
+			<output width="1" regex="out\[?([0-1])\]?" separator=","></output>
+			<immediate width="8" regex="([^\s,;\|]+)" separator=","></immediate>
+			<datatype width="2" regex="(([A-Z])+)" separator=","></datatype>
+			<signtype width="3" regex="(([A-Z])+)" separator=","></signtype>
+		</instructionFieldTypes>
+		<instructions>
+			<nop mnemonic="nop" type="NOP" opcode="0"></nop>
+			<sla mnemonic="sla" type="T1_lsu_b" opcode="1"></sla>
+			<sli mnemonic="sli" type="T1_lsu_f" opcode="2"></sli>
+			<sga mnemonic="sga" type="T1_lsu_b" opcode="3"></sga>
+			<sgi mnemonic="sgi" type="T1_lsu_f" opcode="22"></sgi>
+			<lla mnemonic="lla" type="T1_lsu_c" opcode="5"></lla>
+			<lli mnemonic="lli" type="T1_lsu_e" opcode="6"></lli>
+			<lga mnemonic="lga" type="T1_lsu_c" opcode="7"></lga>
+			<lgi mnemonic="lgi" type="T1_lsu_e" opcode="8"></lgi>
+			<lli_sla mnemonic="lli_sla" type="T1_lsu_a" opcode="9"></lli_sla>
+			<lgi_sla mnemonic="lgi_sla" type="T1_lsu_a" opcode="10"></lgi_sla>
+			<lla_sli mnemonic="lla_sli" type="T1_lsu_a" opcode="11"></lla_sli>
+			<lli_sli mnemonic="lli_sli" type="T1_lsu_d" opcode="12"></lli_sli>
+			<lga_sli mnemonic="lga_sli" type="T1_lsu_a" opcode="13"></lga_sli>
+			<lgi_sli mnemonic="lgi_sli" type="T1_lsu_d" opcode="14"></lgi_sli>
+			<lli_sga mnemonic="lli_sga" type="T1_lsu_a" opcode="15"></lli_sga>
+			<lgi_sga mnemonic="lgi_sga" type="T1_lsu_a" opcode="17"></lgi_sga>
+			<lla_sgi mnemonic="lla_sgi" type="T1_lsu_a" opcode="18"></lla_sgi>
+			<lli_sgi mnemonic="lli_sgi" type="T1_lsu_d" opcode="19"></lli_sgi>
+			<lga_sgi mnemonic="lga_sgi" type="T1_lsu_a" opcode="23"></lga_sgi>
+			<lgi_sgi mnemonic="lgi_sgi" type="T1_lsu_d" opcode="21"></lgi_sgi>
+			<srm mnemonic="srm" type="T2" opcode="32"></srm>
+			<lrm_srm mnemonic="lrm_srm" type="T3" opcode="3"></lrm_srm>
+			<lrm mnemonic="lrm" type="T2_b" opcode="40"></lrm>
+			<sra mnemonic="sra" type="T4" opcode="144"></sra>
+			<lra mnemonic="lra" type="T4_b" opcode="136"></lra>
+			<add mnemonic="add" type="T1" opcode="26"></add>
+			<add_c mnemonic="add_c" type="T1_alu_a" opcode="74"></add_c>
+			<add_se mnemonic="add_se" type="T1_alu" opcode="10"></add_se>
+			<sub mnemonic="sub" type="T1" opcode="27"></sub>
+			<sub_c mnemonic="sub_c" type="T1_alu_a" opcode="75"></sub_c>
+			<sub_se mnemonic="sub_se" type="T1_alu" opcode="11"></sub_se>
+			<and mnemonic="and" type="T1" opcode="16"></and>
+			<nand mnemonic="nand" type="T1" opcode="48"></nand>
+			<or mnemonic="or" type="T1" opcode="17"></or>
+			<nor mnemonic="nor" type="T1" opcode="49"></nor>
+			<xor mnemonic="xor" type="T1" opcode="18"></xor>
+			<xnor mnemonic="xnor" type="T1" opcode="50"></xnor>
+			<neg mnemonic="neg" type="T1_d" opcode="51"></neg>
+			<cmov mnemonic="cmov" type="T1" opcode="115"></cmov>
+			<ecmov mnemonic="ecmov" type="T1" opcode="3"></ecmov>
+			<pass mnemonic="pass" type="T1_d" opcode="19"></pass>
+			<pass_se mnemonic="pass_se" type="T1_alu_d" opcode="3"></pass_se>
+			<eq mnemonic="eq" type="T1" opcode="111"></eq>
+			<neq mnemonic="neq" type="T1" opcode="95"></neq>
+			<ltu mnemonic="ltu" type="T1" opcode="31"></ltu>
+			<lts mnemonic="lts" type="T1" opcode="79"></lts>
+			<geu mnemonic="geu" type="T1" opcode="63"></geu>
+			<ges mnemonic="ges" type="T1" opcode="47"></ges>
+			<shll1 mnemonic="shll1" type="T1_d" opcode="20"></shll1>
+			<shll4 mnemonic="shll4" type="T1_d" opcode="21"></shll4>
+			<shrl1 mnemonic="shrl1" type="T1_d" opcode="22"></shrl1>
+			<shrl4 mnemonic="shrl4" type="T1_d" opcode="23"></shrl4>
+			<shra1 mnemonic="shra1" type="T1_d" opcode="6"></shra1>
+			<shra4 mnemonic="shra4" type="T1_d" opcode="7"></shra4>
+			<imm mnemonic="imm" type="T5" opcode="1"></imm>
+			<nopi mnemonic="nopi" type="T5_b" opcode="0"></nopi>
+			<jr mnemonic="jr" type="T1_g" opcode="96"></jr>
+			<ja mnemonic="ja" type="T1_g" opcode="104"></ja>
+			<bcr mnemonic="bcr" type="T1_b" opcode="112"></bcr>
+			<bca mnemonic="bca" type="T1_b" opcode="120"></bca>
+			<accu mnemonic="accu" type="T2" opcode="50"></accu>
+			<accs mnemonic="accs" type="T2" opcode="51"></accs>
+			<jri mnemonic="jri" type="T6_b" opcode="1"></jri>
+			<jai mnemonic="jai" type="T6_b" opcode="3"></jai>
+			<bcri mnemonic="bcri" type="T6" opcode="5"></bcri>
+			<bcai mnemonic="bcai" type="T6" opcode="7"></bcai>
+			<mullu mnemonic="mullu" type="T1" opcode="72"></mullu>
+			<mullu_sh8 mnemonic="mullu_sh8" type="T1_mul8" opcode="73"></mullu_sh8>
+			<mullu_sh16 mnemonic="mullu_sh16" type="T1_mul16" opcode="74"></mullu_sh16>
+			<mullu_sh24 mnemonic="mullu_sh24" type="T1_mul24" opcode="75"></mullu_sh24>
+			<mulls mnemonic="mulls" type="T1" opcode="88"></mulls>
+			<mulls_sh8 mnemonic="mulls_sh8" type="T1_mul8" opcode="89"></mulls_sh8>
+			<mulls_sh16 mnemonic="mulls_sh16" type="T1_mul16" opcode="90"></mulls_sh16>
+			<mulls_sh24 mnemonic="mulls_sh24" type="T1_mul24" opcode="91"></mulls_sh24>
+			<mulu mnemonic="mulu" type="T1" opcode="104"></mulu>
+			<mulu_sh8 mnemonic="mulu_sh8" type="T1_mul8" opcode="105"></mulu_sh8>
+			<mulu_sh16 mnemonic="mulu_sh16" type="T1_mul16" opcode="106"></mulu_sh16>
+			<mulu_sh24 mnemonic="mulu_sh24" type="T1_mul24" opcode="107"></mulu_sh24>
+			<muls mnemonic="muls" type="T1" opcode="120"></muls>
+			<muls_sh8 mnemonic="muls_sh8" type="T1_mul8" opcode="121"></muls_sh8>
+			<muls_sh16 mnemonic="muls_sh16" type="T1_mul16" opcode="122"></muls_sh16>
+			<muls_sh24 mnemonic="muls_sh24" type="T1_mul24" opcode="123"></muls_sh24>
+			<lh mnemonic="lh" type="T1_e" opcode="32"></lh>
+		</instructions>
+	</ISA>
+	<configuration>
+		<functionalunittypes>
+			<ID>
+				<reconfiguration bits="3"></reconfiguration>
+				<connections inputs="1" outputs="0"></connections>
+			</ID>
+			<IU>
+				<reconfiguration bits="0"></reconfiguration>
+				<connections inputs="1" outputs="1"></connections>
+			</IU>
+			<ALU>
+				<control idtype="2"></control>
+				<reconfiguration bits="3"></reconfiguration>
+				<connections inputs="4" outputs="2"></connections>
+			</ALU>
+			<LSU>
+				<control idtype="0"></control>
+				<reconfiguration bits="0"></reconfiguration>
+				<connections inputs="4" outputs="2"></connections>
+			</LSU>
+			<RF>
+				<control idtype="1"></control>
+				<reconfiguration bits="0"></reconfiguration>
+				<connections inputs="4" outputs="2"></connections>
+			</RF>
+			<ABU>
+				<control idtype="3"></control>
+				<reconfiguration bits="1"></reconfiguration>
+				<connections inputs="4" outputs="2"></connections>
+			</ABU>
+			<MUL>
+				<control idtype="4"></control>
+				<reconfiguration bits="0"></reconfiguration>
+				<connections inputs="4" outputs="2"></connections>
+			</MUL>
+		</functionalunittypes>
+		<functionalunits>
+			<fu name="id_abu" type="ID">
+				<index>0</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>imm</sinkUnit>
+					<sourceUnit></sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="imm" type="IU">
+				<index>0</index>
+				<connections inputs="1" outputs="1"></connections>
+				<state>
+					<sinkUnit>rf</sinkUnit>
+					<sourceUnit>id_abu</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="rf" ID="id_rf" type="RF">
+				<control idtype="1"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>lsu</sinkUnit>
+					<sourceUnit>imm</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="imm.0"></input>
+				<input index="1" source="lsu.1"></input>
+				<input index="2" source="alu.1"></input>
+				<input index="3" source="mul.0"></input>
+			</fu>
+			<fu name="lsu" ID="id_lsu" type="LSU">
+				<control idtype="0"></control>
+				<index>0</index>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>id_lsu</sinkUnit>
+					<sourceUnit>rf</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="imm.0"></input>
+				<input index="1" source="rf.1"></input>
+				<input index="2" source="rf.0"></input>
+			</fu>
+			<fu name="id_lsu" type="ID">
+				<index>1</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>abu</sinkUnit>
+					<sourceUnit>lsu</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="abu" config="1" ID="id_abu" type="ABU">
+				<control idtype="3"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>id_mul</sinkUnit>
+					<sourceUnit>id_lsu</sourceUnit>
+				</state>
+				<reconfiguration bits="1"></reconfiguration>
+				<input index="0" source="alu.1"></input>
+				<input index="1" source="rf.1"></input>
+			</fu>
+			<fu name="id_mul" type="ID">
+				<index>2</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>id_alu</sinkUnit>
+					<sourceUnit>abu</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="id_alu" type="ID">
+				<index>3</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>mul</sinkUnit>
+					<sourceUnit>id_mul</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="mul" config="1" ID="id_mul" type="MUL">
+				<control idtype="4"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>alu</sinkUnit>
+					<sourceUnit>id_alu</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="rf.0"></input>
+				<input index="1" source="rf.1"></input>
+			</fu>
+			<fu name="alu" config="1" ID="id_alu" type="ALU">
+				<control idtype="2"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>id_rf</sinkUnit>
+					<sourceUnit>mul</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="rf.0"></input>
+				<input index="1" source="rf.1"></input>
+			</fu>
+			<fu name="id_rf" type="ID">
+				<index>4</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit></sinkUnit>
+					<sourceUnit>alu</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+		</functionalunits>
+		<CGRA_type>0</CGRA_type>
+	</configuration>
+	<DataTypes>
+		<byte width="8"></byte>
+		<hword width="16"></hword>
+		<word width="32"></word>
+		<dword width="64"></dword>
+	</DataTypes>
+</architecture>

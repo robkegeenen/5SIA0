@@ -1,0 +1,17 @@
+	RAM_SDP<<MEM_TYPE>> 
+	#(
+		.DATA_WIDTH(<<D_WIDTH>>),
+		.ADDR_WIDTH(<<MEM_ADDR_WIDTH>>),
+		.DATAFILE(<<MEM_FILE>>),
+		.DO_INIT(<<DO_INIT>>)
+	)	
+    <<UNIT_NAME>>
+	(
+		.clock(iClk),
+		.data(<<MEM_WD>>),
+		.rdaddress(<<MEM_RA>>),
+		.wraddress(<<MEM_WA>>),
+		.wren(<<MEM_WE>>),
+		.rden(<<MEM_RE>>),
+		.q(<<MEM_RD>>)
+	);

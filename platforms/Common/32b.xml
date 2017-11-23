@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architecture>
+    <!-- Use 'hdl_param=name' to identify parameters '<<name>>' that are replaced in the HDL code-->
+    <!-- By default this file EXTENDS(!) the included configurations. If you want to OVERRIDE a section, add the override='true' attribute to the tag you want to override -->
+
+    <ISA>
+        <instructiontypes>
+            <T5 width="33" hdl_param="I_IMM_WIDTH">
+                <imm    type="immediate"    width="32"      override="true"/>
+            </T5>
+
+            <T5_b>
+                <unused type="unused"       width="32"      override="true"/>
+            </T5_b>
+         </instructiontypes>
+    </ISA>
+
+    <Includes>
+        <!-- Inherit from base configuration -->
+        <Base file="base.xml"/>
+    </Includes>
+
+    <Core>
+        <DataPath width="32" hdl_param="D_WIDTH"/>
+    </Core>
+
+    <configuration>            
+        <functionalunittypes>
+            <ID>
+                <reconfiguration bits="3"/>
+                <connections inputs="1" outputs="0"/>
+            </ID>
+
+            <IU>
+                <reconfiguration bits="0"/>
+                <connections inputs="1" outputs="1"/>
+            </IU>
+
+            <ALU>
+                <control idtype='2'/>
+                <reconfiguration bits="1"/>
+                <connections inputs="4" outputs="2"/>
+            </ALU>
+
+            <LSU>
+                <control idtype='0'/>
+                <reconfiguration bits="0"/>
+                <connections inputs="4" outputs="2"/>
+            </LSU>
+
+            <RF>
+                <control idtype='1'/>
+                <reconfiguration bits="0"/>
+                <connections inputs="4" outputs="2"/>
+            </RF>
+
+            <ABU>
+                <control idtype='3'/>
+                <reconfiguration bits="1"/>
+                <connections inputs="4" outputs="2"/>
+            </ABU>
+
+            <MUL>
+                <control idtype='4'/>
+                <reconfiguration bits="0"/>
+                <connections inputs="4" outputs="2"/>
+            </MUL>
+
+        </functionalunittypes>
+    </configuration>
+
+</architecture>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model>
+	<energy>
+		<ID>
+			<decoding energy_op="0.3"/>
+            <decoding_repeat energy_op="0.1"/>
+		</ID>
+        <LSU>
+            <nop energy_op="0.75"/>
+            <pass energy_op="1.0"/>
+            <sla energy_op="3"/>
+            <sli energy_op="3.5"/>
+            <sga energy_op="9"/>
+            <sgi energy_op="9.3"/>
+            <lla energy_op="3"/>
+            <lli energy_op="3.5"/>
+            <lga energy_op="7.3"/>
+            <lgi energy_op="7.7"/>
+            <lli_sla energy_op="4"/>
+            <lgi_sla energy_op="8.2"/>
+            <lla_sli energy_op="4.5"/>
+            <lli_sli energy_op="4.5"/>
+            <lga_sli energy_op="8.1"/>
+            <lgi_sli energy_op="8"/>
+            <lli_sga energy_op="8.2"/>
+            <lgi_sga energy_op="17"/>
+            <lla_sgi energy_op="9"/>
+            <lli_sgi energy_op="10.1"/>
+            <lga_sgi energy_op="17"/>
+            <lgi_sgi energy_op="18"/>
+            <srm energy_op="2.5"/>
+            <lrm energy_op="1.35"/>
+        </LSU>
+        <RF>
+            <nop energy_op="0.45"/>
+            <lrm_srm energy_op="2.7"/>
+            <srm energy_op="1.8"/>
+            <lrm energy_op="1.1"/>
+            <sra energy_op="2.7"/>
+            <lra energy_op="1.5"/>
+        </RF>
+        <ALU>
+            <nop energy_op="0.9"/>
+            <add energy_op="1.6"/>
+            <add_se energy_op="1.9"/>
+            <sub energy_op="1.6"/>
+            <sub_se energy_op="1.9"/>
+            <and energy_op="1.3"/>
+            <nand energy_op="1.2"/>
+            <or energy_op="1.5"/>
+            <nor energy_op="1.5"/>
+            <xor energy_op="3.1"/>
+            <xnor energy_op="3.3"/>
+            <neg energy_op="1.35"/>
+            <cmov energy_op="1.35"/>
+            <ecmov energy_op="1.35"/>
+            <pass energy_op="1.2"/>
+            <pass_se energy_op="1.4"/>
+            <eq energy_op="3.3"/>
+            <neq energy_op="3.4"/>
+            <ltu energy_op="3.4"/>
+            <lts energy_op="3.4"/>
+            <geu energy_op="3.4"/>
+            <ges energy_op="3.4"/>
+            <shll1 energy_op="1.2"/>
+            <shll4 energy_op="1.2"/>
+            <shrl1 energy_op="1.2"/>
+            <shrl4 energy_op="1.2"/>
+            <shra1 energy_op="1.4"/>
+            <shra4 energy_op="1.4"/>
+        </ALU>
+        <IU>
+            <nopi energy_op="0.35"/>
+            <imm energy_op="0.9"/>
+        </IU>
+        <ABU>
+            <nop energy_op="1.2"/>
+            <jr energy_op="1.2"/>
+            <ja energy_op="0.9"/>
+            <bcr energy_op="1.5"/>
+            <bca energy_op="1.1"/>
+            <srm  energy_op="2.7"/>
+            <lrm  energy_op="1.2"/>
+            <accu energy_op="2.7"/>
+            <accs  energy_op="2.7"/>
+            <jri  energy_op="1.1"/>
+            <jai energy_op="0.9"/>
+            <bcri energy_op="1.2"/>
+            <bcai energy_op="0.0"/>
+        </ABU>
+        <MUL>
+            <nop energy_op="1.5"/>
+            <mullu energy_op="30"/>
+            <mullu_sh8 energy_op="30"/>
+            <mullu_sh16 energy_op="30"/>
+            <mullu_sh24 energy_op="30"/>
+            <mulls energy_op="30"/>
+            <mulls_sh8 energy_op="30"/>
+            <mulls_sh16 energy_op="30"/>
+            <mulls_sh24 energy_op="30"/>        
+            <mulu energy_op="36"/>
+            <mulu_sh8 energy_op="36"/>
+            <mulu_sh16 energy_op="36"/>
+            <mulu_sh24 energy_op="36"/>
+            <muls energy_op="36"/>
+            <muls_sh8 energy_op="36"/>
+            <muls_sh16 energy_op="36"/>
+            <muls_sh24 energy_op="36"/>           
+            <lh energy_op="3"/>
+            <pass energy_op="15"/>
+        </MUL>		
+	</energy>
+
+	<area>
+		<wire area_um2="100"/>
+		<ID area_um2="1151"/>
+		<IU area_um2="558"/>
+		<ALU area_um2="7215"/>
+		<RF area_um2="9637"/>
+		<ABU area_um2="16371"/>
+		<LSU area_um2="22426"/>
+		<MUL area_um2="24857"/>
+	</area>
+</model>

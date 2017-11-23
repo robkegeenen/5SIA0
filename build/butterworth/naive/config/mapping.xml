@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<architecture>
+	<Core>
+		<StateSwitch enabled="0"></StateSwitch>
+		<PerformanceCounters enabled="1"></PerformanceCounters>
+		<Branchslots slots="2"></Branchslots>
+		<DecodedInstructions width="16"></DecodedInstructions>
+		<Loader offset="C0000"></Loader>
+		<Memory type="">
+			<GM width="32" depth="8192" addresswidth="32" interface="DTL"></GM>
+			<LM width="32" depth="256" addresswidth="16"></LM>
+			<IM depth="256" addresswidth="16"></IM>
+			<SM width="32" depth="256" addresswidth="32"></SM>
+		</Memory>
+		<Interface width="32" addresswidth="32" max_blockwidth="5"></Interface>
+		<DataPath width="32"></DataPath>
+		<Peripherals>
+			<Peripheral type="Console" name="CON" addr_offset="32768"></Peripheral>
+		</Peripherals>
+		<InstructionWidth>
+			<instruction>12</instruction>
+			<immediate>33</immediate>
+		</InstructionWidth>
+	</Core>
+	<fu_mapping>
+		<connectIndex>4</connectIndex>
+		<placeFU>id_rf</placeFU>
+		<chipFU>id_rf</chipFU>
+		<type>ID</type>
+		<configIndex>8</configIndex>
+		<configValue>0001</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<type>ALU</type>
+		<configIndex>7</configIndex>
+		<placeFU>alu</placeFU>
+		<configValue>001</configValue>
+		<chipFU>alu</chipFU>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>3</connectIndex>
+		<placeFU>id_alu</placeFU>
+		<chipFU>id_alu</chipFU>
+		<type>ID</type>
+		<configIndex>6</configIndex>
+		<configValue>0010</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>2</connectIndex>
+		<placeFU>id_mul</placeFU>
+		<chipFU>id_mul</chipFU>
+		<type>ID</type>
+		<configIndex>5</configIndex>
+		<configValue>0100</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<type>ABU</type>
+		<configIndex>4</configIndex>
+		<placeFU>abu</placeFU>
+		<configValue>01</configValue>
+		<chipFU>abu</chipFU>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>1</connectIndex>
+		<placeFU>id_lsu</placeFU>
+		<chipFU>id_lsu</chipFU>
+		<type>ID</type>
+		<configIndex>3</configIndex>
+		<configValue>0000</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>0</connectIndex>
+		<placeFU>lsu</placeFU>
+		<chipFU>lsu</chipFU>
+		<type>LSU</type>
+		<configIndex>2</configIndex>
+		<configValue>0</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>0</connectIndex>
+		<placeFU>imm</placeFU>
+		<chipFU>imm</chipFU>
+		<type>IU</type>
+		<configIndex>1</configIndex>
+		<configValue>0</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>0</connectIndex>
+		<placeFU>id_abu</placeFU>
+		<chipFU>id_abu</chipFU>
+		<type>ID</type>
+		<configIndex>0</configIndex>
+		<configValue>0011</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>0</connectIndex>
+		<type>IU</type>
+		<placeFU>imm</placeFU>
+		<chipFU>imm</chipFU>
+	</fu_mapping>
+	<fu_count>
+		<IU>1</IU>
+		<RF>1</RF>
+		<LSU>1</LSU>
+		<ABU>1</ABU>
+		<MUL>1</MUL>
+		<ALU>1</ALU>
+		<ID>5</ID>
+	</fu_count>
+</architecture>

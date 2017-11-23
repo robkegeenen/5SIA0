@@ -1,0 +1,164 @@
+// Generated on 2017-11-21 17:32:16
+
+///////////////////////////////////////////////////////////////////////////////
+//inst      	// Source Code            	% Comment                            
+///////////////////////////////////////////////////////////////////////////////
+@0
+000000000000	//  nop                   	% 
+000000000000	// nop                    	% auto inserted nop
+100000000000	//  srm r0, in0           	% addr -> r0
+100000000100	//  srm r1, in0           	% incr -> r1
+100000001000	//  srm r2, in0           	% a[0] -> r2
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[1] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[2] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[3] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[4] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[5] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[6] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[7] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[8] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[9] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, a[10] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+100000000000	//  srm r0, in0           	% addr -> r0
+100000001000	//  srm r2, in0           	% b[0] -> r2
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[1] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[2] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[3] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[4] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[5] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[6] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[7] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[8] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[9] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+110001001000	//  lrm_srm r1, r2, in0   	% load incr, b[10] -> r2
+100000000010	//  srm r0, in2           	% store addr+incr (from ALU)
+101000001000	//  lrm r2                	% load coeff
+000000000000	// nop                    	% auto inserted nop
+100000000000	//  srm r0, in0           	% 4 -> r0
+100000010100	//  srm r5, in0           	% i->r5
+100000001100	//  srm r3, in0           	% addr x[0] -> r3
+100000010000	//  srm r4, in0           	% addr y[0] -> r4
+101000001100	//  lrm r3                	% load addr x[i]
+110100001110	//  lrm_srm r4, r3, in2   	% load addr y[i], store Ax-4
+110101010010	//  lrm_srm r5, r4, in2   	% load i, store Ay-4
+100000010110	//  srm r5, in2           	% 
+000000000000	// nop                    	% auto inserted nop
+000000000000	// nop                    	% auto inserted nop
+000000000000	// nop                    	% auto inserted nop
+100000011100	//  srm r7, in0           	% branch jump -> r7
+100000011000	//  srm r6, in0           	% store data load addr -> r6
+100000001000	//  srm r2, in0           	% store np -> r2
+000000000000	// nop                    	% auto inserted nop
+100000010100	//  srm r5, in0           	% i->r5
+100000000000	//  srm r0, in0           	% load address -> r0
+101000000100	//  lrm r1                	% load incr, r0 is available implicit
+110001000010	//  lrm_srm r1, r0, in2   	% load incr,  store load_addr-4
+100000001110	//  srm r3, in2           	% store load_addr + 4 -> r3
+110011010001	//  lrm_srm r3, r4, in1   	% load addr+4, store x[i] -> r4
+110100000000	//  lrm_srm r4, r0, in0   	% load x[i-1] sore -1 -> r0
+110101000010	//  lrm_srm r5, r0, in2   	% load i store load_addr+4
+100000010110	//  srm r5, in2           	% store i-1
+000000000000	// nop                    	% auto inserted nop
+000000000000	// nop                    	% auto inserted nop
+000000000000	// nop                    	% auto inserted nop
+100000010100	//  srm r5, in0           	% i->r5
+100000000000	//  srm r0, in0           	% load address -> r0
+101000000100	//  lrm r1                	% load incr, r0 is available implicit
+110001000010	//  lrm_srm r1, r0, in2   	% load incr,  store load_addr-4
+100000001110	//  srm r3, in2           	% store load_addr + 4 -> r3
+110011010001	//  lrm_srm r3, r4, in1   	% load addr+4, store x[i] -> r4
+110100000000	//  lrm_srm r4, r0, in0   	% load x[i-1] sore -1 -> r0
+110101000010	//  lrm_srm r5, r0, in2   	% load i store load_addr+4
+100000010110	//  srm r5, in2           	% store i-1
+000000000000	// nop                    	% auto inserted nop
+000000000000	// nop                    	% auto inserted nop
+101000011000	//  lrm r6                	% load data address
+100000000010	//  srm r0, in2           	% data_addr -> r0
+110001001101	//  lrm_srm r1, r3, in1   	% load incr, data -> r3
+100000011010	//  srm r6, in2           	% data_addr+4 -> r6
+100000000000	//  srm r0, in0           	% x[10] addr -> r0
+110011000000	//  lrm_srm r3, r0, in0   	% load data, y[10] addr -> r0
+100000001100	//  srm r3, in0           	% 0 -> r3
+101000001100	//  lrm r3                	% load r3
+000000000000	// nop                    	% auto inserted nop
+000000000000	// nop                    	% auto inserted nop
+100000000000	//  srm r0, in0           	% incr -> r0
+100000111100	//  srm r15, in0          	% yy -> r15
+100000101000	//  srm r10, in0          	% j -> r10
+100000101100	//  srm r11, in0          	% Addr_b -> r11
+100000110000	//  srm r12, in0          	% Addr_x ->  r12
+101000101100	//  lrm r11               	% load Addr_b
+100000101110	//  srm r11, in2          	% store addr_b
+111100001101	//  lrm_srm r12, r3, in1  	% load addr_x, store b[j] -> r3
+111010110010	//  lrm_srm r10, r12, in2 	% load j, store addr_x
+111100000001	//  lrm_srm r12, r0, in1  	% load addrx , store x[i-j]
+110011101010	//  lrm_srm r3, r10, in2  	% load b[j], store j-4 -> r10
+100000000011	//  srm r0, in3           	% store b[j]*x[i-j]
+101000111100	//  lrm r15               	% load yy
+111010000000	//  lrm_srm r10, r0, in0  	% ; load j-4 , incr -> r0
+100000111110	//  srm r15, in2          	% store yy+ b[j]*x[i-j]
+000000000000	// nop                    	% auto inserted nop
+100000101000	//  srm r10, in0          	% j -> r10
+100000101100	//  srm r11, in0          	% Addr_b -> r11
+100000110000	//  srm r12, in0          	% Addr_x ->  r12
+101000101100	//  lrm r11               	% load Addr_a
+100000101110	//  srm r11, in2          	% store addr_a
+111100001101	//  lrm_srm r12, r3, in1  	% load addr_x, store a[j+1] -> r3
+111010110010	//  lrm_srm r10, r12, in2 	% load j, store addr_y
+111100000001	//  lrm_srm r12, r0, in1  	% load addrx , store y[i-j-1]
+110011101010	//  lrm_srm r3, r10, in2  	% load b[j], store j-4 -> r10
+100000000011	//  srm r0, in3           	% store a[j+1]*y[i-j-1]
+101000111100	//  lrm r15               	% load yy
+111010000000	//  lrm_srm r10, r0, in0  	% ; load j-4 , incr -> r0
+100000111110	//  srm r15, in2          	% store yy+ a[j+1]*y[i-j-1]
+000000000000	// nop                    	% auto inserted nop
+100000000000	//  srm r0, in0           	% y[10] addr -> r0
+111111000000	//  lrm_srm r15, r0, in0  	% load yy, write_offset -> r0
+101000011000	//  lrm r6                	% load read data addr
+100000000010	//  srm r0, in2           	% store write_addr -> r0
+111111000000	//  lrm_srm r15, r0, in0  	% -1 -> r0
+101000001000	//  lrm r2                	% load np
+110111001010	//  lrm_srm r7, r2, in2   	% load branch jump, np-1 -> r2
+000000000000	// nop                    	% auto inserted nop
+000000000000	// nop                    	% auto inserted nop
+000000000000	//  nop                   	% 

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architecture>
+    <!-- Use 'hdl_param=name' to identify parameters '<<name>>' that are replaced in the HDL code-->
+
+    <ISA>
+        <instructiontypes>
+           
+            <NOP> 
+                <mnemonic     type="mnemonic"/>
+                <unused0      type="unused"   width="1"/>
+                <unused1      type="unused"   width="2"/>
+                <unused2      type="unused"   width="2"/>
+            </NOP>
+
+            <T1>
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1>
+
+            <T1_b> <!-- no D -->
+                <mnemonic     type="mnemonic"/>
+                <unused       type="unused" width="1"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_b>
+
+            <T1_c><!-- no A -->
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <unused       type="unused" width="2"/>
+            </T1_c>
+
+            <T1_d><!-- no B -->
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <unused       type="unused" width="2"/>
+                <inputA       type="input"/>
+            </T1_d>
+
+            <T1_e><!-- no A,B -->
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <unused0      type="unused" width="2"/>
+                <unused1      type="unused" width="2"/>
+            </T1_e>
+
+            <T1_f><!-- no D,B -->
+                <mnemonic     type="mnemonic"/>
+                <unused0      type="unused" width="1"/>
+                <unused1      type="unused" width="2"/>
+                <inputA       type="input"/>
+            </T1_f>
+
+            <T1_g><!-- no D,A -->
+                <mnemonic     type="mnemonic"/>
+                <unused0      type="unused" width="1"/>
+                <inputB       type="input"/>
+                <unused1      type="unused" width="2"/>
+            </T1_g>
+
+            <T1_lsu_a>
+                <mnemonic     type="mnemonic" width="5"/>
+                <datatype     type="datatype"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_lsu_a>            
+
+            <T1_lsu_b><!-- no D -->
+                <mnemonic     type="mnemonic" width="5"/>
+                <datatype     type="datatype"/>
+                <unused       type="unused" width="1"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_lsu_b>            
+
+            <T1_lsu_c><!-- no A -->
+                <mnemonic     type="mnemonic" width="5"/>
+                <datatype     type="datatype"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <unused       type="unused" width="2"/>
+            </T1_lsu_c>
+
+            <T1_lsu_d><!-- no B -->
+                <mnemonic     type="mnemonic" width="5"/>
+                <datatype     type="datatype"/>
+                <output       type="output"/>
+                <unused       type="unused" width="2"/>
+                <inputA       type="input"/>
+            </T1_lsu_d>
+
+            <T1_lsu_e><!-- no A,B -->
+                <mnemonic     type="mnemonic" width="5"/>
+                <datatype     type="datatype"/>
+                <output       type="output"/>
+                <unused0      type="unused" width="2"/>
+                <unused1      type="unused" width="2"/>
+            </T1_lsu_e>
+
+            <T1_lsu_f><!-- no D,B -->
+                <mnemonic     type="mnemonic" width="5"/>
+                <datatype     type="datatype"/>
+                <unused0      type="unused" width="1"/>
+                <unused1      type="unused" width="2"/>
+                <inputA       type="input"/>
+            </T1_lsu_f>   
+
+            <T1_alu_d><!-- no B -->
+                <mnemonic     type="mnemonic" width="4"/>
+                <signtype     type="signtype"/> 
+                <output       type="output"/>
+                <unused       type="unused" width="2"/>
+                <inputA       type="input"/>
+            </T1_alu_d>            
+
+            <T1_alu>
+                <mnemonic     type="mnemonic" width="4"/>
+                <signtype     type="signtype"/> 
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_alu>                   
+
+            <T1_alu_a>
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_alu_a>
+
+            <T1_mul8>
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_mul8>
+
+            <T1_mul16>
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_mul16>
+
+            <T1_mul24>
+                <mnemonic     type="mnemonic"/>
+                <output       type="output"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T1_mul24>
+
+            <T2>
+                <mnemonic     type="mnemonic" width="6"/>
+                <destination  type="register"/>
+                <inputA       type="input"/>
+            </T2>
+
+            <T2_b> <!-- no A -->
+                <mnemonic     type="mnemonic" width="6"/>
+                <destination  type="register"/>
+                <unused       type="unused" width="2"/>
+            </T2_b>
+
+            <T3>
+                <mnemonic     type="mnemonic" width="2"/>
+                <load_reg     type="register"/>
+                <store_reg    type="register"/>
+                <inputA       type="input"/>
+            </T3>
+
+            <T4>
+                <mnemonic     type="mnemonic" width="8"/>
+                <inputB       type="input"/>
+                <inputA       type="input"/>
+            </T4>
+
+            <T4_b>
+                <mnemonic     type="mnemonic" width="8"/>
+                <inputB       type="input"/>
+                <unused       type="unused" width="2"/>
+            </T4_b>
+
+            
+            <!-- Immediate T5 types -->
+            <T5 width="9" hdl_param="I_IMM_WIDTH"> <!-- The width of the immediate instruction to be used by the HDL -->
+                <mnemonic     type="mnemonic"     width="1"/>
+                <imm          type="immediate"    width="8"/>
+            </T5>
+
+            <T5_b> <!-- Immediate Nop -->
+                <mnemonic     type="mnemonic"     width="1"/>
+                <unused       type="unused"       width="8"/>
+            </T5_b>
+
+            <T6>
+                <mnemonic     type="mnemonic"     width="4"/>
+                <imm          type="immediate"    width="6"/>
+                <inputA       type="input"  />
+            </T6>
+
+
+            <T6_b> <!-- no A -->
+                <mnemonic     type="mnemonic"     width="4"/>
+                <imm          type="immediate"    width="6"/>
+                <unused       type="unused"       width="2"/>
+            </T6_b>
+
+        </instructiontypes>
+
+        <!-- "(0b[0-1]+)|(0x[0-9a-fA-F]+)|((?!0x|0b)[0-9]+)"-->
+
+        <instructionFieldTypes>
+            <!-- instruction fields in order of concat -->
+            <!-- first match group in regex is the 'value' to extract to use for machine code-->
+            <mnemonic           width="7"  separator="\s+" />                        
+            <unused             width="1"  />
+            <register           width="4"  regex="r([0-3]?[0-9])"                  separator=","/>
+            <input              width="2"  regex="in\[?([0-3])\]?"                 separator=","/>
+            <output             width="1"  regex="out\[?([0-1])\]?"                separator=","/>
+            <!--<immediate          width="8"  regex="((0x|0b)?[0-9a-fA-F]+)"          separator=","/> -->
+            <immediate          width="8"  regex="([^\s,;\|]+)" separator=","/>
+            <datatype           width="2"  regex="(([A-Z])+)" separator=","/>
+            <signtype           width="3"  regex="(([A-Z])+)" separator=","/>
+            
+            <!--
+            <branchtarget16     width="16" regex="(((0x|0b)?[0-9a-fA-F]+)|(\$[^\s:]+))"     separator=","/>
+            <branchtarget21     width="21" regex="(((0x|0b)?[0-9a-fA-F]+)|(\$[^\s:]+))"     separator=","/>
+            <branchtarget26     width="26" regex="(((0x|0b)?[0-9a-fA-F]+)|(\$[^\s:]+))"     separator=","/>      
+            -->    
+
+        </instructionFieldTypes>
+
+        <instructions>
+            <!-- generic types -->
+            <nop        mnemonic="nop"      type="NOP"      opcode="0"/>    
+            
+            <!-- LSU T1 types -->
+            <sla        mnemonic="sla"      type="T1_lsu_b"     opcode="1"/> 
+            <sli        mnemonic="sli"      type="T1_lsu_f"     opcode="2"/>
+            <sga        mnemonic="sga"      type="T1_lsu_b"     opcode="3"/>
+            <sgi        mnemonic="sgi"      type="T1_lsu_f"     opcode="22"/>
+            <lla        mnemonic="lla"      type="T1_lsu_c"     opcode="5"/>
+            <lli        mnemonic="lli"      type="T1_lsu_e"     opcode="6"/>
+            <lga        mnemonic="lga"      type="T1_lsu_c"     opcode="7"/>
+            <lgi        mnemonic="lgi"      type="T1_lsu_e"     opcode="8"/>
+            <lli_sla    mnemonic="lli_sla"  type="T1_lsu_a"     opcode="9"/>
+            <lgi_sla    mnemonic="lgi_sla"  type="T1_lsu_a"     opcode="10"/>
+            <lla_sli    mnemonic="lla_sli"  type="T1_lsu_a"     opcode="11"/>
+            <lli_sli    mnemonic="lli_sli"  type="T1_lsu_d"     opcode="12"/>
+            <lga_sli    mnemonic="lga_sli"  type="T1_lsu_a"     opcode="13"/>
+            <lgi_sli    mnemonic="lgi_sli"  type="T1_lsu_d"     opcode="14"/>
+            <lli_sga    mnemonic="lli_sga"  type="T1_lsu_a"     opcode="15"/>
+            <lgi_sga    mnemonic="lgi_sga"  type="T1_lsu_a"     opcode="17"/>
+            <lla_sgi    mnemonic="lla_sgi"  type="T1_lsu_a"     opcode="18"/>
+            <lli_sgi    mnemonic="lli_sgi"  type="T1_lsu_d"     opcode="19"/>
+            <lga_sgi    mnemonic="lga_sgi"  type="T1_lsu_a"     opcode="23"/>
+            <lgi_sgi    mnemonic="lgi_sgi"  type="T1_lsu_d"     opcode="21"/>            
+          
+            <!-- LSU T2 types -->
+            <srm        mnemonic="srm"      type="T2"       opcode="32"/>
+
+            <!-- RF T3 types -->
+            <lrm_srm    mnemonic="lrm_srm"  type="T3"       opcode="3"/>
+
+            <!-- RF T2 types -->
+            <!-- also <srm        mnemonic="srm"      type="T2"    opcode="64"/> as defined in LSU T2-->
+            <lrm        mnemonic="lrm"      type="T2_b"     opcode="40"/>
+
+            <!-- RF T4 types -->
+            <sra        mnemonic="sra"      type="T4"       opcode="144"/>
+            <lra        mnemonic="lra"      type="T4_b"     opcode="136"/>
+
+
+            <!-- ALU types-->
+            <add        mnemonic="add"      type="T1"       opcode="26"/>
+            <add_c      mnemonic="add_c"    type="T1_alu_a" opcode="74"/>
+            <add_se     mnemonic="add_se"   type="T1_alu"   opcode="10"/>
+            <sub        mnemonic="sub"      type="T1"       opcode="27"/>
+            <sub_c      mnemonic="sub_c"    type="T1_alu_a" opcode="75"/>
+            <sub_se     mnemonic="sub_se"   type="T1_alu"   opcode="11"/>
+            <and        mnemonic="and"      type="T1"       opcode="16"/>
+            <nand       mnemonic="nand"     type="T1"       opcode="48"/>
+            <or         mnemonic="or"       type="T1"       opcode="17"/>
+            <nor        mnemonic="nor"      type="T1"       opcode="49"/>
+            <xor        mnemonic="xor"      type="T1"       opcode="18"/>
+            <xnor       mnemonic="xnor"     type="T1"       opcode="50"/>
+            <neg        mnemonic="neg"      type="T1_d"     opcode="51"/>
+            <cmov       mnemonic="cmov"     type="T1"       opcode="115"/>
+            <ecmov      mnemonic="ecmov"    type="T1"       opcode="3"/>
+            <pass       mnemonic="pass"     type="T1_d"     opcode="19"/>
+            <pass_se    mnemonic="pass_se"  type="T1_alu_d" opcode="3"/>
+            <eq         mnemonic="eq"       type="T1"       opcode="111"/>
+            <neq        mnemonic="neq"      type="T1"       opcode="95"/>
+            <ltu        mnemonic="ltu"      type="T1"       opcode="31"/>
+            <lts        mnemonic="lts"      type="T1"       opcode="79"/>
+            <geu        mnemonic="geu"      type="T1"       opcode="63"/>
+            <ges        mnemonic="ges"      type="T1"       opcode="47"/>
+            <shll1      mnemonic="shll1"    type="T1_d"     opcode="20"/>
+            <shll4      mnemonic="shll4"    type="T1_d"     opcode="21"/>
+            <shrl1      mnemonic="shrl1"    type="T1_d"     opcode="22"/>
+            <shrl4      mnemonic="shrl4"    type="T1_d"     opcode="23"/>
+            <shra1      mnemonic="shra1"    type="T1_d"     opcode="6"/>
+            <shra4      mnemonic="shra4"    type="T1_d"     opcode="7"/>
+
+            <!-- Immediate T5 types -->
+            <imm        mnemonic="imm"      type="T5"       opcode="1"/> 
+            <nopi       mnemonic="nopi"     type="T5_b"     opcode="0"/> 
+
+            <!-- Branch types -->
+            <jr         mnemonic="jr"       type="T1_g"     opcode="96"/>
+            <ja         mnemonic="ja"       type="T1_g"     opcode="104"/>
+            <bcr        mnemonic="bcr"      type="T1_b"     opcode="112"/>
+            <bca        mnemonic="bca"      type="T1_b"     opcode="120"/>
+
+            <accu       mnemonic="accu"     type="T2"       opcode="50"/>
+            <accs       mnemonic="accs"     type="T2"       opcode="51"/>
+
+            <jri        mnemonic="jri"      type="T6_b"     opcode="1"/>
+            <jai        mnemonic="jai"      type="T6_b"     opcode="3"/>
+            <bcri       mnemonic="bcri"     type="T6"       opcode="5"/>
+            <bcai       mnemonic="bcai"     type="T6"       opcode="7"/>
+
+            <!-- MUL types-->
+            <mullu      mnemonic="mullu"    type="T1"       opcode="72"/>
+            <mullu_sh8      mnemonic="mullu_sh8"    type="T1_mul8"       opcode="73"/>
+            <mullu_sh16      mnemonic="mullu_sh16"    type="T1_mul16"       opcode="74"/>
+            <mullu_sh24      mnemonic="mullu_sh24"    type="T1_mul24"       opcode="75"/>
+            <mulls      mnemonic="mulls"    type="T1"       opcode="88"/>
+            <mulls_sh8      mnemonic="mulls_sh8"    type="T1_mul8"       opcode="89"/>
+            <mulls_sh16      mnemonic="mulls_sh16"    type="T1_mul16"       opcode="90"/>
+            <mulls_sh24      mnemonic="mulls_sh24"    type="T1_mul24"       opcode="91"/>
+            <mulu       mnemonic="mulu"     type="T1"       opcode="104"/>
+            <mulu_sh8       mnemonic="mulu_sh8"     type="T1_mul8"       opcode="105"/>
+            <mulu_sh16       mnemonic="mulu_sh16"     type="T1_mul16"       opcode="106"/>
+            <mulu_sh24       mnemonic="mulu_sh24"     type="T1_mul24"       opcode="107"/>
+            <muls       mnemonic="muls"     type="T1"       opcode="120"/>
+            <muls_sh8       mnemonic="muls_sh8"     type="T1_mul8"       opcode="121"/>
+            <muls_sh16       mnemonic="muls_sh16"     type="T1_mul16"       opcode="122"/>
+            <muls_sh24       mnemonic="muls_sh24"     type="T1_mul24"       opcode="123"/>            
+            <lh         mnemonic="lh"       type="T1_e"     opcode="32"/>
+
+        </instructions>    
+
+    </ISA>
+
+    <DataTypes>
+        <byte  width="8" />
+        <hword width="16"/>
+        <word  width="32"/>
+        <dword width="64"/>
+    </DataTypes>
+
+    <PeripheralTypes>
+        <Console addr_range="1">
+            <Toplevel_connections>
+                <connection name="WriteData" type="output" width="32"/>
+                <connection name="WriteValid" type="output" width="1"/>
+                <connection name="WriteEnable" type="output" width="4"/>
+            </Toplevel_connections>
+        </Console>
+
+        <VGA addr_range="1048576">
+            <Toplevel_connections>
+                <connection name="VGAClk" type="input" width="1"/>
+                <connection name="VGA_R" type="output" width="8"/>
+                <connection name="VGA_G" type="output" width="8"/>
+                <connection name="VGA_B" type="output" width="8"/>
+                <connection name="VGA_Clk" type="output" width="1"/>
+                <connection name="VGA_Sync" type="output" width="1"/>
+                <connection name="VGA_Blank" type="output" width="1"/>
+                <connection name="VGA_VS" type="output" width="1"/>
+                <connection name="VGA_HS" type="output" width="1"/>
+            </Toplevel_connections>
+        </VGA>
+
+        <FIFO addr_range="10">
+            <!--TOP LEVEL CONNECTIONS TBD only required if peripherals is external from CGRA -->
+            <Toplevel_connections>
+            </Toplevel_connections>
+        </FIFO>
+    </PeripheralTypes>
+    
+    <Core>
+        <StateSwitch enabled="0"/>
+        <PerformanceCounters enabled="1"/>
+        <Branchslots slots="2"/>
+        <DecodedInstructions width="16"/>
+        <Loader offset="C0000"/>
+        <Memory type="TSMC">
+            <GM width="32" depth="4096" addresswidth="32" interface="native"/>
+            <LM width="32" depth="256" addresswidth="16"/>
+            <IM depth="256" addresswidth="16"/>
+            <SM width="32" depth="256" addresswidth="32"/>
+        </Memory>
+        <Interface width="32" addresswidth="32" max_blockwidth="5"/>
+    </Core>
+
+</architecture>

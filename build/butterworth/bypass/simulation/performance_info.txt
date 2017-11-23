@@ -1,0 +1,8 @@
+total cycles:     854146
+stalled cycles:       8000
+active cycles (id_abu):      84012, utilization:          9 percent
+active cycles (imm):     156099, utilization:         18 percent
+active cycles (id_lsu):     174044, utilization:         20 percent
+active cycles (id_mul):      42000, utilization:          4 percent
+active cycles (id_alu):     336053, utilization:         39 percent
+active cycles (id_rf):     712118, utilization:         84 percent

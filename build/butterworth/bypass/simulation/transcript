@@ -1,0 +1,35 @@
+# vsim +notimingchecks -do {run -all} -c TB_CGRA_Top 
+# //  ModelSim SE-64 10.2a Mar 15 2013 Linux 3.13.0-106-generic
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.TB_CGRA_Top(fast)
+# Loading work.ID(fast)
+# Loading work.IU(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.dtl_sram_controller(rtl)#1
+# run -all 
+# ** Warning: (vsim-8233) CGRA_testbench.v(503): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top
+# ** Warning: (vsim-PLI-3408) Too few data words read on line 2001 of file "data.vbin". Expected 8192, found 2000.    : CGRA_testbench.v(292)
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top
+# ** Warning: (vsim-PLI-3408) Too few data words read on line 2001 of file "data.vbin". Expected 8192, found 2000.    : RAM_SDP_BE.v(48)
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxx1 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_inst
+# ** Warning: (vsim-8233) CGRA_testbench.v(503): Index xxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top
+# ** Warning: (vsim-8233) CGRA_testbench.v(503): Index xxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
+#    Time: 5 ns  Iteration: 3  Instance: /TB_CGRA_Top

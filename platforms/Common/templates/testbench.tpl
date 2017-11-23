@@ -1,0 +1,491 @@
+`timescale 1 ns / 1 ns
+
+`include "config.vh"
+
+module <<MODULE_NAME>>;
+
+	parameter LOADER_OFFSET = <<LOADER_OFFSET>>;
+
+	//common parameters
+	parameter D_WIDTH = <<D_WIDTH>>;
+	parameter I_WIDTH = <<I_WIDTH>>;
+	parameter I_IMM_WIDTH = <<I_IMM_WIDTH>>;
+	parameter I_DECODED_WIDTH = <<DECODED_WIDTH>>;
+	
+	parameter LM_ADDR_WIDTH = <<LM_ADDR_WIDTH>>;
+	parameter GM_ADDR_WIDTH = <<GM_ADDR_WIDTH>>;	
+	parameter IM_ADDR_WIDTH = <<IM_ADDR_WIDTH>>;
+	
+	parameter LM_MEM_ADDR_WIDTH = <<LM_DEPTH_WIDTH>>;
+	parameter GM_MEM_ADDR_WIDTH = <<GM_DEPTH_WIDTH>>;
+	parameter IM_MEM_ADDR_WIDTH = <<IM_DEPTH_WIDTH>>;
+	parameter LM_MEM_WIDTH = <<LM_MEM_WIDTH>>;
+	parameter GM_MEM_WIDTH = <<GM_MEM_WIDTH>>;
+
+	parameter NUM_ID = <<NUM_ID>>;
+	parameter NUM_IMM = <<NUM_IMM>>;
+	parameter NUM_LDMEM = <<NUM_LDMEM>>;
+	parameter NUM_GDMEM = <<NUM_GDMEM>>;
+	
+	parameter INTERFACE_WIDTH = <<INTERFACE_WIDTH>>;
+	parameter INTERFACE_ADDR_WIDTH = <<INTERFACE_ADDR_WIDTH>>;
+	parameter INTERFACE_BLOCK_WIDTH = <<INTERFACE_BLOCK_WIDTH>>;
+
+	parameter MAGIC_DMEM_LOAD = <<MAGIC_DMEM_LOAD>>;
+
+	parameter BINARY_WORDS = 2**15;
+	parameter BINARY_FILE = "out.bin";
+	
+	parameter STATE_IDLE = 3'b000;
+	parameter STATE_DATA_LOAD = 3'b001;
+	parameter STATE_CONFIG_LOAD = 3'b010;
+	parameter STATE_RELEASE_RESET = 3'b011;
+
+	parameter STATE_CONFIG_STATE_READADDR = 3'b100;
+	parameter STATE_CONFIG_STATE_WRITEADDR = 3'b101;
+	parameter STATE_CONFIG_STATE_COMMAND = 3'b110;	
+	
+	//declare required registers
+	reg rClk = 0;
+	reg rReset = 1;
+	
+	//generate the master clock
+	always begin
+		#5 rClk <= !rClk;
+	end
+
+	reg [INTERFACE_WIDTH-1:0] rBinary [BINARY_WORDS-1:0];
+	reg [INTERFACE_WIDTH-1:0] rDataBinary [2**GM_MEM_ADDR_WIDTH-1:0];
+	
+	reg [2:0] rState;
+	reg [127:0] rCycleLimitCount;
+
+	initial begin
+		rCycleLimitCount=0;
+	end
+
+	`ifndef ASIC_NO_PERF_COUNTERS
+	`ifndef ASIC_SYNTHESIS 
+	always @(posedge rClk)
+	begin
+		rCycleLimitCount <= rCycleLimitCount + 1;
+
+		if (rCycleLimitCount > 5000000)
+		begin
+			$fatal("MAXIMUM SIMULATION TIME EXCEEDED!!!");
+			
+		end
+	end
+	`endif
+	`endif
+		
+	//---------------- FOR LOADER ----------------------
+	reg rLoaderCommandValid;	
+	reg rLoaderWriteValid;	
+	reg rLoaderCommandReadWrite;
+	wire wLoaderCommandAccept;
+	wire wLoaderWriteAccept;
+	wire wLoaderReadValid;
+	wire [INTERFACE_WIDTH-1:0] wLoaderReadData;
+	reg [INTERFACE_ADDR_WIDTH-1:0] rLoaderAddr;
+		
+	//reg rLoaderReadDataValid;
+	reg [INTERFACE_WIDTH-1:0] rLoaderWriteData;
+		
+	//---------------- FOR GLOBAL MEM ----------------------
+	reg rDMEMCommandValid;	
+	reg rDMEMWriteValid;	
+	wire wDMEMCommandAccept;
+	wire wDMEMWriteAccept;
+		
+	//reg rDMEMReadDataValid;
+	reg [INTERFACE_WIDTH-1:0] rDMEMWriteData;
+	reg [INTERFACE_ADDR_WIDTH-1:0] rDMEMWriteAddr;
+		
+	wire wHalted;
+	wire wConfigDone;
+
+	reg [INTERFACE_WIDTH-1:0] rStateConfig;
+	
+	//wire wLoaderReadReq;
+	//wire [INTERFACE_ADDR_WIDTH-1:0] wLoaderReadAddr;	
+	//reg [INTERFACE_ADDR_WIDTH-1:0] rLoaderReadAddr;
+	
+	initial begin
+		rState = STATE_IDLE;		
+		rLoaderCommandReadWrite = 0;		
+		rDMEMWriteAddr = 0;
+		rDMEMCommandValid = 0;		
+		rDMEMWriteValid = 0;							
+		rReset = 1;
+		rLoaderCommandValid = 0;		
+		rLoaderWriteValid = 0;		
+		rLoaderAddr = LOADER_OFFSET;
+						
+		#20 rReset = 0;				
+		if (MAGIC_DMEM_LOAD==0)
+			#20 rState = STATE_DATA_LOAD;			
+		else
+			#20 rState = STATE_CONFIG_LOAD;			
+				
+		while (!wConfigDone) //wait for config to be completed
+			begin
+				#100 rReset = 0;
+			end		
+		
+		`ifdef INCLUDE_STATE_CONTROL
+			#200 rState = STATE_CONFIG_STATE_READADDR;
+			#200 rState = STATE_CONFIG_STATE_WRITEADDR;
+			
+			#1300 rStateConfig = 'b001_100; //disable shift in and request swap
+			#10 rState = STATE_CONFIG_STATE_COMMAND;
+			#100 rStateConfig = 'b000_000; //set everything back to zero (not timing critical, responds to rising of command bits)
+			#10 rState = STATE_CONFIG_STATE_COMMAND;		
+			
+			#50000 rStateConfig = 'b010_100; //disable shift out and request swap
+			#10 rState = STATE_CONFIG_STATE_COMMAND;
+			#100 rStateConfig = 'b000_000; //set everything back to zero (not timing critical, responds to rising of command bits)
+			#10 rState = STATE_CONFIG_STATE_COMMAND;			
+		`endif
+				
+		/* //to test if restarting works
+		while(!wHalted)
+			begin
+				#100 rReset = 0;
+			end
+			
+		#2000 rLoaderAddr <= 32'd4;
+		rLoaderWriteData <= 32'h00000001;
+		rLoaderCommandValid <= 1;
+		rLoaderWriteValid <= 1;					
+
+		#2000 rLoaderAddr <= 32'd4;
+		rLoaderWriteData <= 32'h00000000;
+		rLoaderCommandValid <= 1;
+		rLoaderWriteValid <= 1;					
+		*/
+		
+	end
+	
+	always @(posedge rClk)
+	begin
+		if (wLoaderCommandAccept)
+			rLoaderCommandValid <= 0;
+			
+		if (wLoaderWriteAccept)
+			rLoaderWriteValid <= 0;
+			
+		if (wDMEMCommandAccept)
+			rDMEMCommandValid <= 0;
+			
+		if (wDMEMWriteAccept)
+			rDMEMWriteValid <= 0;	
+	
+		if (rState == STATE_DATA_LOAD)
+			begin
+				if (wDMEMWriteAccept)
+					rDMEMWriteAddr <= rDMEMWriteAddr + 1'd1;				
+					
+					if (rDMEMWriteAddr < 2**GM_MEM_ADDR_WIDTH-1)
+						begin			
+							if (!(rDMEMCommandValid | rDMEMWriteValid))
+								begin						
+									rDMEMCommandValid <= 1;
+									rDMEMWriteValid <= 1;			
+									rDMEMWriteData	<= rDataBinary[rDMEMWriteAddr];
+								end
+						end
+					else
+						rState = STATE_CONFIG_LOAD;					
+			end
+			
+		if (rState == STATE_CONFIG_LOAD)			
+			begin					
+					if (!(rLoaderCommandValid | rLoaderWriteValid))
+						begin
+							rState <= STATE_RELEASE_RESET;
+							rLoaderAddr <= LOADER_OFFSET;
+							rLoaderWriteData <= 32'h00000000;
+							rLoaderCommandValid <= 1;
+							rLoaderWriteValid <= 1;					
+						end
+			end
+			
+		if (rState == STATE_RELEASE_RESET)
+			begin									
+					if (wConfigDone)
+						begin
+							rState <= STATE_IDLE;
+							rLoaderAddr <= LOADER_OFFSET+4;
+							rLoaderWriteData <= 32'h00000000;
+							rLoaderCommandValid <= 1;
+							rLoaderWriteValid <= 1;					
+						end			
+			end
+			
+		if (rState == STATE_CONFIG_STATE_READADDR)			
+			begin					
+					if (!(rLoaderCommandValid | rLoaderWriteValid))
+						begin
+							rState <= STATE_IDLE;
+							rLoaderAddr <= LOADER_OFFSET+12;
+							rLoaderWriteData <= 32'd8;
+							rLoaderCommandValid <= 1;
+							rLoaderWriteValid <= 1;					
+						end
+			end		
+			
+		if (rState == STATE_CONFIG_STATE_WRITEADDR)			
+			begin					
+					if (!(rLoaderCommandValid | rLoaderWriteValid))
+						begin
+							rState <= STATE_IDLE;
+							rLoaderAddr <= LOADER_OFFSET+16;
+							rLoaderWriteData <= 32'd8;
+							rLoaderCommandValid <= 1;
+							rLoaderWriteValid <= 1;					
+						end
+			end				
+			
+		if (rState == STATE_CONFIG_STATE_COMMAND)			
+			begin					
+					if (!(rLoaderCommandValid | rLoaderWriteValid))
+						begin
+							rState <= STATE_IDLE;
+							rLoaderAddr <= LOADER_OFFSET+8;
+							rLoaderWriteData <= rStateConfig;
+							rLoaderCommandValid <= 1;
+							rLoaderWriteValid <= 1;					
+						end
+			end				
+			
+	/* //if you want to test reading the status register (polling)
+		if (rState == STATE_IDLE)
+			begin
+				if (wConfigDone & !rLoaderCommandValid)
+					begin
+							rLoaderCommandValid <= 1;			
+							rLoaderCommandReadWrite <= 1;
+					end			
+			end
+	*/	
+
+	if (rState == STATE_IDLE) begin
+		rLoaderCommandValid <= 0;			
+		rLoaderWriteValid <= 0;			
+	end
+					
+	end
+	
+	integer f;
+	integer x;
+	reg read_return;
+	
+	initial begin		
+		f = $fopen(BINARY_FILE, "rb");
+		read_return=$fread(rBinary, f);
+		$fclose(f);
+		
+		for (x=0; x < BINARY_WORDS; x = x + 1)
+			rBinary[x] = {rBinary[x][7:0], rBinary[x][15:8], rBinary[x][23:16], rBinary[x][31:24]};
+
+		$readmemb("data.vbin", rDataBinary, 0, 2**GM_MEM_ADDR_WIDTH-1);
+	end			
+
+	always @(posedge rClk)
+		if (wHalted)
+			begin
+				#5 $finish();
+			end
+
+	integer file;	
+	
+	initial begin
+	   	file = $fopen({"GM_out.txt"},"w");			   	
+	
+	   	@(negedge rReset); //Wait for reset to be released	  
+	   	forever
+	   	begin
+	 	  	@(posedge wHalted)
+	 	  		for (x=0; x < 2**GM_MEM_ADDR_WIDTH; x = x + 1)
+ 					$fwrite(file,"%b\n", dut.GM_inst.rRAM[x]);			 						  
+	   	end
+
+	   	$fclose(f);  
+	 end			
+	
+	`ifndef ASIC_SYNTHESIS 
+	`ifndef ASIC_NO_PERF_COUNTERS	
+	`ifdef INCLUDE_PERF_COUNTERS
+		<<PERF_REGS>>
+
+		always @(posedge rClk)
+		begin
+			if (wConfigDone)	
+				begin	
+					<<PERF_COUNTERS>>
+				end
+
+			if (rReset)
+				begin
+					<<PERF_RESET>>
+				end
+		end
+
+		integer file_perf;
+		initial begin
+		   	file_perf = $fopen({"performance_info.txt"},"w");			   	
+		
+		   	@(negedge rReset); //Wait for reset to be released	  
+		   	forever
+		   	begin
+		 	  	@(posedge wHalted)
+		 	  		begin			 			
+			 			$fwrite(file_perf,"total cycles: %d\nstalled cycles: %d\n", dut.<<DESIGN_NAME>>_Core_inst.<<DESIGN_NAME>>_Compute_Wrapper_inst.rCycleCounter, dut.<<DESIGN_NAME>>_Core_inst.<<DESIGN_NAME>>_Compute_Wrapper_inst.rStallCounter);			 			
+			 			<<PERF_WRITE>>
+		 			end
+		   	end
+
+		   	$fclose(f);  
+		 end	
+	`endif
+	`endif
+	`endif
+	
+	//SMEM DTL wires
+	wire wDTL_SMEM_CommandAccept;
+	wire wDTL_SMEM_WriteAccept;
+	wire wDTL_SMEM_ReadValid;
+	wire wDTL_SMEM_ReadLast;
+	wire [INTERFACE_WIDTH-1:0] wDTL_SMEM_ReadData;
+			
+	wire wDTL_SMEM_CommandValid;
+	wire wDTL_SMEM_WriteValid;	
+	wire wDTL_SMEM_CommandReadWrite;
+	wire [(INTERFACE_WIDTH/8)-1:0] wDTL_SMEM_WriteEnable;
+	wire [INTERFACE_ADDR_WIDTH-1:0] wDTL_SMEM_Address;
+	wire [INTERFACE_WIDTH-1:0] wDTL_SMEM_WriteData;
+		
+	wire [INTERFACE_BLOCK_WIDTH-1:0] wDTL_SMEM_BlockSize;
+	wire wDTL_SMEM_WriteLast;
+	wire wDTL_SMEM_ReadAccept;		
+	
+	wire [INTERFACE_ADDR_WIDTH-1:0] wReadAddr;
+			
+	<<DUT_NAME>> dut
+	(
+		.iClk(rClk),
+		.iReset(rReset),
+		.oHalted(wHalted),
+		.oConfigDone(wConfigDone),					
+		
+		//peripheral connections
+<<PERIPHERAL_CONNECTIONS>>
+							
+		//DTL interface for control by the host (SLAVE)
+		.oDTL_Loader_CommandAccept(wLoaderCommandAccept),
+		.oDTL_Loader_WriteAccept(wLoaderWriteAccept),
+		.oDTL_Loader_ReadValid(wLoaderReadValid),
+		.oDTL_Loader_ReadLast(),
+		.oDTL_Loader_ReadData(wLoaderReadData),
+			
+		.iDTL_Loader_CommandValid(rLoaderCommandValid),
+		.iDTL_Loader_WriteValid(rLoaderWriteValid),		
+		.iDTL_Loader_CommandReadWrite(rLoaderCommandReadWrite),
+		.iDTL_Loader_WriteEnable({(INTERFACE_WIDTH/8){1'b1}}),
+		.iDTL_Loader_Address(rLoaderAddr),	
+		.iDTL_Loader_WriteData(rLoaderWriteData),
+			
+		.iDTL_Loader_BlockSize({(INTERFACE_BLOCK_WIDTH){1'b0}}),
+		.iDTL_Loader_WriteLast(1'b1),
+		.iDTL_Loader_ReadAccept(1'b1),			
+			
+		//DTL interface for the shared memory with the host (MASTER)
+		.iDTL_SMEM_CommandAccept(wDTL_SMEM_CommandAccept),
+		.iDTL_SMEM_WriteAccept(wDTL_SMEM_WriteAccept),
+		.iDTL_SMEM_ReadValid(wDTL_SMEM_ReadValid),
+		.iDTL_SMEM_ReadLast(wDTL_SMEM_ReadLast),
+		.iDTL_SMEM_ReadData(wDTL_SMEM_ReadData),
+			
+		.oDTL_SMEM_CommandValid(wDTL_SMEM_CommandValid),
+		.oDTL_SMEM_WriteValid(wDTL_SMEM_WriteValid),		
+		.oDTL_SMEM_CommandReadWrite(wDTL_SMEM_CommandReadWrite),
+		.oDTL_SMEM_WriteEnable(wDTL_SMEM_WriteEnable),
+		.oDTL_SMEM_Address(wDTL_SMEM_Address),	
+		.oDTL_SMEM_WriteData(wDTL_SMEM_WriteData),
+			
+		.oDTL_SMEM_BlockSize(wDTL_SMEM_BlockSize),
+		.oDTL_SMEM_WriteLast(wDTL_SMEM_WriteLast),
+		.oDTL_SMEM_ReadAccept(wDTL_SMEM_ReadAccept),		
+
+		//DTL interface for control by the host (SLAVE)
+		.oDTL_DMEM_CommandAccept(wDMEMCommandAccept),
+		.oDTL_DMEM_WriteAccept(wDMEMWriteAccept),
+		.oDTL_DMEM_ReadValid(),
+		.oDTL_DMEM_ReadLast(),
+		.oDTL_DMEM_ReadData(),
+			
+		.iDTL_DMEM_CommandValid(rDMEMCommandValid),
+		.iDTL_DMEM_WriteValid(rDMEMWriteValid),		
+		.iDTL_DMEM_CommandReadWrite(1'b0),
+		.iDTL_DMEM_WriteEnable({(INTERFACE_WIDTH/8){1'b1}}),
+		.iDTL_DMEM_Address(rDMEMWriteAddr),	
+		.iDTL_DMEM_WriteData(rDMEMWriteData),
+			
+		.iDTL_DMEM_BlockSize({(INTERFACE_BLOCK_WIDTH){1'b0}}),
+		.iDTL_DMEM_WriteLast(1'b1),
+		.iDTL_DMEM_ReadAccept(1'b1)					
+		
+	);
+	
+	
+	dtl_sram_controller DTL_SRAM_CONTROLLER_inst
+	(
+	  .clk(rClk),
+	  .rst(rReset),
+	  .dtl_cmd_valid(wDTL_SMEM_CommandValid),
+	  .dtl_cmd_accept(wDTL_SMEM_CommandAccept),
+	  .dtl_cmd_addr(wDTL_SMEM_Address >> 2),
+	  .dtl_cmd_read(wDTL_SMEM_CommandReadWrite),
+	  .dtl_cmd_block_size(wDTL_SMEM_BlockSize),
+
+	  .dtl_wr_valid(wDTL_SMEM_WriteValid),
+	  .dtl_wr_last(wDTL_SMEM_WriteLast),
+	  .dtl_wr_accept(wDTL_SMEM_WriteAccept),
+	  .dtl_wr_mask(wDTL_SMEM_WriteEnable),
+	  .dtl_wr_data(wDTL_SMEM_WriteData),
+
+	  .dtl_rd_valid(wDTL_SMEM_ReadValid),
+	  .dtl_rd_last(wDTL_SMEM_ReadLast),
+	  .dtl_rd_accept(wDTL_SMEM_ReadAccept),
+	  .dtl_rd_data(wDTL_SMEM_ReadData), 
+
+	  .ram_clk(),
+	  .ram_rst(),
+	  .ram_addr(wReadAddr),
+	  .ram_wr_data(),
+	  .ram_en(),
+	  .ram_wbe(),
+	  .ram_rd_data(wDTL_SMEM_ReadValid ? rBinary[wReadAddr] : 32'bX),
+	  
+	  //dummy bus used to prevent xilinx tools from optimizing stuff away
+	  //explicitly unconnected to avoid warnings about it.
+	  //.LMB_Clk(),
+	  .lmb_clk(),
+	  .lmb_rst(),
+	  .lmb_abus(),
+	  .lmb_writedbus(),
+	  .lmb_addrstrobe(),
+	  .lmb_readstrobe(),
+	  .lmb_writestrobe(),
+	  .lmb_be(),
+	  .sl_dbus(),
+	  .sl_ready(),
+	  .sl_wait(),
+	  .sl_ue(),
+	  .sl_ce()
+	 );	
+
+		
+endmodule
+

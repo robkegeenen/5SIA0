@@ -1,0 +1,4 @@
+//`define INCLUDE_STATE_CONTROL
+`define INCLUDE_PERF_COUNTERS
+//`define NATIVE_GM_INTERFACE
+//`define SYN_MEM
