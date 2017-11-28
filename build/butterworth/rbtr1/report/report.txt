@@ -1,0 +1,53 @@
+
+----------------------------------
+|        Energy report:          |
+----------------------------------
+
+Energy for FUs (1) and ID for 'imm_stor':	11.45 pJ
+Energy for FUs (1) and ID for 'id_lsu_x':	21.45 pJ
+Energy for FUs (1) and ID for 'id_mul_y':	40.2 pJ
+Energy for FUs (1) and ID for 'imm_y':	11.45 pJ
+Energy for FUs (1) and ID for 'imm_x':	11.45 pJ
+Energy for FUs (1) and ID for 'id_rf_x':	13.95 pJ
+Energy for FUs (1) and ID for 'id_rf_y':	13.95 pJ
+Energy for FUs (1) and ID for 'id_lsu_y':	21.45 pJ
+Energy for FUs (1) and ID for 'id_mul_x':	40.2 pJ
+Energy for FUs (1) and ID for 'id_abu_stor':	32.7 pJ
+Energy for FUs (1) and ID for 'id_abu_contr':	32.6 pJ
+Energy for FUs (1) and ID for 'id_abu_y':	32.7 pJ
+Energy for FUs (1) and ID for 'id_abu_x':	32.7 pJ
+
+Total energy:	316.25 pJ
+
+----------------------------------
+|         Area report:           |
+----------------------------------
+
+Area for FU type 'IU' (3):	1674.0 um^2	Wire area (6):	600.0 um^2	Total area:	2274.0 um^2
+Area for FU type 'RF' (2):	19274.0 um^2	Wire area (7):	700.0 um^2	Total area:	19974.0 um^2
+Area for FU type 'LSU' (2):	44852.0 um^2	Wire area (5):	500.0 um^2	Total area:	45352.0 um^2
+Area for FU type 'ABU' (4):	65484.0 um^2	Wire area (11):	1100.0 um^2	Total area:	66584.0 um^2
+Area for FU type 'MUL' (2):	49714.0 um^2	Wire area (6):	600.0 um^2	Total area:	50314.0 um^2
+Area for FU type 'ID' (10):	11510.0 um^2	Wire area (20):	2000.0 um^2	Total area:	13510.0 um^2
+
+Total FU area:	192508.0 um^2	Total wire area:	5500.0 um^2	Total area:	198008.0 um^2
+
+----------------------------------
+|      Performance report:       |
+----------------------------------
+
+total cycles:          2
+stalled cycles:          0
+active cycles (id_lsu_y):          0, utilization:          0 percent
+active cycles (id_lsu_x):          0, utilization:          0 percent
+active cycles (id_mul_y):          0, utilization:          0 percent
+active cycles (id_mul_x):          0, utilization:          0 percent
+active cycles (id_rf_x):          0, utilization:          0 percent
+active cycles (id_rf_y):          0, utilization:          0 percent
+active cycles (id_abu_contr):          8, utilization:        400 percent
+active cycles (imm_y):          0, utilization:          0 percent
+active cycles (imm_x):          0, utilization:          0 percent
+active cycles (id_abu_stor):          0, utilization:          0 percent
+active cycles (id_abu_y):          0, utilization:          0 percent
+active cycles (id_abu_x):          0, utilization:          0 percent
+active cycles (imm_stor):          0, utilization:          0 percent

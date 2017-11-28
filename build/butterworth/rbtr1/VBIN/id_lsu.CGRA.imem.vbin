@@ -1,0 +1,162 @@
+// Generated on 2017-11-28 18:13:13
+
+///////////////////////////////////////////////////////////////////
+//inst      	// Source Code          	% Comment                  
+///////////////////////////////////////////////////////////////////
+@0
+000000000000	//  nop                 	% 
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store value r2 on addr r0
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011000100	//  sla WORD, in1, in0  	% write 0 in x[i]
+000011000100	//  sla WORD, in1, in0  	% write 0 in x[i]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+001011011000	//  lla WORD, out1, in2 	% load x[i]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store x[i] in x[i-1]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+001011011000	//  lla WORD, out1, in2 	% load x[i]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store x[i] in x[i-1]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+001111010100	//  lga WORD, out1, in1 	% load data
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% data -> x[10]
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% 0 -> x[10]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+001011010100	//  lla WORD, out1, in1 	% load b[j]
+000000000000	// nop                  	% auto inserted nop
+001011010100	//  lla WORD, out1, in1 	% load x[i-j]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+001011010100	//  lla WORD, out1, in1 	% load a[j+1]
+000000000000	// nop                  	% auto inserted nop
+001011010100	//  lla WORD, out1, in1 	% load y[i-j-1]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000011001001	//  sla WORD, in2, in1  	% store yy in y[10]
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000111001001	//  sga WORD, in2, in1  	% store yy in data memory
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	// nop                  	% auto inserted nop
+000000000000	//  nop                 	% 
