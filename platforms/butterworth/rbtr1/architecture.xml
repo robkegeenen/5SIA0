@@ -23,20 +23,21 @@
         <input index="0" source="abu_stor.1"/>
       </fu>
 
-
-
-      <fu type="ID" name="id_lsu_x">
+      <fu type="ID" name="id_lsu_stor">
         <input index="0" source="abu_contr.1"/>
       </fu>
-      <fu type="LSU" name="lsu_x" ID="id_lsu_x">
-        <input index="0" source="imm_stor.0"/>
+      <fu type="LSU" name="lsu_stor" ID="id_lsu_stor">
+        <input index="0" source="abu_stor.1"/>
+        <input index="1" source="rf_y.1"/>
       </fu>
+
+
 
       <fu type="ID" name="id_rf_x">
         <input index="0" source="abu_contr.1"/>
       </fu>
       <fu type="RF" name="rf_x" ID="id_rf_x">
-        <input index="0" source="lsu_x.1"/>
+        <input index="0" source="lsu_stor.1"/>
         <input index="1" source="abu_stor.1"/>
       </fu>
 
@@ -63,19 +64,11 @@
 
 
 
-      <fu type="ID" name="id_lsu_y">
-        <input index="0" source="abu_contr.1"/>
-      </fu>
-      <fu type="LSU" name="lsu_y" ID="id_lsu_y">
-        <input index="0" source="imm_stor.0"/>
-        <input index="1" source="rf_y.1"/>
-      </fu>
-
       <fu type="ID" name="id_rf_y">
         <input index="0" source="abu_contr.1"/>
       </fu>
       <fu type="RF" name="rf_y" ID="id_rf_y">
-        <input index="0" source="lsu_y.1"/>
+        <input index="0" source="lsu_stor.1"/>
         <input index="1" source="abu_stor.1"/>
         <input index="2" source="abu_x.1"/>
       </fu>

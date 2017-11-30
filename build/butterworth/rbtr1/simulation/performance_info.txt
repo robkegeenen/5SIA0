@@ -1,15 +1,14 @@
-total cycles:          2
-stalled cycles:          0
-active cycles (id_lsu_y):          0, utilization:          0 percent
-active cycles (id_lsu_x):          0, utilization:          0 percent
+total cycles:         29
+stalled cycles:          2
+active cycles (imm_stor):          2, utilization:          7 percent
+active cycles (id_abu_x):          0, utilization:          0 percent
+active cycles (id_abu_y):          0, utilization:          0 percent
+active cycles (imm_x):          0, utilization:          0 percent
+active cycles (id_rf_x):          0, utilization:          0 percent
+active cycles (id_rf_y):          2, utilization:          7 percent
+active cycles (id_abu_stor):          4, utilization:         14 percent
+active cycles (id_lsu_stor):          1, utilization:          3 percent
+active cycles (id_abu_contr):          1, utilization:          3 percent
 active cycles (id_mul_y):          0, utilization:          0 percent
 active cycles (id_mul_x):          0, utilization:          0 percent
-active cycles (id_rf_x):          0, utilization:          0 percent
-active cycles (id_rf_y):          0, utilization:          0 percent
-active cycles (id_abu_contr):          8, utilization:        400 percent
 active cycles (imm_y):          0, utilization:          0 percent
-active cycles (imm_x):          0, utilization:          0 percent
-active cycles (id_abu_stor):          0, utilization:          0 percent
-active cycles (id_abu_y):          0, utilization:          0 percent
-active cycles (id_abu_x):          0, utilization:          0 percent
-active cycles (imm_stor):          0, utilization:          0 percent

@@ -1,4 +1,3 @@
-# vsim +notimingchecks -do {run -all} -c TB_CGRA_Top 
 # //  ModelSim SE-64 10.2a Mar 15 2013 Linux 3.13.0-135-generic
 # //
 # //  Copyright 1991-2013 Mentor Graphics Corporation
@@ -8,58 +7,582 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# Loading work.TB_CGRA_Top(fast)
-# Loading work.ID(fast)
-# Loading work.IU(fast)
+# vsim +notimingchecks -do {do wave.do; run -all} -novopt TB_CGRA_Top 
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.TB_CGRA_Top
+# Loading work.TB_CGRA_Top
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.CGRA_Top
+# Loading work.CGRA_Top
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.CGRA_Core
+# Loading work.CGRA_Core
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.CGRA_Compute_Wrapper
+# Loading work.CGRA_Compute_Wrapper
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.LOADER
+# Loading work.LOADER
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.CGRA_Compute
+# Loading work.CGRA_Compute
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.IF
+# Loading work.IF
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.IU
+# Loading work.IU
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.ID
+# Loading work.ID
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.ABU
+# Loading work.ABU
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.MUL
+# Loading work.MUL
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.RF
+# Loading work.RF
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.LSU
+# Loading work.LSU
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.DATA_Buffer
+# Loading work.DATA_Buffer
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.DTL_SlaveInterface
+# Loading work.DTL_SlaveInterface
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.DTL_MasterInterface
+# Loading work.DTL_MasterInterface
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.General_ARBITER
+# Loading work.General_ARBITER
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.CGRA_Memory
+# Loading work.CGRA_Memory
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.RAM_SDP_BE
+# Loading work.RAM_SDP_BE
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.RAM_SDP
+# Loading work.RAM_SDP
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.DTL_Address_Isolator
+# Loading work.DTL_Address_Isolator
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.DTL_ARBITER
+# Loading work.DTL_ARBITER
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.BUFFXD12BWP12T40M1P
+# Loading work.BUFFXD12BWP12T40M1P
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.Address_Isolator
+# Loading work.Address_Isolator
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.ARBITER
+# Loading work.ARBITER
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.READARB
+# Loading work.READARB
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.WRITEARB
+# Loading work.WRITEARB
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.ARBITER_RR
+# Loading work.ARBITER_RR
 # Loading std.standard
+# Refreshing /home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation/work.dtl_sram_controller(rtl)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.std_logic_arith(body)
-# Loading work.dtl_sram_controller(rtl)#1
-# run -all 
-# ** Warning: (vsim-8233) CGRA_testbench.v(538): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
+# Loading work.dtl_sram_controller(rtl)
+# do wave.do 
+#  run -all 
+# ** Warning: (vsim-8233) CGRA_testbench.v(533): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
 #    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top
 # ** Warning: (vsim-PLI-3408) Too few data words read on line 2001 of file "data.vbin". Expected 8192, found 2000.    : CGRA_testbench.v(292)
 #    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) MUL.v(105): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_x_inst
+# ** Warning: (vsim-8233) MUL.v(106): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_x_inst
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) RF.v(59): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_y_inst
+# ** Warning: (vsim-8233) RF.v(65): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_y_inst
+# ** Warning: (vsim-8233) RF.v(59): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_x_inst
+# ** Warning: (vsim-8233) RF.v(65): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_x_inst
+# ** Warning: (vsim-8233) MUL.v(105): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_y_inst
+# ** Warning: (vsim-8233) MUL.v(106): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_y_inst
+# ** Warning: (vsim-8233) LSU.v(322): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst
+# ** Warning: (vsim-8233) LSU.v(375): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst
+# ** Warning: (vsim-8233) LSU.v(465): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk2
+# ** Warning: (vsim-8233) LSU.v(466): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk2
+# ** Warning: (vsim-8233) LSU.v(484): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk3
+# ** Warning: (vsim-8233) LSU.v(485): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk3
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/LM_lsu_stor/forwarding[0]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/LM_lsu_stor/forwarding[1]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/LM_lsu_stor/forwarding[2]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/LM_lsu_stor/forwarding[3]
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
 # ** Warning: (vsim-PLI-3408) Too few data words read on line 2001 of file "data.vbin". Expected 8192, found 2000.    : RAM_SDP_BE.v(48)
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top
-# ** Warning: (vsim-8233) ABU.v(231): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
-# ** Warning: (vsim-8233) ABU.v(231): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
-# ** Warning: (vsim-8233) ABU.v(231): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
-# ** Warning: (vsim-8233) ABU.v(231): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxxx1 into array dimension [15:0] is out of bounds.
-#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
-# ** Warning: (vsim-8233) CGRA_testbench.v(538): Index xxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/GM_inst
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[0]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[1]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[2]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[3]
+# ** Warning: (vsim-8233) DTL_Arbiter.v(116): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(179): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(180): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(181): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(182): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(183): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(184): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(185): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 0  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) CGRA_testbench.v(533): Index xxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
 #    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top
-# ** Warning: (vsim-8233) CGRA_testbench.v(538): Index xxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
-#    Time: 5 ns  Iteration: 3  Instance: /TB_CGRA_Top
-# ** Warning: (vsim-8233) ABU.v(226): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 4465 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 4465 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
-# ** Warning: (vsim-8233) ABU.v(226): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 4465 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
-# ** Warning: (vsim-8233) ABU.v(231): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 4465 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
-# ** Warning: (vsim-8233) ABU.v(231): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 4465 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
-# ** Warning: (vsim-8233) ABU.v(231): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 4465 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(184): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(183): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(181): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) MUL.v(105): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_x_inst
+# ** Warning: (vsim-8233) MUL.v(106): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_x_inst
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) RF.v(59): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_y_inst
+# ** Warning: (vsim-8233) RF.v(59): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_x_inst
+# ** Warning: (vsim-8233) MUL.v(105): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_y_inst
+# ** Warning: (vsim-8233) MUL.v(106): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_y_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(180): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(179): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(182): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(116): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) DTL_Arbiter.v(185): Index x into array dimension [1:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/DTL_ARBITER_TOP_inst
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst/genblk4
+# ** Warning: (vsim-8233) LSU.v(465): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk2
+# ** Warning: (vsim-8233) LSU.v(466): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk2
+# ** Warning: (vsim-8233) LSU.v(484): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk3
+# ** Warning: (vsim-8233) LSU.v(485): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst/genblk3
+# ** Warning: (vsim-8233) LSU.v(322): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst
+# ** Warning: (vsim-8233) LSU.v(375): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 0 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/lsu_stor_inst
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 5 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[0]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 5 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[1]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 5 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[2]
+# ** Warning: (vsim-8233) RAM_SDP_BE.v(73): Index xxxxxxxxxxxxx into array dimension [8191:0] is out of bounds.
+#    Time: 5 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/GM_inst/forwarding[3]
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 25 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 495 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 605 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 635 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 715 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 775 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 815 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_mul_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_contr
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_lsu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_stor
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_rf_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_y
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_id_abu_x
+# ** Warning: (vsim-8233) RAM_SDP.v(58): Index xxxxxxxx into array dimension [255:0] is out of bounds.
+#    Time: 895 ns  Iteration: 3  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Memory_inst/IM_imm_stor
+# ** Warning: (vsim-8233) RF.v(65): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_y_inst
+# ** Warning: (vsim-8233) RF.v(65): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_x_inst
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(223): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) MUL.v(106): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_y_inst
+# ** Warning: (vsim-8233) MUL.v(105): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_y_inst
+# ** Warning: (vsim-8233) MUL.v(106): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_x_inst
+# ** Warning: (vsim-8233) MUL.v(105): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/mul_x_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(226): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(231): Index xxx0 into array dimension [15:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(203): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Region: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst/genblk4
+# ** Warning: (vsim-8233) ABU.v(195): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30495 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_contr_inst
+# ** Warning: (vsim-8233) RF.v(122): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30505 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_y_inst
+# ** Warning: (vsim-8233) RF.v(122): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 30505 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_y_inst
+# ** Warning: (vsim-8233) RF.v(122): Index xx into array dimension [3:0] is out of bounds.
+#    Time: 30505 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_x_inst
+# ** Warning: (vsim-8233) RF.v(122): Index xxxx into array dimension [15:0] is out of bounds.
+#    Time: 30505 ns  Iteration: 1  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/rf_x_inst
+# 1
+# Break in Module TB_CGRA_Top at CGRA_testbench.v line 298
