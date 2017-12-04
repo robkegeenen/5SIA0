@@ -27,7 +27,7 @@ module CGRA_Compute_Wrapper
 	parameter GM_MEM_WIDTH = 32,
 	
 	parameter NUM_ID = 10,
-	parameter NUM_IMM = 4,
+	parameter NUM_IMM = 3,
 	parameter NUM_LOCAL_DMEM = 1,
 	parameter NUM_GLOBAL_DMEM = 1,
 	parameter NUM_PERIPHERALS = 1
@@ -401,7 +401,7 @@ module CGRA_Compute_Wrapper
 		#(
 			.INTERFACE_WIDTH(INTERFACE_WIDTH),
 			.INTERFACE_ADDR_WIDTH(INTERFACE_ADDR_WIDTH),			
-			.STATE_BITS(3462)
+			.STATE_BITS(3396)
 		)
 		SC_inst
 		(

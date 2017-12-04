@@ -21,7 +21,7 @@ module CGRA_Compute
 	parameter GM_MEM_WIDTH = 32,
 	
 	parameter NUM_ID = 10,
-	parameter NUM_IMM = 4,
+	parameter NUM_IMM = 3,
 	parameter NUM_LOCAL_DMEM = 1,
 	parameter NUM_GLOBAL_DMEM = 1,
 
@@ -121,10 +121,10 @@ module CGRA_Compute
 	wire [I_WIDTH-1:0] wIM_ID_Instruction[9:0];
 	wire [I_DECODED_WIDTH-1:0] wIM_ID_DecodedInstruction[9:0];
 
-	wire [IM_ADDR_WIDTH-1:0] wIM_IU_ReadAddress[3:0];
-	wire [I_IMM_WIDTH-1:0] wIM_IU_ReadData[3:0];
-	wire wIM_IU_ReadEnable[3:0];
-	wire [I_IMM_WIDTH-1:0] wIM_IU_Instruction[3:0];
+	wire [IM_ADDR_WIDTH-1:0] wIM_IU_ReadAddress[2:0];
+	wire [I_IMM_WIDTH-1:0] wIM_IU_ReadData[2:0];
+	wire wIM_IU_ReadEnable[2:0];
+	wire [I_IMM_WIDTH-1:0] wIM_IU_Instruction[2:0];
 
 	//data wires 
 	wire [D_WIDTH-1:0] wData_mul_y_0;
@@ -137,7 +137,6 @@ module CGRA_Compute
 	wire [D_WIDTH-1:0] wData_abu_x_1;
 	wire [D_WIDTH-1:0] wData_abu_y_0;
 	wire [D_WIDTH-1:0] wData_abu_y_1;
-	wire [D_WIDTH-1:0] wData_imm_alu_0;
 	wire [D_WIDTH-1:0] wData_imm_y_0;
 	wire [D_WIDTH-1:0] wData_imm_x_0;
 	wire [D_WIDTH-1:0] wData_rf_y_0;
@@ -161,12 +160,11 @@ module CGRA_Compute
 	wire wConfig_imm_y_TO_imm_x;
 	wire wConfig_imm_x_TO_id_abu_stor;
 	wire wConfig_abu_stor_TO_lsu_stor;
-	wire wConfig_abu_y_TO_imm_alu;
+	wire wConfig_id_abu_stor_TO_id_abu_y;
 	wire wConfig_id_alu_TO_abu_x;
 	wire wConfig_abu_x_TO_abu_y;
 	wire wConfig_alu_TO_id_rf_x;
 	wire wConfig_id_rf_x_TO_id_rf_y;
-	wire wConfig_id_abu_stor_TO_id_abu_y;
 	wire wConfig_id_abu_y_TO_id_abu_x;
 	wire wConfig_id_abu_TO_id_alu;
 	wire wConfig_imm_stor_TO_abu_stor;
@@ -175,7 +173,7 @@ module CGRA_Compute
 	wire wConfig_id_mul_x_TO_alu;
 	wire wConfig_id_lsu_stor_TO_id_mul_y;
 	wire wConfig_id_mul_y_TO_id_mul_x;
-	wire wConfig_imm_alu_TO_imm_y;
+	wire wConfig_abu_y_TO_imm_y;
 	
 
 	//Carrychain wires
@@ -205,9 +203,9 @@ module CGRA_Compute
 	assign {wLM_ReadData[0]} = iLM_ReadData;
 
 	//assigns for instruction memories
-	assign oIM_ReadAddress = {wIM_IU_ReadAddress[3], wIM_IU_ReadAddress[2], wIM_IU_ReadAddress[1], wIM_IU_ReadAddress[0], wIM_ID_ReadAddress[9], wIM_ID_ReadAddress[8], wIM_ID_ReadAddress[7], wIM_ID_ReadAddress[6], wIM_ID_ReadAddress[5], wIM_ID_ReadAddress[4], wIM_ID_ReadAddress[3], wIM_ID_ReadAddress[2], wIM_ID_ReadAddress[1], wIM_ID_ReadAddress[0]};
-	assign oIM_ReadEnable = {wIM_IU_ReadEnable[3], wIM_IU_ReadEnable[2], wIM_IU_ReadEnable[1], wIM_IU_ReadEnable[0], wIM_ID_ReadEnable[9], wIM_ID_ReadEnable[8], wIM_ID_ReadEnable[7], wIM_ID_ReadEnable[6], wIM_ID_ReadEnable[5], wIM_ID_ReadEnable[4], wIM_ID_ReadEnable[3], wIM_ID_ReadEnable[2], wIM_ID_ReadEnable[1], wIM_ID_ReadEnable[0]};
-	assign {wIM_IU_ReadData[3], wIM_IU_ReadData[2], wIM_IU_ReadData[1], wIM_IU_ReadData[0], wIM_ID_ReadData[9], wIM_ID_ReadData[8], wIM_ID_ReadData[7], wIM_ID_ReadData[6], wIM_ID_ReadData[5], wIM_ID_ReadData[4], wIM_ID_ReadData[3], wIM_ID_ReadData[2], wIM_ID_ReadData[1], wIM_ID_ReadData[0]} = iIM_ReadData;	
+	assign oIM_ReadAddress = {wIM_IU_ReadAddress[2], wIM_IU_ReadAddress[1], wIM_IU_ReadAddress[0], wIM_ID_ReadAddress[9], wIM_ID_ReadAddress[8], wIM_ID_ReadAddress[7], wIM_ID_ReadAddress[6], wIM_ID_ReadAddress[5], wIM_ID_ReadAddress[4], wIM_ID_ReadAddress[3], wIM_ID_ReadAddress[2], wIM_ID_ReadAddress[1], wIM_ID_ReadAddress[0]};
+	assign oIM_ReadEnable = {wIM_IU_ReadEnable[2], wIM_IU_ReadEnable[1], wIM_IU_ReadEnable[0], wIM_ID_ReadEnable[9], wIM_ID_ReadEnable[8], wIM_ID_ReadEnable[7], wIM_ID_ReadEnable[6], wIM_ID_ReadEnable[5], wIM_ID_ReadEnable[4], wIM_ID_ReadEnable[3], wIM_ID_ReadEnable[2], wIM_ID_ReadEnable[1], wIM_ID_ReadEnable[0]};
+	assign {wIM_IU_ReadData[2], wIM_IU_ReadData[1], wIM_IU_ReadData[0], wIM_ID_ReadData[9], wIM_ID_ReadData[8], wIM_ID_ReadData[7], wIM_ID_ReadData[6], wIM_ID_ReadData[5], wIM_ID_ReadData[4], wIM_ID_ReadData[3], wIM_ID_ReadData[2], wIM_ID_ReadData[1], wIM_ID_ReadData[0]} = iIM_ReadData;	
 
 	//assign for halting
 	assign oHalted = wHalted;
@@ -227,8 +225,7 @@ module CGRA_Compute
 		wire wState_id_abu_TO_id_alu;
 		wire wState_id_alu_TO_abu_x;
 		wire wState_abu_x_TO_abu_y;
-		wire wState_abu_y_TO_imm_alu;
-		wire wState_imm_alu_TO_imm_y;
+		wire wState_abu_y_TO_imm_y;
 		wire wState_imm_y_TO_imm_x;
 		wire wState_imm_x_TO_rf_y;
 		wire wState_rf_y_TO_rf_x;
@@ -257,11 +254,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_ID_ReadAddress[6]),
-		.iInstruction(wIM_ID_ReadData[6]),
+		.oInstructionAddress(wIM_ID_ReadAddress[7]),
+		.iInstruction(wIM_ID_ReadData[7]),
 
-		.oInstruction(wIM_ID_Instruction[6]),
-		.oInstructionReadEnable(wIM_ID_ReadEnable[6])
+		.oInstruction(wIM_ID_Instruction[7]),
+		.oInstructionReadEnable(wIM_ID_ReadEnable[7])
 	);
 
 	ID //instruction decoding
@@ -295,8 +292,8 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 
-		.iInstruction(wIM_ID_Instruction[6]),	
-		.oDecodedInstruction(wIM_ID_DecodedInstruction[6])			
+		.iInstruction(wIM_ID_Instruction[7]),	
+		.oDecodedInstruction(wIM_ID_DecodedInstruction[7])			
 	);	
 
 	MUL
@@ -471,10 +468,10 @@ module CGRA_Compute
 		.iCarryIn(1'b0),
 		.oCarryOut(),
 
-		.iInputs({wData_abu_y_0, wData_abu_x_0, wData_imm_alu_0, wData_abu_stor_0}), 
+		.iInputs({wData_abu_y_0, wData_abu_x_0, wData_lsu_stor_1, wData_abu_stor_0}), 
 		.oOutputs({wData_alu_1, wData_alu_0}),
 		
-		.iDecodedInstruction(wIM_ID_DecodedInstruction[4])
+		.iDecodedInstruction(wIM_ID_DecodedInstruction[5])
 	);
 
 	IF //instruction fetching
@@ -489,11 +486,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_ID_ReadAddress[1]),
-		.iInstruction(wIM_ID_ReadData[1]),
+		.oInstructionAddress(wIM_ID_ReadAddress[2]),
+		.iInstruction(wIM_ID_ReadData[2]),
 
-		.oInstruction(wIM_ID_Instruction[1]),
-		.oInstructionReadEnable(wIM_ID_ReadEnable[1])
+		.oInstruction(wIM_ID_Instruction[2]),
+		.oInstructionReadEnable(wIM_ID_ReadEnable[2])
 	);
 
 	ID //instruction decoding
@@ -527,8 +524,8 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 
-		.iInstruction(wIM_ID_Instruction[1]),	
-		.oDecodedInstruction(wIM_ID_DecodedInstruction[1])			
+		.iInstruction(wIM_ID_Instruction[2]),	
+		.oDecodedInstruction(wIM_ID_DecodedInstruction[2])			
 	);	
 
 	IF //instruction fetching
@@ -543,11 +540,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_ID_ReadAddress[2]),
-		.iInstruction(wIM_ID_ReadData[2]),
+		.oInstructionAddress(wIM_ID_ReadAddress[3]),
+		.iInstruction(wIM_ID_ReadData[3]),
 
-		.oInstruction(wIM_ID_Instruction[2]),
-		.oInstructionReadEnable(wIM_ID_ReadEnable[2])
+		.oInstruction(wIM_ID_Instruction[3]),
+		.oInstructionReadEnable(wIM_ID_ReadEnable[3])
 	);
 
 	ID //instruction decoding
@@ -581,8 +578,8 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 
-		.iInstruction(wIM_ID_Instruction[2]),	
-		.oDecodedInstruction(wIM_ID_DecodedInstruction[2])			
+		.iInstruction(wIM_ID_Instruction[3]),	
+		.oDecodedInstruction(wIM_ID_DecodedInstruction[3])			
 	);	
 
 
@@ -627,7 +624,7 @@ module CGRA_Compute
 		.iInputs({{D_WIDTH{1'b0}}, {D_WIDTH{1'b0}}, {D_WIDTH{1'b0}}, wData_abu_stor_1}),
 		.oOutputs({wData_abu_1, wData_abu_0}),
 		
-		.iDecodedInstruction(wIM_ID_DecodedInstruction[5])	
+		.iDecodedInstruction(wIM_ID_DecodedInstruction[6])	
 	);
 
 	IF //instruction fetching
@@ -642,11 +639,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_ID_ReadAddress[5]),
-		.iInstruction(wIM_ID_ReadData[5]),
+		.oInstructionAddress(wIM_ID_ReadAddress[6]),
+		.iInstruction(wIM_ID_ReadData[6]),
 
-		.oInstruction(wIM_ID_Instruction[5]),
-		.oInstructionReadEnable(wIM_ID_ReadEnable[5])
+		.oInstruction(wIM_ID_Instruction[6]),
+		.oInstructionReadEnable(wIM_ID_ReadEnable[6])
 	);
 
 	ID //instruction decoding
@@ -680,8 +677,8 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 
-		.iInstruction(wIM_ID_Instruction[5]),	
-		.oDecodedInstruction(wIM_ID_DecodedInstruction[5])			
+		.iInstruction(wIM_ID_Instruction[6]),	
+		.oDecodedInstruction(wIM_ID_DecodedInstruction[6])			
 	);	
 
 	IF //instruction fetching
@@ -696,11 +693,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_ID_ReadAddress[4]),
-		.iInstruction(wIM_ID_ReadData[4]),
+		.oInstructionAddress(wIM_ID_ReadAddress[5]),
+		.iInstruction(wIM_ID_ReadData[5]),
 
-		.oInstruction(wIM_ID_Instruction[4]),
-		.oInstructionReadEnable(wIM_ID_ReadEnable[4])
+		.oInstruction(wIM_ID_Instruction[5]),
+		.oInstructionReadEnable(wIM_ID_ReadEnable[5])
 	);
 
 	ID //instruction decoding
@@ -734,8 +731,8 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 
-		.iInstruction(wIM_ID_Instruction[4]),	
-		.oDecodedInstruction(wIM_ID_DecodedInstruction[4])			
+		.iInstruction(wIM_ID_Instruction[5]),	
+		.oDecodedInstruction(wIM_ID_DecodedInstruction[5])			
 	);	
 
 
@@ -780,7 +777,7 @@ module CGRA_Compute
 		.iInputs({{D_WIDTH{1'b0}}, {D_WIDTH{1'b0}}, wData_imm_stor_0, wData_mul_x_0}),
 		.oOutputs({wData_abu_x_1, wData_abu_x_0}),
 		
-		.iDecodedInstruction(wIM_ID_DecodedInstruction[3])	
+		.iDecodedInstruction(wIM_ID_DecodedInstruction[4])	
 	);
 
 
@@ -812,11 +809,11 @@ module CGRA_Compute
 		//config chain
 		.iConfigEnable(iConfigEnable),
 		.iConfigDataIn(wConfig_abu_x_TO_abu_y),
-		.oConfigDataOut(wConfig_abu_y_TO_imm_alu),
+		.oConfigDataOut(wConfig_abu_y_TO_imm_y),
 
 		`ifdef INCLUDE_STATE_CONTROL	//use only if state control is enabled				
 			.iStateDataIn(wState_abu_x_TO_abu_y),
-			.oStateDataOut(wState_abu_y_TO_imm_alu),	
+			.oStateDataOut(wState_abu_y_TO_imm_y),	
 			.iStateShift(iStateShift),
 			.iNewStateIn(iStateNewIn),		
 			.iOldStateOut(iStateOldOut),		
@@ -825,60 +822,7 @@ module CGRA_Compute
 		.iInputs({{D_WIDTH{1'b0}}, {D_WIDTH{1'b0}}, wData_imm_stor_0, wData_mul_y_0}),
 		.oOutputs({wData_abu_y_1, wData_abu_y_0}),
 		
-		.iDecodedInstruction(wIM_ID_DecodedInstruction[7])	
-	);
-
-	IF //instruction fetching
-	#(
-		.I_WIDTH(I_IMM_WIDTH),
-		.IM_ADDR_WIDTH(IM_ADDR_WIDTH)
-	)
-	IF_imm_alu_inst
-	(		
-		.iClk(iClk),
-		.iReset(iReset),
-
-		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
-	
-		.oInstructionAddress(wIM_IU_ReadAddress[1]),
-		.iInstruction(wIM_IU_ReadData[1]),
-
-		.oInstruction(wIM_IU_Instruction[1]),
-		.oInstructionReadEnable(wIM_IU_ReadEnable[1])
-	);
-
-	IU
-	#(	
-		.I_IMM_WIDTH(I_IMM_WIDTH),
-		.D_WIDTH(D_WIDTH),
-	
-		.INSERT_BUBBLE(1),
-	
-		.TEST_ID("imm_alu"),
-		.NUM_STALL_GROUPS(NUM_STALL_GROUPS)
-	)
-	imm_alu_inst
-	(
-		.iClk(iClk),
-		.iReset(iReset),
-
-		.iStall(wStall | iStateSwitchHalt),
-
-		//config chain
-		.iConfigEnable(iConfigEnable),
-		.iConfigDataIn(wConfig_abu_y_TO_imm_alu),
-		.oConfigDataOut(wConfig_imm_alu_TO_imm_y),
-
-		`ifdef INCLUDE_STATE_CONTROL	//use only if state control is enabled				
-			.iStateDataIn(wState_abu_y_TO_imm_alu),
-			.oStateDataOut(wState_imm_alu_TO_imm_y),	
-			.iStateShift(iStateShift),
-			.iNewStateIn(iStateNewIn),		
-			.iOldStateOut(iStateOldOut),		
-		`endif			
-	
-		.iInstruction(wIM_IU_Instruction[1]),
-		.oImmediateOut(wData_imm_alu_0)	
+		.iDecodedInstruction(wIM_ID_DecodedInstruction[1])	
 	);
 
 	IF //instruction fetching
@@ -893,11 +837,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_IU_ReadAddress[2]),
-		.iInstruction(wIM_IU_ReadData[2]),
+		.oInstructionAddress(wIM_IU_ReadAddress[1]),
+		.iInstruction(wIM_IU_ReadData[1]),
 
-		.oInstruction(wIM_IU_Instruction[2]),
-		.oInstructionReadEnable(wIM_IU_ReadEnable[2])
+		.oInstruction(wIM_IU_Instruction[1]),
+		.oInstructionReadEnable(wIM_IU_ReadEnable[1])
 	);
 
 	IU
@@ -919,18 +863,18 @@ module CGRA_Compute
 
 		//config chain
 		.iConfigEnable(iConfigEnable),
-		.iConfigDataIn(wConfig_imm_alu_TO_imm_y),
+		.iConfigDataIn(wConfig_abu_y_TO_imm_y),
 		.oConfigDataOut(wConfig_imm_y_TO_imm_x),
 
 		`ifdef INCLUDE_STATE_CONTROL	//use only if state control is enabled				
-			.iStateDataIn(wState_imm_alu_TO_imm_y),
+			.iStateDataIn(wState_abu_y_TO_imm_y),
 			.oStateDataOut(wState_imm_y_TO_imm_x),	
 			.iStateShift(iStateShift),
 			.iNewStateIn(iStateNewIn),		
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 	
-		.iInstruction(wIM_IU_Instruction[2]),
+		.iInstruction(wIM_IU_Instruction[1]),
 		.oImmediateOut(wData_imm_y_0)	
 	);
 
@@ -946,11 +890,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_IU_ReadAddress[3]),
-		.iInstruction(wIM_IU_ReadData[3]),
+		.oInstructionAddress(wIM_IU_ReadAddress[2]),
+		.iInstruction(wIM_IU_ReadData[2]),
 
-		.oInstruction(wIM_IU_Instruction[3]),
-		.oInstructionReadEnable(wIM_IU_ReadEnable[3])
+		.oInstruction(wIM_IU_Instruction[2]),
+		.oInstructionReadEnable(wIM_IU_ReadEnable[2])
 	);
 
 	IU
@@ -983,7 +927,7 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 	
-		.iInstruction(wIM_IU_Instruction[3]),
+		.iInstruction(wIM_IU_Instruction[2]),
 		.oImmediateOut(wData_imm_x_0)	
 	);
 
@@ -1013,7 +957,7 @@ module CGRA_Compute
 		.iInputs({wData_imm_stor_0, wData_alu_0, wData_abu_stor_1, wData_alu_1}),
 		.oOutputs({wData_rf_y_1, wData_rf_y_0}),
 		
-		.iDecodedInstruction(wIM_ID_DecodedInstruction[2])	
+		.iDecodedInstruction(wIM_ID_DecodedInstruction[3])	
 	);	
 
 	RF
@@ -1039,10 +983,10 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 		
-		.iInputs({wData_imm_stor_0, wData_alu_0, wData_abu_stor_1, wData_lsu_stor_1}),
+		.iInputs({wData_imm_stor_0, wData_alu_0, wData_abu_stor_1, wData_lsu_stor_0}),
 		.oOutputs({wData_rf_x_1, wData_rf_x_0}),
 		
-		.iDecodedInstruction(wIM_ID_DecodedInstruction[1])	
+		.iDecodedInstruction(wIM_ID_DecodedInstruction[2])	
 	);	
 
 	IF //instruction fetching
@@ -1111,11 +1055,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_ID_ReadAddress[7]),
-		.iInstruction(wIM_ID_ReadData[7]),
+		.oInstructionAddress(wIM_ID_ReadAddress[1]),
+		.iInstruction(wIM_ID_ReadData[1]),
 
-		.oInstruction(wIM_ID_Instruction[7]),
-		.oInstructionReadEnable(wIM_ID_ReadEnable[7])
+		.oInstruction(wIM_ID_Instruction[1]),
+		.oInstructionReadEnable(wIM_ID_ReadEnable[1])
 	);
 
 	ID //instruction decoding
@@ -1149,8 +1093,8 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 
-		.iInstruction(wIM_ID_Instruction[7]),	
-		.oDecodedInstruction(wIM_ID_DecodedInstruction[7])			
+		.iInstruction(wIM_ID_Instruction[1]),	
+		.oDecodedInstruction(wIM_ID_DecodedInstruction[1])			
 	);	
 
 	IF //instruction fetching
@@ -1165,11 +1109,11 @@ module CGRA_Compute
 
 		.iProgramCounter(wData_abu_1[IM_ADDR_WIDTH-1:0]),
 	
-		.oInstructionAddress(wIM_ID_ReadAddress[3]),
-		.iInstruction(wIM_ID_ReadData[3]),
+		.oInstructionAddress(wIM_ID_ReadAddress[4]),
+		.iInstruction(wIM_ID_ReadData[4]),
 
-		.oInstruction(wIM_ID_Instruction[3]),
-		.oInstructionReadEnable(wIM_ID_ReadEnable[3])
+		.oInstruction(wIM_ID_Instruction[4]),
+		.oInstructionReadEnable(wIM_ID_ReadEnable[4])
 	);
 
 	ID //instruction decoding
@@ -1203,8 +1147,8 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif			
 
-		.iInstruction(wIM_ID_Instruction[3]),	
-		.oDecodedInstruction(wIM_ID_DecodedInstruction[3])			
+		.iInstruction(wIM_ID_Instruction[4]),	
+		.oDecodedInstruction(wIM_ID_DecodedInstruction[4])			
 	);	
 
 	IF //instruction fetching
@@ -1374,10 +1318,10 @@ module CGRA_Compute
 			.iOldStateOut(iStateOldOut),		
 		`endif				
 
-		.iInputs({{D_WIDTH{1'b0}}, {D_WIDTH{1'b0}}, wData_alu_1, wData_abu_stor_1}),
+		.iInputs({{D_WIDTH{1'b0}}, wData_imm_y_0, wData_alu_1, wData_abu_stor_1}),
 		.oOutputs({wData_lsu_stor_1, wData_lsu_stor_0}),
 		
-		.iDecodedInstruction(wIM_ID_DecodedInstruction[6]),
+		.iDecodedInstruction(wIM_ID_DecodedInstruction[7]),
 				
 		.iLM_ReadData(wLM_ReadData[0]),
 		.oLM_ReadAddress(wLM_ReadAddress[0]),		

@@ -29,20 +29,17 @@
       <fu type="LSU" name="lsu_stor" ID="id_lsu_stor">
         <input index="0" source="abu_stor.1"/>
         <input index="1" source="alu.1"/>
+        <input index="2" source="imm_y.0"/>
       </fu>
 
 
-
-      <fu type="IU" name="imm_alu">
-        <input index="0" source="abu.1"/>
-      </fu>
 
       <fu type="ID" name="id_alu">
         <input index="0" source="abu.1"/>
       </fu>
       <fu type="ALU" name="alu" ID="id_alu" config="0">
         <input index="0" source="abu_stor.0"/>
-        <input index="1" source="imm_alu.0"/>
+        <input index="1" source="lsu_stor.1"/>
         <input index="2" source="abu_x.0"/>
         <input index="3" source="abu_y.0"/>
       </fu>
@@ -53,7 +50,7 @@
         <input index="0" source="abu.1"/>
       </fu>
       <fu type="RF" name="rf_x" ID="id_rf_x">
-        <input index="0" source="lsu_stor.1"/>
+        <input index="0" source="lsu_stor.0"/>
         <input index="1" source="abu_stor.1"/>
         <input index="2" source="alu.0"/>
         <input index="3" source="imm_stor.0"/>

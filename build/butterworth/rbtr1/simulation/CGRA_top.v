@@ -26,7 +26,7 @@ module CGRA_Top
 	parameter GM_MEM_WIDTH = 32,
 	
 	parameter NUM_ID = 10,
-	parameter NUM_IMM = 4,
+	parameter NUM_IMM = 3,
 	
 	parameter NUM_LOCAL_DMEM = 1,
 	parameter NUM_GLOBAL_DMEM = 1,

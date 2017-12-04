@@ -1,4 +1,4 @@
-// Generated on 2017-12-04 01:27:51
+// Generated on 2017-12-04 19:49:13
 
 ///////////////////////////////////////////////////////////
 //inst      	// Source Code          	% Comment          
@@ -12,11 +12,11 @@
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
+100000000010	//  srm r0, in2         	% 
+101000000000	//  lrm r0              	% 
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
-000000000000	// nop                  	% auto inserted nop
-000000000000	// nop                  	% auto inserted nop
-001111010000	//  lga WORD, out1, in0 	% 
+001111000000	//  lga WORD, out0, in0 	% 
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop

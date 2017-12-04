@@ -23,7 +23,7 @@ module TB_CGRA_Top;
 	parameter GM_MEM_WIDTH = 32;
 
 	parameter NUM_ID = 10;
-	parameter NUM_IMM = 4;
+	parameter NUM_IMM = 3;
 	parameter NUM_LDMEM = 1;
 	parameter NUM_GDMEM = 1;
 	
@@ -325,7 +325,6 @@ module TB_CGRA_Top;
 			reg [INTERFACE_WIDTH-1:0] rCounter_id_rf_y;
 			reg [INTERFACE_WIDTH-1:0] rCounter_id_abu;
 			reg [INTERFACE_WIDTH-1:0] rCounter_id_alu;
-			reg [INTERFACE_WIDTH-1:0] rCounter_imm_alu;
 			reg [INTERFACE_WIDTH-1:0] rCounter_imm_y;
 			reg [INTERFACE_WIDTH-1:0] rCounter_imm_x;
 			reg [INTERFACE_WIDTH-1:0] rCounter_id_abu_stor;
@@ -353,8 +352,6 @@ module TB_CGRA_Top;
 						rCounter_id_abu <= rCounter_id_abu + 1'd1;
 					if(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.id_alu_inst.iInstruction != 0 & !dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.id_alu_inst.rStall)
 						rCounter_id_alu <= rCounter_id_alu + 1'd1;
-					if(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.imm_alu_inst.iInstruction != 0 & !dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.imm_alu_inst.rStall)
-						rCounter_imm_alu <= rCounter_imm_alu + 1'd1;
 					if(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.imm_y_inst.iInstruction != 0 & !dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.imm_y_inst.rStall)
 						rCounter_imm_y <= rCounter_imm_y + 1'd1;
 					if(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.imm_x_inst.iInstruction != 0 & !dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.CGRA_Compute_inst.imm_x_inst.rStall)
@@ -380,7 +377,6 @@ module TB_CGRA_Top;
 					rCounter_id_rf_y <= 0;
 					rCounter_id_abu <= 0;
 					rCounter_id_alu <= 0;
-					rCounter_imm_alu <= 0;
 					rCounter_imm_y <= 0;
 					rCounter_imm_x <= 0;
 					rCounter_id_abu_stor <= 0;
@@ -409,7 +405,6 @@ module TB_CGRA_Top;
 						$fwrite(file_perf,"active cycles (id_rf_y): %d, utilization: %d percent\n", rCounter_id_rf_y, (rCounter_id_rf_y*100)/(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rCycleCounter - dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rStallCounter));
 						$fwrite(file_perf,"active cycles (id_abu): %d, utilization: %d percent\n", rCounter_id_abu, (rCounter_id_abu*100)/(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rCycleCounter - dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rStallCounter));
 						$fwrite(file_perf,"active cycles (id_alu): %d, utilization: %d percent\n", rCounter_id_alu, (rCounter_id_alu*100)/(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rCycleCounter - dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rStallCounter));
-						$fwrite(file_perf,"active cycles (imm_alu): %d, utilization: %d percent\n", rCounter_imm_alu, (rCounter_imm_alu*100)/(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rCycleCounter - dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rStallCounter));
 						$fwrite(file_perf,"active cycles (imm_y): %d, utilization: %d percent\n", rCounter_imm_y, (rCounter_imm_y*100)/(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rCycleCounter - dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rStallCounter));
 						$fwrite(file_perf,"active cycles (imm_x): %d, utilization: %d percent\n", rCounter_imm_x, (rCounter_imm_x*100)/(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rCycleCounter - dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rStallCounter));
 						$fwrite(file_perf,"active cycles (id_abu_stor): %d, utilization: %d percent\n", rCounter_id_abu_stor, (rCounter_id_abu_stor*100)/(dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rCycleCounter - dut.CGRA_Core_inst.CGRA_Compute_Wrapper_inst.rStallCounter));
