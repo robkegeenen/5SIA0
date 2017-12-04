@@ -23,74 +23,119 @@
 		</InstructionWidth>
 	</Core>
 	<fu_mapping>
-		<connectIndex>1</connectIndex>
-		<placeFU>imm_y</placeFU>
-		<chipFU>imm_y</chipFU>
-		<type>IU</type>
-		<configIndex>16</configIndex>
-		<configValue>0</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>3</connectIndex>
-		<placeFU>id_mul_x</placeFU>
-		<chipFU>id_mul_x</chipFU>
-		<type>ID</type>
-		<configIndex>15</configIndex>
-		<configValue>0100</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>0</connectIndex>
-		<placeFU>id_mul_y</placeFU>
-		<chipFU>id_mul_y</chipFU>
-		<type>ID</type>
-		<configIndex>14</configIndex>
-		<configValue>0100</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>6</connectIndex>
-		<placeFU>id_abu_contr</placeFU>
-		<chipFU>id_abu_contr</chipFU>
-		<type>ID</type>
-		<configIndex>13</configIndex>
-		<configValue>0011</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>5</connectIndex>
-		<placeFU>id_lsu_stor</placeFU>
-		<chipFU>id_lsu_stor</chipFU>
-		<type>ID</type>
-		<configIndex>12</configIndex>
-		<configValue>0000</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>4</connectIndex>
-		<placeFU>id_abu_stor</placeFU>
-		<chipFU>id_abu_stor</chipFU>
-		<type>ID</type>
-		<configIndex>11</configIndex>
-		<configValue>0011</configValue>
-	</fu_mapping>
-	<fu_mapping>
 		<connectIndex>0</connectIndex>
 		<placeFU>lsu_stor</placeFU>
 		<chipFU>lsu_stor</chipFU>
 		<type>LSU</type>
-		<configIndex>10</configIndex>
+		<configIndex>19</configIndex>
 		<configValue>0</configValue>
 	</fu_mapping>
 	<fu_mapping>
 		<type>ABU</type>
-		<configIndex>9</configIndex>
+		<configIndex>18</configIndex>
 		<placeFU>abu_stor</placeFU>
 		<configValue>00</configValue>
 		<chipFU>abu_stor</chipFU>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>0</connectIndex>
+		<placeFU>imm_stor</placeFU>
+		<chipFU>imm_stor</chipFU>
+		<type>IU</type>
+		<configIndex>17</configIndex>
+		<configValue>0</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>3</connectIndex>
+		<placeFU>id_abu_x</placeFU>
+		<chipFU>id_abu_x</chipFU>
+		<type>ID</type>
+		<configIndex>16</configIndex>
+		<configValue>0011</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>7</connectIndex>
+		<placeFU>id_abu_y</placeFU>
+		<chipFU>id_abu_y</chipFU>
+		<type>ID</type>
+		<configIndex>15</configIndex>
+		<configValue>0011</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>0</connectIndex>
+		<placeFU>id_abu_stor</placeFU>
+		<chipFU>id_abu_stor</chipFU>
+		<type>ID</type>
+		<configIndex>14</configIndex>
+		<configValue>0011</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>3</connectIndex>
+		<placeFU>imm_x</placeFU>
+		<chipFU>imm_x</chipFU>
+		<type>IU</type>
+		<configIndex>13</configIndex>
+		<configValue>0</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>2</connectIndex>
+		<placeFU>imm_y</placeFU>
+		<chipFU>imm_y</chipFU>
+		<type>IU</type>
+		<configIndex>12</configIndex>
+		<configValue>0</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>1</connectIndex>
+		<placeFU>imm_alu</placeFU>
+		<chipFU>imm_alu</chipFU>
+		<type>IU</type>
+		<configIndex>11</configIndex>
+		<configValue>0</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<type>ABU</type>
+		<configIndex>10</configIndex>
+		<placeFU>abu_y</placeFU>
+		<configValue>00</configValue>
+		<chipFU>abu_y</chipFU>
+	</fu_mapping>
+	<fu_mapping>
+		<type>ABU</type>
+		<configIndex>9</configIndex>
+		<placeFU>abu_x</placeFU>
+		<configValue>00</configValue>
+		<chipFU>abu_x</chipFU>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>4</connectIndex>
+		<placeFU>id_alu</placeFU>
+		<chipFU>id_alu</chipFU>
+		<type>ID</type>
+		<configIndex>8</configIndex>
+		<configValue>0010</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>5</connectIndex>
+		<placeFU>id_abu</placeFU>
+		<chipFU>id_abu</chipFU>
+		<type>ID</type>
+		<configIndex>7</configIndex>
+		<configValue>0011</configValue>
+	</fu_mapping>
+	<fu_mapping>
+		<type>ABU</type>
+		<configIndex>6</configIndex>
+		<placeFU>abu</placeFU>
+		<configValue>01</configValue>
+		<chipFU>abu</chipFU>
 	</fu_mapping>
 	<fu_mapping>
 		<connectIndex>2</connectIndex>
 		<placeFU>id_rf_y</placeFU>
 		<chipFU>id_rf_y</chipFU>
 		<type>ID</type>
-		<configIndex>8</configIndex>
+		<configIndex>5</configIndex>
 		<configValue>0001</configValue>
 	</fu_mapping>
 	<fu_mapping>
@@ -98,86 +143,71 @@
 		<placeFU>id_rf_x</placeFU>
 		<chipFU>id_rf_x</chipFU>
 		<type>ID</type>
-		<configIndex>7</configIndex>
+		<configIndex>4</configIndex>
 		<configValue>0001</configValue>
 	</fu_mapping>
 	<fu_mapping>
-		<connectIndex>2</connectIndex>
-		<placeFU>imm_x</placeFU>
-		<chipFU>imm_x</chipFU>
-		<type>IU</type>
-		<configIndex>6</configIndex>
-		<configValue>0</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<type>ABU</type>
-		<configIndex>5</configIndex>
-		<placeFU>abu_x</placeFU>
-		<configValue>00</configValue>
-		<chipFU>abu_x</chipFU>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>7</connectIndex>
-		<placeFU>id_abu_y</placeFU>
-		<chipFU>id_abu_y</chipFU>
-		<type>ID</type>
-		<configIndex>4</configIndex>
-		<configValue>0011</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<type>ABU</type>
+		<type>ALU</type>
 		<configIndex>3</configIndex>
-		<placeFU>abu_contr</placeFU>
-		<configValue>01</configValue>
-		<chipFU>abu_contr</chipFU>
+		<placeFU>alu</placeFU>
+		<configValue>000</configValue>
+		<chipFU>alu</chipFU>
 	</fu_mapping>
 	<fu_mapping>
-		<type>ABU</type>
+		<connectIndex>9</connectIndex>
+		<placeFU>id_mul_x</placeFU>
+		<chipFU>id_mul_x</chipFU>
+		<type>ID</type>
 		<configIndex>2</configIndex>
-		<placeFU>abu_y</placeFU>
-		<configValue>00</configValue>
-		<chipFU>abu_y</chipFU>
+		<configValue>0100</configValue>
 	</fu_mapping>
 	<fu_mapping>
 		<connectIndex>8</connectIndex>
-		<placeFU>id_abu_x</placeFU>
-		<chipFU>id_abu_x</chipFU>
+		<placeFU>id_mul_y</placeFU>
+		<chipFU>id_mul_y</chipFU>
 		<type>ID</type>
 		<configIndex>1</configIndex>
-		<configValue>0011</configValue>
+		<configValue>0100</configValue>
 	</fu_mapping>
 	<fu_mapping>
-		<connectIndex>0</connectIndex>
-		<placeFU>imm_stor</placeFU>
-		<chipFU>imm_stor</chipFU>
-		<type>IU</type>
+		<connectIndex>6</connectIndex>
+		<placeFU>id_lsu_stor</placeFU>
+		<chipFU>id_lsu_stor</chipFU>
+		<type>ID</type>
 		<configIndex>0</configIndex>
-		<configValue>0</configValue>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>0</connectIndex>
-		<type>IU</type>
-		<placeFU>imm_stor</placeFU>
-		<chipFU>imm_stor</chipFU>
-	</fu_mapping>
-	<fu_mapping>
-		<connectIndex>2</connectIndex>
-		<type>IU</type>
-		<placeFU>imm_x</placeFU>
-		<chipFU>imm_x</chipFU>
+		<configValue>0000</configValue>
 	</fu_mapping>
 	<fu_mapping>
 		<connectIndex>1</connectIndex>
 		<type>IU</type>
+		<placeFU>imm_alu</placeFU>
+		<chipFU>imm_alu</chipFU>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>2</connectIndex>
+		<type>IU</type>
 		<placeFU>imm_y</placeFU>
 		<chipFU>imm_y</chipFU>
 	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>3</connectIndex>
+		<type>IU</type>
+		<placeFU>imm_x</placeFU>
+		<chipFU>imm_x</chipFU>
+	</fu_mapping>
+	<fu_mapping>
+		<connectIndex>0</connectIndex>
+		<type>IU</type>
+		<placeFU>imm_stor</placeFU>
+		<chipFU>imm_stor</chipFU>
+	</fu_mapping>
 	<fu_count>
-		<IU>3</IU>
+		<IU>4</IU>
 		<RF>2</RF>
 		<LSU>1</LSU>
 		<ABU>4</ABU>
 		<MUL>2</MUL>
-		<ID>9</ID>
+		<ALU>1</ALU>
+		<ID>10</ID>
 	</fu_count>
 </architecture>

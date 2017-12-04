@@ -1,32 +1,35 @@
-// Generated on 2017-11-30 16:02:19
+// Generated on 2017-12-04 01:27:51
 
-///////////////////////////////////////////////////
-//inst      	// Source Code  	% Comment          
-///////////////////////////////////////////////////
+////////////////////////////////////////////////////
+//inst      	// Source Code   	% Comment          
+////////////////////////////////////////////////////
 @0
-000000000000	//  nop         	% 
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-100000000001	//  srm r0, in1 	% 
-101000000000	//  lrm r0      	% 
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	// nop          	% auto inserted nop
-000000000000	//  nop         	% 
+000000000000	//  nop          	% 
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+100100000111	//  sra in1, in3 	% 
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+100010001000	//  lra in2      	% 
+100010001000	//  lra in2      	% 
+100010001000	//  lra in2      	% 
+100010001000	//  lra in2      	% 
+100010001000	//  lra in2      	% 
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+100100001000	//  sra in2, in0 	% 
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	// nop           	% auto inserted nop
+000000000000	//  nop          	% 

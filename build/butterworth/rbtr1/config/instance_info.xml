@@ -4,87 +4,102 @@
 		<imm_stor>
 			<configData>0</configData>
 			<last>0</last>
-			<sourceUnit></sourceUnit>
+			<sourceUnit>id_abu_x</sourceUnit>
 		</imm_stor>
 		<imm_x>
 			<configData>0</configData>
 			<last>0</last>
-			<sourceUnit>abu_x</sourceUnit>
+			<sourceUnit>imm_y</sourceUnit>
 		</imm_x>
-		<id_mul_x>
-			<configData>0100</configData>
+		<id_abu_stor>
+			<configData>0011</configData>
 			<last>0</last>
-			<sourceUnit>id_mul_y</sourceUnit>
-		</id_mul_x>
-		<abu_contr>
-			<configData>01</configData>
+			<sourceUnit>imm_x</sourceUnit>
+		</id_abu_stor>
+		<lsu_stor>
+			<configData>0</configData>
+			<last>1</last>
+			<sourceUnit>abu_stor</sourceUnit>
+		</lsu_stor>
+		<imm_alu>
+			<configData>0</configData>
 			<last>0</last>
 			<sourceUnit>abu_y</sourceUnit>
-		</abu_contr>
-		<id_mul_y>
-			<configData>0100</configData>
-			<last>0</last>
-			<sourceUnit>id_abu_contr</sourceUnit>
-		</id_mul_y>
+		</imm_alu>
 		<abu_x>
 			<configData>00</configData>
 			<last>0</last>
-			<sourceUnit>id_abu_y</sourceUnit>
+			<sourceUnit>id_alu</sourceUnit>
 		</abu_x>
 		<abu_y>
 			<configData>00</configData>
 			<last>0</last>
-			<sourceUnit>id_abu_x</sourceUnit>
+			<sourceUnit>abu_x</sourceUnit>
 		</abu_y>
 		<id_rf_x>
 			<configData>0001</configData>
 			<last>0</last>
-			<sourceUnit>imm_x</sourceUnit>
+			<sourceUnit>alu</sourceUnit>
 		</id_rf_x>
 		<id_rf_y>
 			<configData>0001</configData>
 			<last>0</last>
 			<sourceUnit>id_rf_x</sourceUnit>
 		</id_rf_y>
-		<abu_stor>
-			<configData>00</configData>
-			<last>0</last>
-			<sourceUnit>id_rf_y</sourceUnit>
-		</abu_stor>
-		<lsu_stor>
-			<configData>0</configData>
-			<last>0</last>
-			<sourceUnit>abu_stor</sourceUnit>
-		</lsu_stor>
-		<id_abu_stor>
-			<configData>0011</configData>
-			<last>0</last>
-			<sourceUnit>lsu_stor</sourceUnit>
-		</id_abu_stor>
-		<id_lsu_stor>
-			<configData>0000</configData>
-			<last>0</last>
-			<sourceUnit>id_abu_stor</sourceUnit>
-		</id_lsu_stor>
-		<id_abu_contr>
-			<configData>0011</configData>
-			<last>0</last>
-			<sourceUnit>id_lsu_stor</sourceUnit>
-		</id_abu_contr>
 		<id_abu_y>
 			<configData>0011</configData>
 			<last>0</last>
-			<sourceUnit>abu_contr</sourceUnit>
+			<sourceUnit>id_abu_stor</sourceUnit>
 		</id_abu_y>
 		<id_abu_x>
 			<configData>0011</configData>
 			<last>0</last>
-			<sourceUnit>imm_stor</sourceUnit>
+			<sourceUnit>id_abu_y</sourceUnit>
 		</id_abu_x>
+		<id_alu>
+			<configData>0010</configData>
+			<last>0</last>
+			<sourceUnit>id_abu</sourceUnit>
+		</id_alu>
+		<abu_stor>
+			<configData>00</configData>
+			<last>0</last>
+			<sourceUnit>imm_stor</sourceUnit>
+		</abu_stor>
+		<abu>
+			<configData>01</configData>
+			<last>0</last>
+			<sourceUnit>id_rf_y</sourceUnit>
+		</abu>
+		<id_abu>
+			<configData>0011</configData>
+			<last>0</last>
+			<sourceUnit>abu</sourceUnit>
+		</id_abu>
+		<id_lsu_stor>
+			<configData>0000</configData>
+			<last>0</last>
+			<sourceUnit></sourceUnit>
+		</id_lsu_stor>
+		<alu>
+			<configData>000</configData>
+			<last>0</last>
+			<sourceUnit>id_mul_x</sourceUnit>
+		</alu>
+		<id_mul_y>
+			<configData>0100</configData>
+			<last>0</last>
+			<sourceUnit>id_lsu_stor</sourceUnit>
+		</id_mul_y>
+		<id_mul_x>
+			<configData>0100</configData>
+			<last>0</last>
+			<sourceUnit>id_mul_y</sourceUnit>
+		</id_mul_x>
 		<imm_y>
 			<configData>0</configData>
-			<last>1</last>
-			<sourceUnit>id_mul_x</sourceUnit>
+			<last>0</last>
+			<sourceUnit>imm_alu</sourceUnit>
 		</imm_y>
 	</reconfiguration>
 	<Core>
@@ -414,105 +429,234 @@
 			</MUL>
 		</functionalunittypes>
 		<functionalunits>
-			<fu name="imm_stor" type="IU">
-				<index>0</index>
-				<connections inputs="1" outputs="1"></connections>
+			<fu name="id_lsu_stor" type="ID">
+				<index>6</index>
+				<connections inputs="1" outputs="0"></connections>
 				<state>
-					<sinkUnit>id_abu_x</sinkUnit>
+					<sinkUnit>mul_y</sinkUnit>
 					<sourceUnit></sourceUnit>
 				</state>
-				<reconfiguration bits="0"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
 			</fu>
-			<fu name="id_abu_x" type="ID">
+			<fu name="mul_y" config="1" ID="id_mul_y" type="MUL">
+				<control idtype="4"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>id_mul_y</sinkUnit>
+					<sourceUnit>id_lsu_stor</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="rf_y.1"></input>
+				<input index="1" source="imm_y.0"></input>
+			</fu>
+			<fu name="id_mul_y" type="ID">
 				<index>8</index>
 				<connections inputs="1" outputs="0"></connections>
 				<state>
-					<sinkUnit>abu_y</sinkUnit>
-					<sourceUnit>imm_stor</sourceUnit>
+					<sinkUnit>id_mul_x</sinkUnit>
+					<sourceUnit>mul_y</sourceUnit>
 				</state>
 				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
+				<input index="0" source="abu.1"></input>
 			</fu>
-			<fu name="abu_y" config="0" ID="id_abu_y" type="ABU">
-				<control idtype="3"></control>
-				<connections inputs="4" outputs="2"></connections>
-				<state>
-					<sinkUnit>abu_contr</sinkUnit>
-					<sourceUnit>id_abu_x</sourceUnit>
-				</state>
-				<reconfiguration bits="1"></reconfiguration>
-				<input index="0" source="mul_y.0"></input>
-				<input index="1" source="imm_y.0"></input>
-			</fu>
-			<fu name="abu_contr" config="1" ID="id_abu_contr" type="ABU">
-				<control idtype="3"></control>
-				<connections inputs="4" outputs="2"></connections>
-				<state>
-					<sinkUnit>id_abu_y</sinkUnit>
-					<sourceUnit>abu_y</sourceUnit>
-				</state>
-				<reconfiguration bits="1"></reconfiguration>
-				<input index="0" source="abu_stor.1"></input>
-			</fu>
-			<fu name="id_abu_y" type="ID">
-				<index>7</index>
+			<fu name="id_mul_x" type="ID">
+				<index>9</index>
 				<connections inputs="1" outputs="0"></connections>
 				<state>
-					<sinkUnit>abu_x</sinkUnit>
-					<sourceUnit>abu_contr</sourceUnit>
+					<sinkUnit>alu</sinkUnit>
+					<sourceUnit>id_mul_y</sourceUnit>
 				</state>
 				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
+				<input index="0" source="abu.1"></input>
 			</fu>
-			<fu name="abu_x" config="0" ID="id_abu_x" type="ABU">
-				<control idtype="3"></control>
+			<fu name="alu" config="0" ID="id_alu" type="ALU">
+				<control idtype="2"></control>
 				<connections inputs="4" outputs="2"></connections>
 				<state>
-					<sinkUnit>imm_x</sinkUnit>
-					<sourceUnit>id_abu_y</sourceUnit>
-				</state>
-				<reconfiguration bits="1"></reconfiguration>
-				<input index="0" source="mul_x.0"></input>
-				<input index="1" source="imm_x.0"></input>
-				<input index="2" source="abu_y.1"></input>
-			</fu>
-			<fu name="imm_x" type="IU">
-				<index>2</index>
-				<connections inputs="1" outputs="1"></connections>
-				<state>
 					<sinkUnit>id_rf_x</sinkUnit>
-					<sourceUnit>abu_x</sourceUnit>
+					<sourceUnit>id_mul_x</sourceUnit>
 				</state>
-				<reconfiguration bits="0"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu_stor.0"></input>
+				<input index="1" source="imm_alu.0"></input>
+				<input index="2" source="abu_x.0"></input>
+				<input index="3" source="abu_y.0"></input>
 			</fu>
 			<fu name="id_rf_x" type="ID">
 				<index>1</index>
 				<connections inputs="1" outputs="0"></connections>
 				<state>
 					<sinkUnit>id_rf_y</sinkUnit>
-					<sourceUnit>imm_x</sourceUnit>
+					<sourceUnit>alu</sourceUnit>
 				</state>
 				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
+				<input index="0" source="abu.1"></input>
 			</fu>
 			<fu name="id_rf_y" type="ID">
 				<index>2</index>
 				<connections inputs="1" outputs="0"></connections>
 				<state>
-					<sinkUnit>mul_x</sinkUnit>
+					<sinkUnit>abu</sinkUnit>
 					<sourceUnit>id_rf_x</sourceUnit>
 				</state>
 				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="abu" config="1" ID="id_abu" type="ABU">
+				<control idtype="3"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>id_abu</sinkUnit>
+					<sourceUnit>id_rf_y</sourceUnit>
+				</state>
+				<reconfiguration bits="1"></reconfiguration>
+				<input index="0" source="abu_stor.1"></input>
+			</fu>
+			<fu name="id_abu" type="ID">
+				<index>5</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>id_alu</sinkUnit>
+					<sourceUnit>abu</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="id_alu" type="ID">
+				<index>4</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>abu_x</sinkUnit>
+					<sourceUnit>id_abu</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="abu_x" config="0" ID="id_abu_x" type="ABU">
+				<control idtype="3"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>abu_y</sinkUnit>
+					<sourceUnit>id_alu</sourceUnit>
+				</state>
+				<reconfiguration bits="1"></reconfiguration>
+				<input index="0" source="mul_x.0"></input>
+				<input index="1" source="imm_stor.0"></input>
+			</fu>
+			<fu name="abu_y" config="0" ID="id_abu_y" type="ABU">
+				<control idtype="3"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>imm_alu</sinkUnit>
+					<sourceUnit>abu_x</sourceUnit>
+				</state>
+				<reconfiguration bits="1"></reconfiguration>
+				<input index="0" source="mul_y.0"></input>
+				<input index="1" source="imm_stor.0"></input>
+			</fu>
+			<fu name="imm_alu" type="IU">
+				<index>1</index>
+				<connections inputs="1" outputs="1"></connections>
+				<state>
+					<sinkUnit>imm_y</sinkUnit>
+					<sourceUnit>abu_y</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="imm_y" type="IU">
+				<index>2</index>
+				<connections inputs="1" outputs="1"></connections>
+				<state>
+					<sinkUnit>imm_x</sinkUnit>
+					<sourceUnit>imm_alu</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="imm_x" type="IU">
+				<index>3</index>
+				<connections inputs="1" outputs="1"></connections>
+				<state>
+					<sinkUnit>rf_y</sinkUnit>
+					<sourceUnit>imm_y</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="rf_y" ID="id_rf_y" type="RF">
+				<control idtype="1"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>rf_x</sinkUnit>
+					<sourceUnit>imm_x</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="alu.1"></input>
+				<input index="1" source="abu_stor.1"></input>
+				<input index="2" source="alu.0"></input>
+				<input index="3" source="imm_stor.0"></input>
+			</fu>
+			<fu name="rf_x" ID="id_rf_x" type="RF">
+				<control idtype="1"></control>
+				<connections inputs="4" outputs="2"></connections>
+				<state>
+					<sinkUnit>id_abu_stor</sinkUnit>
+					<sourceUnit>rf_y</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="lsu_stor.1"></input>
+				<input index="1" source="abu_stor.1"></input>
+				<input index="2" source="alu.0"></input>
+				<input index="3" source="imm_stor.0"></input>
+			</fu>
+			<fu name="id_abu_stor" type="ID">
+				<index>0</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>id_abu_y</sinkUnit>
+					<sourceUnit>rf_x</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="id_abu_y" type="ID">
+				<index>7</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>id_abu_x</sinkUnit>
+					<sourceUnit>id_abu_stor</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="id_abu_x" type="ID">
+				<index>3</index>
+				<connections inputs="1" outputs="0"></connections>
+				<state>
+					<sinkUnit>imm_stor</sinkUnit>
+					<sourceUnit>id_abu_y</sourceUnit>
+				</state>
+				<reconfiguration bits="3"></reconfiguration>
+				<input index="0" source="abu.1"></input>
+			</fu>
+			<fu name="imm_stor" type="IU">
+				<index>0</index>
+				<connections inputs="1" outputs="1"></connections>
+				<state>
+					<sinkUnit>mul_x</sinkUnit>
+					<sourceUnit>id_abu_x</sourceUnit>
+				</state>
+				<reconfiguration bits="0"></reconfiguration>
+				<input index="0" source="abu.1"></input>
 			</fu>
 			<fu name="mul_x" config="1" ID="id_mul_x" type="MUL">
 				<control idtype="4"></control>
 				<connections inputs="4" outputs="2"></connections>
 				<state>
 					<sinkUnit>abu_stor</sinkUnit>
-					<sourceUnit>id_rf_y</sourceUnit>
+					<sourceUnit>imm_stor</sourceUnit>
 				</state>
 				<reconfiguration bits="0"></reconfiguration>
 				<input index="0" source="rf_x.1"></input>
@@ -522,117 +666,23 @@
 				<control idtype="3"></control>
 				<connections inputs="4" outputs="2"></connections>
 				<state>
-					<sinkUnit>rf_y</sinkUnit>
+					<sinkUnit>lsu_stor</sinkUnit>
 					<sourceUnit>mul_x</sourceUnit>
 				</state>
 				<reconfiguration bits="1"></reconfiguration>
 				<input index="0" source="imm_stor.0"></input>
-			</fu>
-			<fu name="rf_y" ID="id_rf_y" type="RF">
-				<control idtype="1"></control>
-				<connections inputs="4" outputs="2"></connections>
-				<state>
-					<sinkUnit>rf_x</sinkUnit>
-					<sourceUnit>abu_stor</sourceUnit>
-				</state>
-				<reconfiguration bits="0"></reconfiguration>
-				<input index="0" source="lsu_stor.1"></input>
-				<input index="1" source="abu_stor.1"></input>
-				<input index="2" source="abu_x.1"></input>
-			</fu>
-			<fu name="rf_x" ID="id_rf_x" type="RF">
-				<control idtype="1"></control>
-				<connections inputs="4" outputs="2"></connections>
-				<state>
-					<sinkUnit>mul_y</sinkUnit>
-					<sourceUnit>rf_y</sourceUnit>
-				</state>
-				<reconfiguration bits="0"></reconfiguration>
-				<input index="0" source="lsu_stor.1"></input>
-				<input index="1" source="abu_stor.1"></input>
-			</fu>
-			<fu name="mul_y" config="1" ID="id_mul_y" type="MUL">
-				<control idtype="4"></control>
-				<connections inputs="4" outputs="2"></connections>
-				<state>
-					<sinkUnit>lsu_stor</sinkUnit>
-					<sourceUnit>rf_x</sourceUnit>
-				</state>
-				<reconfiguration bits="0"></reconfiguration>
-				<input index="0" source="rf_y.1"></input>
-				<input index="1" source="imm_y.0"></input>
 			</fu>
 			<fu name="lsu_stor" ID="id_lsu_stor" type="LSU">
 				<control idtype="0"></control>
 				<index>0</index>
 				<connections inputs="4" outputs="2"></connections>
 				<state>
-					<sinkUnit>id_abu_stor</sinkUnit>
-					<sourceUnit>mul_y</sourceUnit>
+					<sinkUnit></sinkUnit>
+					<sourceUnit>abu_stor</sourceUnit>
 				</state>
 				<reconfiguration bits="0"></reconfiguration>
 				<input index="0" source="abu_stor.1"></input>
-				<input index="1" source="rf_y.1"></input>
-			</fu>
-			<fu name="id_abu_stor" type="ID">
-				<index>4</index>
-				<connections inputs="1" outputs="0"></connections>
-				<state>
-					<sinkUnit>id_lsu_stor</sinkUnit>
-					<sourceUnit>lsu_stor</sourceUnit>
-				</state>
-				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
-			</fu>
-			<fu name="id_lsu_stor" type="ID">
-				<index>5</index>
-				<connections inputs="1" outputs="0"></connections>
-				<state>
-					<sinkUnit>id_abu_contr</sinkUnit>
-					<sourceUnit>id_abu_stor</sourceUnit>
-				</state>
-				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
-			</fu>
-			<fu name="id_abu_contr" type="ID">
-				<index>6</index>
-				<connections inputs="1" outputs="0"></connections>
-				<state>
-					<sinkUnit>id_mul_y</sinkUnit>
-					<sourceUnit>id_lsu_stor</sourceUnit>
-				</state>
-				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
-			</fu>
-			<fu name="id_mul_y" type="ID">
-				<index>0</index>
-				<connections inputs="1" outputs="0"></connections>
-				<state>
-					<sinkUnit>id_mul_x</sinkUnit>
-					<sourceUnit>id_abu_contr</sourceUnit>
-				</state>
-				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
-			</fu>
-			<fu name="id_mul_x" type="ID">
-				<index>3</index>
-				<connections inputs="1" outputs="0"></connections>
-				<state>
-					<sinkUnit>imm_y</sinkUnit>
-					<sourceUnit>id_mul_y</sourceUnit>
-				</state>
-				<reconfiguration bits="3"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
-			</fu>
-			<fu name="imm_y" type="IU">
-				<index>1</index>
-				<connections inputs="1" outputs="1"></connections>
-				<state>
-					<sinkUnit></sinkUnit>
-					<sourceUnit>id_mul_x</sourceUnit>
-				</state>
-				<reconfiguration bits="0"></reconfiguration>
-				<input index="0" source="abu_contr.1"></input>
+				<input index="1" source="alu.1"></input>
 			</fu>
 		</functionalunits>
 		<CGRA_type>0</CGRA_type>

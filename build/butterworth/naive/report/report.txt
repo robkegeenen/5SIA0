@@ -1,0 +1,40 @@
+
+----------------------------------
+|        Energy report:          |
+----------------------------------
+
+Energy for FUs (1) and ID for 'id_abu':	1199191.7 pJ
+Energy for FUs (1) and ID for 'imm':	542728.45 pJ
+Energy for FUs (1) and ID for 'id_lsu':	1302734.8 pJ
+Energy for FUs (1) and ID for 'id_mul':	2647630.6 pJ
+Energy for FUs (1) and ID for 'id_alu':	1225395.9 pJ
+Energy for FUs (1) and ID for 'id_rf':	1895375.8 pJ
+
+Total energy:	8813057.25 pJ
+
+----------------------------------
+|         Area report:           |
+----------------------------------
+
+Area for FU type 'IU' (1):	558.0 um^2	Wire area (2):	200.0 um^2	Total area:	758.0 um^2
+Area for FU type 'RF' (1):	9637.0 um^2	Wire area (5):	500.0 um^2	Total area:	10137.0 um^2
+Area for FU type 'LSU' (1):	22426.0 um^2	Wire area (4):	400.0 um^2	Total area:	22826.0 um^2
+Area for FU type 'ABU' (1):	16371.0 um^2	Wire area (3):	300.0 um^2	Total area:	16671.0 um^2
+Area for FU type 'MUL' (1):	24857.0 um^2	Wire area (3):	300.0 um^2	Total area:	25157.0 um^2
+Area for FU type 'ALU' (1):	7215.0 um^2	Wire area (3):	300.0 um^2	Total area:	7515.0 um^2
+Area for FU type 'ID' (5):	5755.0 um^2	Wire area (10):	1000.0 um^2	Total area:	6755.0 um^2
+
+Total FU area:	86819.0 um^2	Total wire area:	3000.0 um^2	Total area:	89819.0 um^2
+
+----------------------------------
+|      Performance report:       |
+----------------------------------
+
+total cycles:     896146
+stalled cycles:       8000
+active cycles (id_abu):      84012, utilization:          9 percent
+active cycles (imm):     156099, utilization:         17 percent
+active cycles (id_lsu):     174044, utilization:         19 percent
+active cycles (id_mul):      42000, utilization:          4 percent
+active cycles (id_alu):     336053, utilization:         37 percent
+active cycles (id_rf):     754118, utilization:         84 percent

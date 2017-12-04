@@ -1,52 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <architecture>
   <Includes>
-    <Base file="../../Common/32b.xml"/> <!-- Inherit from base configuration -->
+    <Base file="../../Common/32b.xml"/>
   </Includes>
   <configuration>
     <functionalunits>
       <fu type="IU" name="imm_stor">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
 
       <fu type="ID" name="id_abu_stor">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="ABU" name="abu_stor" ID="id_abu_stor" config="0">
         <input index="0" source="imm_stor.0"/>
       </fu>
 
-      <fu type="ID" name="id_abu_contr">
-        <input index="0" source="abu_contr.1"/>
+      <fu type="ID" name="id_abu">
+        <input index="0" source="abu.1"/>
       </fu>
-      <fu type="ABU" name="abu_contr" ID="id_abu_contr" config="1">
+      <fu type="ABU" name="abu" ID="id_abu" config="1">
         <input index="0" source="abu_stor.1"/>
       </fu>
 
       <fu type="ID" name="id_lsu_stor">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="LSU" name="lsu_stor" ID="id_lsu_stor">
         <input index="0" source="abu_stor.1"/>
-        <input index="1" source="rf_y.1"/>
+        <input index="1" source="alu.1"/>
+      </fu>
+
+
+
+      <fu type="IU" name="imm_alu">
+        <input index="0" source="abu.1"/>
+      </fu>
+
+      <fu type="ID" name="id_alu">
+        <input index="0" source="abu.1"/>
+      </fu>
+      <fu type="ALU" name="alu" ID="id_alu" config="0">
+        <input index="0" source="abu_stor.0"/>
+        <input index="1" source="imm_alu.0"/>
+        <input index="2" source="abu_x.0"/>
+        <input index="3" source="abu_y.0"/>
       </fu>
 
 
 
       <fu type="ID" name="id_rf_x">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="RF" name="rf_x" ID="id_rf_x">
         <input index="0" source="lsu_stor.1"/>
         <input index="1" source="abu_stor.1"/>
+        <input index="2" source="alu.0"/>
+        <input index="3" source="imm_stor.0"/>
       </fu>
 
       <fu type="IU" name="imm_x">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
 
       <fu type="ID" name="id_mul_x">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="MUL" name="mul_x" ID="id_mul_x" config="1">
         <input index="0" source="rf_x.1"/>
@@ -54,31 +72,31 @@
       </fu>
 
       <fu type="ID" name="id_abu_x">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="ABU" name="abu_x" ID="id_abu_x" config="0">
         <input index="0" source="mul_x.0"/>
-        <input index="1" source="imm_x.0"/>
-        <input index="2" source="abu_y.1"/>
+        <input index="1" source="imm_stor.0"/>
       </fu>
 
 
 
       <fu type="ID" name="id_rf_y">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="RF" name="rf_y" ID="id_rf_y">
-        <input index="0" source="lsu_stor.1"/>
+        <input index="0" source="alu.1"/>
         <input index="1" source="abu_stor.1"/>
-        <input index="2" source="abu_x.1"/>
+        <input index="2" source="alu.0"/>
+        <input index="3" source="imm_stor.0"/>
       </fu>
 
       <fu type="IU" name="imm_y">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
 
       <fu type="ID" name="id_mul_y">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="MUL" name="mul_y" ID="id_mul_y" config="1">
         <input index="0" source="rf_y.1"/>
@@ -86,11 +104,11 @@
       </fu>
 
       <fu type="ID" name="id_abu_y">
-        <input index="0" source="abu_contr.1"/>
+        <input index="0" source="abu.1"/>
       </fu>
       <fu type="ABU" name="abu_y" ID="id_abu_y" config="0">
         <input index="0" source="mul_y.0"/>
-        <input index="1" source="imm_y.0"/>
+        <input index="1" source="imm_stor.0"/>
       </fu>
     </functionalunits>
   </configuration>
