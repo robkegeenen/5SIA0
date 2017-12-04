@@ -42,8 +42,8 @@ doFile() {
 cd "$(dirname "$(readlink -f "${0}")")"
 benchmark="${1}"
 transl="${2}"
-file_cmp="../benchmarks/butterworth/${benchmark}/compare/GM_out.txt"
-file_new="../build/butterworth/${benchmark}/simulation/GM_out.txt"
+file_cmp="benchmarks/butterworth/${benchmark}/compare/GM_out.txt"
+file_new="build/butterworth/${benchmark}/simulation/GM_out.txt"
 
 file_cmp_in="$(doFile "${file_cmp}" "cmp" "in" "${transl}")"
 file_cmp_out="$(doFile "${file_cmp}" "cmp" "out" "${transl}")"

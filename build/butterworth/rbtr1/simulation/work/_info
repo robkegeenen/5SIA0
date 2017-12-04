@@ -8,26 +8,26 @@ Z0 d/home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation
 !i10e 25
 !i10f 100
 T_opt
-!s110 1512413355
-VY0QdMF0bk^m^]TBX@Kl=N2
+!s110 1512418172
+V3]Sz@d0eIQj]8iAI8`=DS3
 04 11 4 work TB_CGRA_Top fast 0
-=1-00248c37a084-5a2598ab-509c8-7f90
+=1-00248c37a084-5a25ab7c-364e1-29ce
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 OL;O;10.2a;57
 vABU
-Z1 !s110 1512413353
+Z1 !s110 1512418170
 I:0RR444Qgk1Nio5lkGb4a0
 Z2 V`JN@9S9cnhjKRR_L]QIcM3
 Z3 d/home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation
-Z4 w1512413662
+Z4 w1512418479
 8ABU.v
 FABU.v
 L0 3
 Z5 OL;L;10.2a;57
 r1
 31
-Z6 !s108 1512413353.893706
+Z6 !s108 1512418170.794324
 Z7 !s107 config.vh|STATE_CONTROLLER.v|RF.v|RAM_SDP_TSMC.v|RAM_SDP_BE_TSMC.v|RAM_SDP_BE.v|RAM_SDP_ALTERA.v|RAM_SDP.v|MUL.v|Loader.v|LSU.v|IU.v|IF.v|ID.v|General_Arbiter.v|DTL_VGA.v|DTL_SlaveInterface.v|DTL_MasterInterface.v|DTL_ConsolePort.v|DTL_Arbiter.v|DTL_Address_Isolator.v|DATA_Buffer.v|CORE_FIFO.v|CGRA_top.v|CGRA_testbench.v|CGRA_memory.v|CGRA_fpgatop.v|CGRA_core.v|CGRA_compute_wrapper.v|CGRA_compute.v|Arbiter.v|Address_Isolator.v|ARBITER_RR.v|ARBITER_GEN_RR.v|ALU.v|ABU.v|
 Z8 !s90 -lint|-nologo|-vlog01compat|ABU.v|ALU.v|ARBITER_GEN_RR.v|ARBITER_RR.v|Address_Isolator.v|Arbiter.v|CGRA_compute.v|CGRA_compute_wrapper.v|CGRA_core.v|CGRA_fpgatop.v|CGRA_memory.v|CGRA_testbench.v|CGRA_top.v|CORE_FIFO.v|DATA_Buffer.v|DTL_Address_Isolator.v|DTL_Arbiter.v|DTL_ConsolePort.v|DTL_MasterInterface.v|DTL_SlaveInterface.v|DTL_VGA.v|General_Arbiter.v|ID.v|IF.v|IU.v|LSU.v|Loader.v|MUL.v|RAM_SDP.v|RAM_SDP_ALTERA.v|RAM_SDP_BE.v|RAM_SDP_BE_TSMC.v|RAM_SDP_TSMC.v|RF.v|STATE_CONTROLLER.v|-work|./work|
 Z9 o-lint -nologo -vlog01compat -work ./work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
@@ -136,13 +136,13 @@ n@a@r@b@i@t@e@r_@r@r
 !s100 jFcSaX9ka>HBi`EP0[b`?1
 !s85 0
 vBUFFXD12BWP12T40M1P
-Z12 !s110 1512413354
+R1
 IPl:Db=SE;N9`T[<<ahfl`2
 R2
 R3
 R4
-Z13 8DATA_Buffer.v
-Z14 FDATA_Buffer.v
+Z12 8DATA_Buffer.v
+Z13 FDATA_Buffer.v
 L0 23
 R5
 r1
@@ -216,7 +216,7 @@ n@c@g@r@a_@core
 !s100 ;ghY7CCTdoDWAHabWkg<j2
 !s85 0
 vCGRA_FPGA_Top
-R12
+R1
 I2_;i;nNXg6c2z5:eoF6IF1
 R2
 R3
@@ -236,7 +236,7 @@ n@c@g@r@a_@f@p@g@a_@top
 !s100 hi=MozoUa^LC@HbSV^FKR1
 !s85 0
 vCGRA_Memory
-R12
+R1
 I^V06Gf2WYGaZTGKm;SYm:3
 R2
 R3
@@ -256,7 +256,7 @@ n@c@g@r@a_@memory
 !s100 _loF8=HE@I5?Ik?NP1BVZ0
 !s85 0
 vCGRA_Top
-R12
+R1
 IO3lhO]NI@PPF4EAj7m_YI0
 R2
 R3
@@ -276,7 +276,7 @@ n@c@g@r@a_@top
 !s100 F;0ak[:Q2G<Q<ccN8lH`m0
 !s85 0
 vCORE_FIFO
-R12
+R1
 I@Rc8X1HG0VnBhfomS9A>K0
 R2
 R3
@@ -296,13 +296,13 @@ n@c@o@r@e_@f@i@f@o
 !s100 `@9MB_QNN[<m0G9c<lE7X0
 !s85 0
 vDATA_Buffer
-R12
+R1
 IFOLV8HaWHNI:Pnn>albn70
 R2
 R3
 R4
+R12
 R13
-R14
 L0 1
 R5
 r1
@@ -316,7 +316,7 @@ n@d@a@t@a_@buffer
 !s100 B_iEFG]`HMYe<NLVaUT591
 !s85 0
 vDTL_Address_Isolator
-R12
+R1
 IDzXbIKZ99j3jlk[5YA0b31
 R2
 R3
@@ -336,7 +336,7 @@ n@d@t@l_@address_@isolator
 !s100 I1ReKzKIC19ab2K[BW7=E2
 !s85 0
 vDTL_ARBITER
-R12
+R1
 IGWbdP8Z:G2nz6LLOLhgdh2
 R2
 R3
@@ -356,7 +356,7 @@ n@d@t@l_@a@r@b@i@t@e@r
 !s100 Ok5^_FW;KA]Y<KWC^AX<V3
 !s85 0
 vDTL_Console
-R12
+R1
 InS8WBHJUS7hjV`chh3enX3
 R2
 R3
@@ -376,7 +376,7 @@ n@d@t@l_@console
 !s100 82Mgl@=53H9h0AGL^gNTl2
 !s85 0
 vDTL_MasterInterface
-R12
+R1
 I[njOMjm?1;KmLOhJ8bcE52
 R2
 R3
@@ -396,7 +396,7 @@ n@d@t@l_@master@interface
 !s100 NUI:An=]kOhM]E5AjBRlO3
 !s85 0
 vDTL_SlaveInterface
-R12
+R1
 I60Af6fGX7Oz1fY0A>ln_<3
 R2
 R3
@@ -417,19 +417,19 @@ n@d@t@l_@slave@interface
 !s85 0
 Edtl_sram_controller
 R4
-Z15 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
-Z16 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
-Z17 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+Z14 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
+Z15 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z16 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
 R3
-Z18 8./dtl_sram_controller.vhd
-Z19 F./dtl_sram_controller.vhd
+Z17 8./dtl_sram_controller.vhd
+Z18 F./dtl_sram_controller.vhd
 l0
 L5
 VkTgSfJ:>anLdX^8g0e2?J1
-Z20 OL;C;10.2a;57
+Z19 OL;C;10.2a;57
 32
-R12
-Z21 !s108 1512413354.175821
+Z20 !s110 1512418171
+Z21 !s108 1512418171.083829
 Z22 !s90 ./dtl_sram_controller.vhd|-work|./work|
 Z23 !s107 ./dtl_sram_controller.vhd|
 Z24 o-work ./work
@@ -437,16 +437,16 @@ Z25 tExplicit 1
 !s100 OaNJESY0NNimD4Jg0o=Y62
 !i10b 1
 Artl
+R14
 R15
 R16
-R17
 DEx4 work 19 dtl_sram_controller 0 22 kTgSfJ:>anLdX^8g0e2?J1
 l77
 L60
 V[>GUFUzP8SlkP<BFY>zG90
-R20
+R19
 32
-R12
+R20
 R21
 R22
 R23
@@ -455,7 +455,7 @@ R25
 !s100 ePe?G<nHZFOENYDJ;>=`<2
 !i10b 1
 vDTL_VGA
-R12
+R1
 IIVG=2Mhl1_7jQhkeh]jQ;0
 R2
 R3
@@ -475,7 +475,7 @@ n@d@t@l_@v@g@a
 !s100 FkznK>d4[bZLUjFdR@7ib0
 !s85 0
 vGeneral_ARBITER
-R12
+R1
 IB:9N]fYoAjeJE31UCoZz_1
 R2
 R3
@@ -495,7 +495,7 @@ n@general_@a@r@b@i@t@e@r
 !s100 j2gWB?kYn:SbIdG85BF?K2
 !s85 0
 vID
-R12
+R1
 IP`hBJ9nbF13?P6L:Y1b]m3
 R2
 R3
@@ -515,7 +515,7 @@ n@i@d
 !s100 clfGVln_nC1IfWaNA6EBH3
 !s85 0
 vIF
-R12
+R1
 I3WhAZ6oN4LKnc3Xm[hU;i0
 R2
 R3
@@ -535,7 +535,7 @@ n@i@f
 !s100 KG4Nll6AHRPEh^g=0RIjd0
 !s85 0
 vIU
-R12
+R1
 I4>ieZ^Yi]=;_B1lagTF2C2
 R2
 R3
@@ -555,7 +555,7 @@ n@i@u
 !s100 jG0Sj9CG2m`dYaAF77jm;2
 !s85 0
 vLOADER
-R12
+R1
 IWin5:d^B>CaMJd30Z[ARP0
 R2
 R3
@@ -575,7 +575,7 @@ n@l@o@a@d@e@r
 !s100 _ao0oU]aYgA<=QUN3RgM=1
 !s85 0
 vLSU
-R12
+R1
 IYmF_NRaCeIfNlCWO1X?[e0
 R2
 R3
@@ -595,7 +595,7 @@ n@l@s@u
 !s100 z=B_>G_=0E]83Q4G1iIlg3
 !s85 0
 vMUL
-R12
+R1
 IRQn8R_=W;n]29k7>Zkbc>2
 R2
 R3
@@ -615,7 +615,7 @@ n@m@u@l
 !s100 dAP`NcHIz8cSdcPBYITfR1
 !s85 0
 vRAM_SDP
-R12
+R20
 I9nKM=ldRIg3elEl<DI`1E0
 R2
 R3
@@ -635,7 +635,7 @@ n@r@a@m_@s@d@p
 !s100 3FJ9_S8bdYKWM:5^Th;cg1
 !s85 0
 vRAM_SDP_ALTERA
-R12
+R20
 I6h4jDdd_A5lLb0Tdaig3<0
 R2
 R3
@@ -655,7 +655,7 @@ n@r@a@m_@s@d@p_@a@l@t@e@r@a
 !s100 TGc8;]e3[jVN[ZXOZ2OaQ0
 !s85 0
 vRAM_SDP_BE
-R12
+R20
 IU52m2[U^70:^5KHZ62?a`1
 R2
 R3
@@ -675,7 +675,7 @@ n@r@a@m_@s@d@p_@b@e
 !s100 2LXFnNo=kz[gDzZmcDXaM1
 !s85 0
 vRAM_SDP_BE_TSMC
-R12
+R20
 Ij59gdBR=HcCV?V_zMmR;90
 R2
 R3
@@ -695,7 +695,7 @@ n@r@a@m_@s@d@p_@b@e_@t@s@m@c
 !s100 b97]_G<COVNaOeR7_EEBj1
 !s85 0
 vRAM_SDP_TSMC
-R12
+R20
 IE5=TG5l_fB1<6?m0G?W711
 R2
 R3
@@ -735,7 +735,7 @@ n@r@e@a@d@a@r@b
 !s100 kcXMi3Ag1SW`DdQS=Za`>2
 !s85 0
 vRF
-R12
+R20
 I:F:[AcNQTUoB6ZTdE]J@G1
 R2
 R3
@@ -755,7 +755,7 @@ n@r@f
 !s100 fVZ4NY0:HRU3?;RmoADDY2
 !s85 0
 vSTATE_CONTROLLER
-R12
+R20
 IVc>M]z43zl8QWWA_TAbhJ2
 R2
 R3
@@ -775,7 +775,7 @@ n@s@t@a@t@e_@c@o@n@t@r@o@l@l@e@r
 !s100 emKXbNiB:mHe_<=Pcn?AL3
 !s85 0
 vTB_CGRA_Top
-R12
+R1
 IIQR9cIdTQEa;UoAE0k@703
 R2
 R3
