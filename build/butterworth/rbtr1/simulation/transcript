@@ -52,14 +52,14 @@
 # ** Warning: (vsim-8233) CGRA_testbench.v(538): Index xxxxxxxxxxxxxxxxxx into array dimension [32767:0] is out of bounds.
 #    Time: 5 ns  Iteration: 3  Instance: /TB_CGRA_Top
 # ** Warning: (vsim-8233) ABU.v(226): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 476105 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+#    Time: 412035 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
 # ** Warning: (vsim-8233) ABU.v(226): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 476105 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+#    Time: 412035 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
 # ** Warning: (vsim-8233) ABU.v(226): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 476105 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+#    Time: 412035 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
 # ** Warning: (vsim-8233) ABU.v(231): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 476105 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
+#    Time: 412035 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_stor_inst
 # ** Warning: (vsim-8233) ABU.v(231): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 476105 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
+#    Time: 412035 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_y_inst
 # ** Warning: (vsim-8233) ABU.v(231): Index xxx1 into array dimension [15:0] is out of bounds.
-#    Time: 476105 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst
+#    Time: 412035 ns  Iteration: 4  Instance: /TB_CGRA_Top/dut/CGRA_Core_inst/CGRA_Compute_Wrapper_inst/CGRA_Compute_inst/abu_x_inst

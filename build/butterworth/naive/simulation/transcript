@@ -1,5 +1,6 @@
 # vsim +notimingchecks -do {run -all} -c TB_CGRA_Top 
-# //  ModelSim SE-64 10.2a Mar 15 2013 Linux 3.13.0-106-generic
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 10.2a Mar 15 2013 Linux 3.13.0-135-generic
 # //
 # //  Copyright 1991-2013 Mentor Graphics Corporation
 # //  All Rights Reserved.

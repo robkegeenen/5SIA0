@@ -1,11 +1,10 @@
-// Generated on 2017-12-04 21:09:30
+// Generated on 2017-12-06 00:08:14
 
 ///////////////////////////////////////////////////////////
 //inst      	// Source Code          	% Comment          
 ///////////////////////////////////////////////////////////
 @0
 000000000000	//  nop                 	% 
-000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
@@ -27,8 +26,6 @@
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
 000111000001	//  sga WORD, in0, in1  	% 
-000000000000	// nop                  	% auto inserted nop
-000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop
 000000000000	// nop                  	% auto inserted nop

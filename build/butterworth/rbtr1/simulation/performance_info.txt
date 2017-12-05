@@ -1,15 +1,15 @@
-total cycles:      44103
+total cycles:      38072
 stalled cycles:       8000
-active cycles (id_lsu_stor):       4017, utilization:         11 percent
-active cycles (id_mul_y):      10000, utilization:         27 percent
-active cycles (id_mul_x):      12000, utilization:         33 percent
-active cycles (id_rf_x):      14016, utilization:         38 percent
-active cycles (id_rf_y):      12016, utilization:         33 percent
-active cycles (id_abu):       2017, utilization:          5 percent
-active cycles (id_alu):      18000, utilization:         49 percent
-active cycles (imm_y):      10016, utilization:         27 percent
-active cycles (imm_x):      12000, utilization:         33 percent
-active cycles (id_abu_stor):      26067, utilization:         72 percent
-active cycles (id_abu_y):      12000, utilization:         33 percent
-active cycles (id_abu_x):      14000, utilization:         38 percent
-active cycles (imm_stor):      22082, utilization:         61 percent
+active cycles (id_lsu_stor):       4002, utilization:         13 percent
+active cycles (id_mul_y):      10000, utilization:         33 percent
+active cycles (id_mul_x):      12000, utilization:         39 percent
+active cycles (id_rf_x):      14016, utilization:         46 percent
+active cycles (id_rf_y):      12016, utilization:         39 percent
+active cycles (id_abu):       2017, utilization:          6 percent
+active cycles (id_alu):      18000, utilization:         59 percent
+active cycles (imm_y):      10016, utilization:         33 percent
+active cycles (imm_x):      12000, utilization:         39 percent
+active cycles (id_abu_stor):      26052, utilization:         86 percent
+active cycles (id_abu_y):      12000, utilization:         39 percent
+active cycles (id_abu_x):      14000, utilization:         46 percent
+active cycles (imm_stor):      22067, utilization:         73 percent

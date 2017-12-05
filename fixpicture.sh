@@ -1,2 +1,2 @@
 #!/bin/bash
-neato -n -Tsvg -o architecture.svg architecture.dot
+neato -n -Teps -o architecture.eps architecture.dot

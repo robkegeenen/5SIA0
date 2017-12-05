@@ -1,4 +1,4 @@
-// Generated on 2017-12-04 21:09:30
+// Generated on 2017-12-06 00:08:14
 
 /////////////////////////////////////////////////////
 //inst      	// Source Code    	% Comment          
@@ -8,10 +8,7 @@
 000000000000	// nop            	% auto inserted nop
 000000000000	// nop            	% auto inserted nop
 000000000000	// nop            	% auto inserted nop
-000000000000	// nop            	% auto inserted nop
-000000000000	// nop            	% auto inserted nop
-010111101100	//  bcri -5, in0  	% 
-000000000000	// nop            	% auto inserted nop
+010111110100	//  bcri -3, in0  	% 
 000000000000	// nop            	% auto inserted nop
 000000000000	// nop            	% auto inserted nop
 000000000000	// nop            	% auto inserted nop
@@ -29,7 +26,7 @@
 000000000000	// nop            	% auto inserted nop
 000000000000	// nop            	% auto inserted nop
 000000000000	// nop            	% auto inserted nop
+010111001000	//  bcri -14, in0 	% 
 000000000000	// nop            	% auto inserted nop
-010110111100	//  bcri -17, in0 	% 
 000000000000	// nop            	% auto inserted nop
-001100000000	//  jai 0         	% bds 1
+001100000000	//  jai 0         	% 
