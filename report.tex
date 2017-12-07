@@ -5,9 +5,11 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{cleveref}
+\usepackage{caption}
 \title{\textbf{CGRA optimization}}
-\author{R\"{o}bke Geenen}
+\author{R\"{o}bke Geenen, 0843558\\Maik Vermeulen, 0813572}
 \date{\today}
+\captionsetup{position=below}
 \begin{document}
 \maketitle
 
@@ -34,10 +36,10 @@ also be discussed shortly.
 \label{sec:architecture}
 \begin{figure}[ht]
   \centering
+  \includegraphics[width=\linewidth]{architecture.eps}
   \caption{A schematic overview of the architecture of the improved
     implementation.}
   \label{fig:architecture}
-  \includegraphics[width=\linewidth]{architecture.eps}
 \end{figure}
 
 All units used in the improved implementation can be seen
@@ -109,17 +111,23 @@ the moment of multiplication. And a third immediate unit
 and \texttt{abu\_y}. Apart from \texttt{abu\_stor}, they only use
 \texttt{imm\_stor} to initialize their registers.
 
+One interesting aspect to note in the architecture of the improved
+implementation is that certain Function Units (FUs) share the same
+Instruction Decode (ID) unit, this is because those FUs execute nearly
+the same instructions. By sharing the IDs the silicon area is reduced
+substantially. Since the FUs do not execute exactly the same
+instructions, some care has to be taken that the instructions not
+needed by a certain FU do not interfere with the functioning of the
+algorithm. To make sure this is not the case, some loops are included
+in the architecture, to let certain FUs execute the same instruction
+while not performing any real work, thereby behaving as if executing a
+No Operation (NOP). One possible drawback of sharing the IDs is that
+the FUs executing useless instructions use some extra power. During
+evaluation, the extra power turned out to be negligible and the area
+savings substantial.
 
 \section{Assembly}
 \label{sec:assembly}
-\resizebox{!}{\textheight}{
-  \rotatebox{90}{
-    \lstinputlisting[caption={The complete assembly source code for
-      the improved implementation.},label={lst:assembly},captionpos=b,
-    basicstyle=\tiny\ttfamily,linewidth=2\textwidth]{butterworth.pasm.tex}
-  }
-}
-
 The complete assembly code of the improved implementation can be found
 in~\Cref{lst:assembly}. The code starts with a small loop that loops
 over all registers in \texttt{rf\_x} and \texttt{rf\_y} and clears
@@ -136,6 +144,14 @@ sample, the memory address of the first input sample, the memory
 address of the first output sample and the total number of samples.
 After initializing the registers, the program drops into the main
 filter loop.
+
+\resizebox{!}{\textheight}{
+  \rotatebox{90}{
+    \lstinputlisting[caption={The complete assembly source code for
+      the improved implementation.},label={lst:assembly},captionpos=b,
+    basicstyle=\tiny\ttfamily,linewidth=2\textwidth]{butterworth.pasm.tex}
+  }
+}
 
 The main loop executes one iteration per sample, it starts with
 loading the input sample from the input address currently stored in
@@ -156,7 +172,7 @@ they have been skipped. Therefore the register address is incremented
 by two instead of by one.
 
 Instead of coming directly from \texttt{abu\_stor}, the register
-address first passes through \texttt{alu} where a bit-wise and is
+address first passes through \texttt{alu} where a bit-wise $and$ is
 performed on the address with a bit-mask. This causes the register
 address to wrap around once it grows larger than the number of
 registers in the register file. The bit-mask used for this operation
@@ -194,36 +210,36 @@ taken, which halts the execution of the CGRA.
 \label{sec:results}
 \begin{table}
   \centering
-  \caption{Different metrics for the naive implementation and the
-    improved implementation.}
-  \label{tbl:results}
   \resizebox{\linewidth}{!}{
     \begin{tabular}{|l||r|r||r|}
       \hline
-      Metric             & \texttt{naive}        & \texttt{rbtr1}        & Improvement ($\%$) \\ \hline\hline
-      Energy ($pJ$)      & $8813057.25$          & $1375805.5$           & $15.61$            \\ \hline
-      Delay ($Cycles$)   & $896146$              & $38072$               & $4.25$             \\ \hline
-      Area ($um^{2}$)    & $89819.0$             & $183397.0$            & $204.19$           \\ \hline
-      EDAP               & $7.09371\cdot10^{17}$ & $9.60627\cdot10^{15}$ & $1.35$             \\ \hline
-      SLOC               & $162$                 & $30$                  & $18.52$            \\ \hline
-      Number of FUs      & $6$                   & $12$                  & $200.00$           \\ \hline
-      Code size          & $972$                 & $360$                 & $37.04$            \\ \hline
+      Metric           & \texttt{naive}        & \texttt{rbtr1}        & Improvement ($\%$) \\ \hline\hline
+      Energy ($pJ$)    & $8813057.25$          & $1376878.3$           & $15.62$            \\ \hline
+      Delay ($Cycles$) & $896146$              & $38072$               & $4.25$             \\ \hline
+      Area ($um^{2}$)  & $89819.0$             & $178693.0$            & $198.95$           \\ \hline
+      EDAP             & $7.09371\cdot10^{17}$ & $9.36718\cdot10^{15}$ & $1.32$             \\ \hline
+      SLOC             & $162$                 & $30$                  & $18.52$            \\ \hline
+      Number of units  & $6$                   & $9$                   & $150.00$           \\ \hline
+      Code size        & $972$                 & $360$                 & $27.78$            \\ \hline
     \end{tabular}
   }
+  \caption{Different metrics for the naive implementation and the
+    improved implementation.}
+  \label{tbl:results}
 \end{table}
 
 Listed in~\Cref{tbl:results} are the relevant metrics for both the
 given naive implementation, \texttt{naive}, and for the improved
 implementation, \texttt{rbtr1}. It can be seen that the new
-implementation uses only $15.61\%$ of the energy that the naive
+implementation uses only $15.62\%$ of the energy that the naive
 implementation uses and it only takes $4.25\%$ of the cycles that the
 naive implementation takes. These two huge improvements do not come
 completely for free however. The improved implementation does take
-$204.19\%$ of the silicon area of the naive implementation. This cost
+$198.95\%$ of the silicon area of the naive implementation. This cost
 in area is completely overshadowed by the improvements in speed and
 energy. Looking at the multiplication of the energy, the delay and the
 area (the Energy Delay Area Product or EDAP), it can be seen that the
-new implementation still only has $1.35\%$ of the total cost of the
+new implementation still only has $1.32\%$ of the total cost of the
 naive implementation.
 
 A separate metric that was taken into consideration when the large
@@ -234,10 +250,11 @@ as much lines of code as the naive implementation has, $30$ lines
 instead of $162$. Practically this means that the new implementation
 would be much more maintainable, which is an important aspect for
 production code. It must however be taken into consideration that each
-line of code is twice as long in terms of operations per line, since
-the new implementation has twice as many Function Units (FUs).
-Therefore the effective code size of the new implementation is still
-$37.04\%$ of the naive implementation code size.
+line of code is one and a half times as long in terms of operations
+per line, since the new implementation has one and a half times as
+many Function Units (FUs). Therefore the effective code size of the
+new implementation is still $27.78\%$ of the naive implementation code
+size.
 
 
 \section{Conclusion}

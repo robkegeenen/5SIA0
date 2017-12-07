@@ -8,26 +8,26 @@ Z0 d/home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation
 !i10e 25
 !i10f 100
 T_opt
-!s110 1512665675
-VS[DTWT9:W]8LH8Aao7Pf43
+!s110 1512676738
+VcF:mFokFoQQ0g;4E9_=M50
 04 11 4 work TB_CGRA_Top fast 0
-=1-00248c37a084-5a29724a-e717d-4e28
+=1-00248c37a084-5a299d82-44aa7-280c
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 OL;O;10.2a;57
 vABU
-Z1 !s110 1512665673
+Z1 !s110 1512676736
 I:0RR444Qgk1Nio5lkGb4a0
 Z2 V`JN@9S9cnhjKRR_L]QIcM3
 Z3 d/home/eca18/eca18050/CGRA/build/butterworth/rbtr1/simulation
-Z4 w1512665984
+Z4 w1512677048
 8ABU.v
 FABU.v
 L0 3
 Z5 OL;L;10.2a;57
 r1
 31
-Z6 !s108 1512665673.326454
+Z6 !s108 1512676736.309203
 Z7 !s107 config.vh|STATE_CONTROLLER.v|RF.v|RAM_SDP_TSMC.v|RAM_SDP_BE_TSMC.v|RAM_SDP_BE.v|RAM_SDP_ALTERA.v|RAM_SDP.v|MUL.v|Loader.v|LSU.v|IU.v|IF.v|ID.v|General_Arbiter.v|DTL_VGA.v|DTL_SlaveInterface.v|DTL_MasterInterface.v|DTL_ConsolePort.v|DTL_Arbiter.v|DTL_Address_Isolator.v|DATA_Buffer.v|CORE_FIFO.v|CGRA_top.v|CGRA_testbench.v|CGRA_memory.v|CGRA_fpgatop.v|CGRA_core.v|CGRA_compute_wrapper.v|CGRA_compute.v|Arbiter.v|Address_Isolator.v|ARBITER_RR.v|ARBITER_GEN_RR.v|ALU.v|ABU.v|
 Z8 !s90 -lint|-nologo|-vlog01compat|ABU.v|ALU.v|ARBITER_GEN_RR.v|ARBITER_RR.v|Address_Isolator.v|Arbiter.v|CGRA_compute.v|CGRA_compute_wrapper.v|CGRA_core.v|CGRA_fpgatop.v|CGRA_memory.v|CGRA_testbench.v|CGRA_top.v|CORE_FIFO.v|DATA_Buffer.v|DTL_Address_Isolator.v|DTL_Arbiter.v|DTL_ConsolePort.v|DTL_MasterInterface.v|DTL_SlaveInterface.v|DTL_VGA.v|General_Arbiter.v|ID.v|IF.v|IU.v|LSU.v|Loader.v|MUL.v|RAM_SDP.v|RAM_SDP_ALTERA.v|RAM_SDP_BE.v|RAM_SDP_BE_TSMC.v|RAM_SDP_TSMC.v|RF.v|STATE_CONTROLLER.v|-work|./work|
 Z9 o-lint -nologo -vlog01compat -work ./work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
@@ -120,7 +120,7 @@ R1
 I]z;YSAko03UKF<RRXoga02
 R2
 R3
-R4
+Z12 w1512677047
 8ARBITER_RR.v
 FARBITER_RR.v
 L0 11
@@ -141,8 +141,8 @@ IPl:Db=SE;N9`T[<<ahfl`2
 R2
 R3
 R4
-Z12 8DATA_Buffer.v
-Z13 FDATA_Buffer.v
+Z13 8DATA_Buffer.v
+Z14 FDATA_Buffer.v
 L0 23
 R5
 r1
@@ -200,7 +200,7 @@ R1
 ICIU8E4VP;aQHoAfgN137d3
 R2
 R3
-w1512665985
+R4
 8CGRA_core.v
 FCGRA_core.v
 L0 5
@@ -301,8 +301,8 @@ IFOLV8HaWHNI:Pnn>albn70
 R2
 R3
 R4
-R12
 R13
+R14
 L0 1
 R5
 r1
@@ -340,7 +340,7 @@ R1
 IGWbdP8Z:G2nz6LLOLhgdh2
 R2
 R3
-R4
+R12
 8DTL_Arbiter.v
 FDTL_Arbiter.v
 L0 11
@@ -360,7 +360,7 @@ R1
 InS8WBHJUS7hjV`chh3enX3
 R2
 R3
-R4
+R12
 8DTL_ConsolePort.v
 FDTL_ConsolePort.v
 L0 11
@@ -380,7 +380,7 @@ R1
 I[njOMjm?1;KmLOhJ8bcE52
 R2
 R3
-R4
+R12
 8DTL_MasterInterface.v
 FDTL_MasterInterface.v
 L0 11
@@ -400,7 +400,7 @@ R1
 I60Af6fGX7Oz1fY0A>ln_<3
 R2
 R3
-R4
+R12
 8DTL_SlaveInterface.v
 FDTL_SlaveInterface.v
 L0 1
@@ -416,42 +416,42 @@ n@d@t@l_@slave@interface
 !s100 j3h;AC=[R4]Pjb9:0J]n03
 !s85 0
 Edtl_sram_controller
-R4
-Z14 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
-Z15 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
-Z16 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+R12
+Z15 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
+Z16 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z17 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
 R3
-Z17 8./dtl_sram_controller.vhd
-Z18 F./dtl_sram_controller.vhd
+Z18 8./dtl_sram_controller.vhd
+Z19 F./dtl_sram_controller.vhd
 l0
 L5
 VkTgSfJ:>anLdX^8g0e2?J1
-Z19 OL;C;10.2a;57
+Z20 OL;C;10.2a;57
 32
 R1
-Z20 !s108 1512665673.594150
-Z21 !s90 ./dtl_sram_controller.vhd|-work|./work|
-Z22 !s107 ./dtl_sram_controller.vhd|
-Z23 o-work ./work
-Z24 tExplicit 1
+Z21 !s108 1512676736.673743
+Z22 !s90 ./dtl_sram_controller.vhd|-work|./work|
+Z23 !s107 ./dtl_sram_controller.vhd|
+Z24 o-work ./work
+Z25 tExplicit 1
 !s100 OaNJESY0NNimD4Jg0o=Y62
 !i10b 1
 Artl
-R14
 R15
 R16
+R17
 DEx4 work 19 dtl_sram_controller 0 22 kTgSfJ:>anLdX^8g0e2?J1
 l77
 L60
 V[>GUFUzP8SlkP<BFY>zG90
-R19
+R20
 32
 R1
-R20
 R21
 R22
 R23
 R24
+R25
 !s100 ePe?G<nHZFOENYDJ;>=`<2
 !i10b 1
 vDTL_VGA
@@ -459,7 +459,7 @@ R1
 IIVG=2Mhl1_7jQhkeh]jQ;0
 R2
 R3
-R4
+R12
 8DTL_VGA.v
 FDTL_VGA.v
 L0 11
