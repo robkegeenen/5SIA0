@@ -24,7 +24,7 @@ module CGRA_Core
 	parameter LM_MEM_WIDTH = 32,
 	parameter GM_MEM_WIDTH = 32,
 	
-	parameter NUM_ID = 10,
+	parameter NUM_ID = 6,
 	parameter NUM_IMM = 3,
 	
 	parameter NUM_LOCAL_DMEM = 1,

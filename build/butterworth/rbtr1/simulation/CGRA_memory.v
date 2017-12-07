@@ -14,7 +14,7 @@ module CGRA_Memory
 	
 	parameter LM_MEM_WIDTH = 32,	
 	
-	parameter NUM_ID = 10,
+	parameter NUM_ID = 6,
 	parameter NUM_IMM = 3,
 	parameter NUM_LOCAL_DMEM = 1	
 )	
@@ -112,6 +112,42 @@ module CGRA_Memory
 	//instruction memories ============================================================
 	RAM_SDP 
 	#(
+		.DATA_WIDTH(I_IMM_WIDTH),
+		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
+		.DATAFILE(""),
+		.DO_INIT(0)
+	)	
+    IM_imm_stor
+	(
+		.clock(iClk),
+		.data(wIM_WriteData_IMM),
+		.rdaddress(wIM_ReadAddress[0+NUM_ID][IM_MEM_ADDR_WIDTH-1:0]),
+		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
+		.wren(wIM_WriteEnable[0+NUM_ID]),
+		.rden(wIM_ReadEnable[0+NUM_ID]),
+		.q(wIM_ReadData_IMM[0])
+	);
+
+	RAM_SDP 
+	#(
+		.DATA_WIDTH(I_WIDTH),
+		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
+		.DATAFILE(""),
+		.DO_INIT(0)
+	)	
+    IM_id_mul
+	(
+		.clock(iClk),
+		.data(wIM_WriteData),
+		.rdaddress(wIM_ReadAddress[0][IM_MEM_ADDR_WIDTH-1:0]),
+		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
+		.wren(wIM_WriteEnable[0]),
+		.rden(wIM_ReadEnable[0]),
+		.q(wIM_ReadData[0])
+	);
+
+	RAM_SDP 
+	#(
 		.DATA_WIDTH(I_WIDTH),
 		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
 		.DATAFILE(""),
@@ -121,137 +157,11 @@ module CGRA_Memory
 	(
 		.clock(iClk),
 		.data(wIM_WriteData),
-		.rdaddress(wIM_ReadAddress[7][IM_MEM_ADDR_WIDTH-1:0]),
-		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[7]),
-		.rden(wIM_ReadEnable[7]),
-		.q(wIM_ReadData[7])
-	);
-
-	RAM_SDP 
-	#(
-		.DATA_WIDTH(I_WIDTH),
-		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
-		.DATAFILE(""),
-		.DO_INIT(0)
-	)	
-    IM_id_mul_y
-	(
-		.clock(iClk),
-		.data(wIM_WriteData),
-		.rdaddress(wIM_ReadAddress[8][IM_MEM_ADDR_WIDTH-1:0]),
-		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[8]),
-		.rden(wIM_ReadEnable[8]),
-		.q(wIM_ReadData[8])
-	);
-
-	RAM_SDP 
-	#(
-		.DATA_WIDTH(I_WIDTH),
-		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
-		.DATAFILE(""),
-		.DO_INIT(0)
-	)	
-    IM_id_mul_x
-	(
-		.clock(iClk),
-		.data(wIM_WriteData),
-		.rdaddress(wIM_ReadAddress[9][IM_MEM_ADDR_WIDTH-1:0]),
-		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[9]),
-		.rden(wIM_ReadEnable[9]),
-		.q(wIM_ReadData[9])
-	);
-
-	RAM_SDP 
-	#(
-		.DATA_WIDTH(I_WIDTH),
-		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
-		.DATAFILE(""),
-		.DO_INIT(0)
-	)	
-    IM_id_rf_x
-	(
-		.clock(iClk),
-		.data(wIM_WriteData),
-		.rdaddress(wIM_ReadAddress[2][IM_MEM_ADDR_WIDTH-1:0]),
-		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[2]),
-		.rden(wIM_ReadEnable[2]),
-		.q(wIM_ReadData[2])
-	);
-
-	RAM_SDP 
-	#(
-		.DATA_WIDTH(I_WIDTH),
-		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
-		.DATAFILE(""),
-		.DO_INIT(0)
-	)	
-    IM_id_rf_y
-	(
-		.clock(iClk),
-		.data(wIM_WriteData),
 		.rdaddress(wIM_ReadAddress[3][IM_MEM_ADDR_WIDTH-1:0]),
 		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
 		.wren(wIM_WriteEnable[3]),
 		.rden(wIM_ReadEnable[3]),
 		.q(wIM_ReadData[3])
-	);
-
-	RAM_SDP 
-	#(
-		.DATA_WIDTH(I_WIDTH),
-		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
-		.DATAFILE(""),
-		.DO_INIT(0)
-	)	
-    IM_id_abu
-	(
-		.clock(iClk),
-		.data(wIM_WriteData),
-		.rdaddress(wIM_ReadAddress[6][IM_MEM_ADDR_WIDTH-1:0]),
-		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[6]),
-		.rden(wIM_ReadEnable[6]),
-		.q(wIM_ReadData[6])
-	);
-
-	RAM_SDP 
-	#(
-		.DATA_WIDTH(I_WIDTH),
-		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
-		.DATAFILE(""),
-		.DO_INIT(0)
-	)	
-    IM_id_alu
-	(
-		.clock(iClk),
-		.data(wIM_WriteData),
-		.rdaddress(wIM_ReadAddress[5][IM_MEM_ADDR_WIDTH-1:0]),
-		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[5]),
-		.rden(wIM_ReadEnable[5]),
-		.q(wIM_ReadData[5])
-	);
-
-	RAM_SDP 
-	#(
-		.DATA_WIDTH(I_IMM_WIDTH),
-		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
-		.DATAFILE(""),
-		.DO_INIT(0)
-	)	
-    IM_imm_y
-	(
-		.clock(iClk),
-		.data(wIM_WriteData_IMM),
-		.rdaddress(wIM_ReadAddress[1+NUM_ID][IM_MEM_ADDR_WIDTH-1:0]),
-		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[1+NUM_ID]),
-		.rden(wIM_ReadEnable[1+NUM_ID]),
-		.q(wIM_ReadData_IMM[1])
 	);
 
 	RAM_SDP 
@@ -279,15 +189,15 @@ module CGRA_Memory
 		.DATAFILE(""),
 		.DO_INIT(0)
 	)	
-    IM_id_abu_stor
+    IM_id_abu
 	(
 		.clock(iClk),
 		.data(wIM_WriteData),
-		.rdaddress(wIM_ReadAddress[0][IM_MEM_ADDR_WIDTH-1:0]),
+		.rdaddress(wIM_ReadAddress[2][IM_MEM_ADDR_WIDTH-1:0]),
 		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[0]),
-		.rden(wIM_ReadEnable[0]),
-		.q(wIM_ReadData[0])
+		.wren(wIM_WriteEnable[2]),
+		.rden(wIM_ReadEnable[2]),
+		.q(wIM_ReadData[2])
 	);
 
 	RAM_SDP 
@@ -297,7 +207,25 @@ module CGRA_Memory
 		.DATAFILE(""),
 		.DO_INIT(0)
 	)	
-    IM_id_abu_y
+    IM_id_rf
+	(
+		.clock(iClk),
+		.data(wIM_WriteData),
+		.rdaddress(wIM_ReadAddress[5][IM_MEM_ADDR_WIDTH-1:0]),
+		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
+		.wren(wIM_WriteEnable[5]),
+		.rden(wIM_ReadEnable[5]),
+		.q(wIM_ReadData[5])
+	);
+
+	RAM_SDP 
+	#(
+		.DATA_WIDTH(I_WIDTH),
+		.ADDR_WIDTH(IM_MEM_ADDR_WIDTH),
+		.DATAFILE(""),
+		.DO_INIT(0)
+	)	
+    IM_id_alu
 	(
 		.clock(iClk),
 		.data(wIM_WriteData),
@@ -315,7 +243,7 @@ module CGRA_Memory
 		.DATAFILE(""),
 		.DO_INIT(0)
 	)	
-    IM_id_abu_x
+    IM_id_abu_contr
 	(
 		.clock(iClk),
 		.data(wIM_WriteData),
@@ -333,15 +261,15 @@ module CGRA_Memory
 		.DATAFILE(""),
 		.DO_INIT(0)
 	)	
-    IM_imm_stor
+    IM_imm_y
 	(
 		.clock(iClk),
 		.data(wIM_WriteData_IMM),
-		.rdaddress(wIM_ReadAddress[0+NUM_ID][IM_MEM_ADDR_WIDTH-1:0]),
+		.rdaddress(wIM_ReadAddress[1+NUM_ID][IM_MEM_ADDR_WIDTH-1:0]),
 		.wraddress(wIM_WriteAddress[IM_MEM_ADDR_WIDTH-1:0]),
-		.wren(wIM_WriteEnable[0+NUM_ID]),
-		.rden(wIM_ReadEnable[0+NUM_ID]),
-		.q(wIM_ReadData_IMM[0])
+		.wren(wIM_WriteEnable[1+NUM_ID]),
+		.rden(wIM_ReadEnable[1+NUM_ID]),
+		.q(wIM_ReadData_IMM[1])
 	);
 
 

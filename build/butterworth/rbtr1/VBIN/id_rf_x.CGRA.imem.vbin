@@ -1,4 +1,4 @@
-// Generated on 2017-12-06 00:08:14
+// Generated on 2017-12-07 16:23:45
 
 ////////////////////////////////////////////////////
 //inst      	// Source Code   	% Comment          
@@ -25,7 +25,7 @@
 100010001000	//  lra in2      	% 
 000000000000	// nop           	% auto inserted nop
 000000000000	// nop           	% auto inserted nop
-000000000000	// nop           	% auto inserted nop
+100100001000	//  sra in2, in0 	% 
 000000000000	// nop           	% auto inserted nop
 000000000000	// nop           	% auto inserted nop
 000000000000	// nop           	% auto inserted nop

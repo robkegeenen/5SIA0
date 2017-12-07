@@ -1,0 +1,46 @@
+
+----------------------------------
+|        Energy report:          |
+----------------------------------
+
+Energy for FUs (1) and ID for 'imm_stor':	32369.15 pJ
+Energy for FUs (1) and ID for 'id_abu':	45097.5 pJ
+Energy for FUs (1) and ID for 'imm_y':	21646.9 pJ
+Energy for FUs (1) and ID for 'imm_x':	22731.7 pJ
+Energy for FUs (1) and ID for 'id_lsu_stor':	86362.65 pJ
+Energy for FUs (2) and ID for 'id_mul':	790417.2 pJ
+Energy for FUs (1) and ID for 'id_alu':	44270.2 pJ
+Energy for FUs (3) and ID for 'id_abu_contr':	254634.4 pJ
+Energy for FUs (2) and ID for 'id_rf':	79348.6 pJ
+
+Total energy:	1376878.3 pJ
+
+----------------------------------
+|         Area report:           |
+----------------------------------
+
+Area for FU type 'IU' (3):	1674.0 um^2	Wire area (6):	600.0 um^2	Total area:	2274.0 um^2
+Area for FU type 'RF' (2):	19274.0 um^2	Wire area (10):	1000.0 um^2	Total area:	20274.0 um^2
+Area for FU type 'LSU' (1):	22426.0 um^2	Wire area (4):	400.0 um^2	Total area:	22826.0 um^2
+Area for FU type 'ABU' (4):	65484.0 um^2	Wire area (17):	1700.0 um^2	Total area:	67184.0 um^2
+Area for FU type 'MUL' (2):	49714.0 um^2	Wire area (6):	600.0 um^2	Total area:	50314.0 um^2
+Area for FU type 'ALU' (1):	7215.0 um^2	Wire area (5):	500.0 um^2	Total area:	7715.0 um^2
+Area for FU type 'ID' (6):	6906.0 um^2	Wire area (12):	1200.0 um^2	Total area:	8106.0 um^2
+
+Total FU area:	172693.0 um^2	Total wire area:	6000.0 um^2	Total area:	178693.0 um^2
+
+----------------------------------
+|      Performance report:       |
+----------------------------------
+
+total cycles:      38072
+stalled cycles:       8000
+active cycles (imm_stor):      24067, utilization:         80 percent
+active cycles (id_mul):      12000, utilization:         39 percent
+active cycles (id_lsu_stor):       4002, utilization:         13 percent
+active cycles (imm_x):      12000, utilization:         39 percent
+active cycles (id_abu):       2017, utilization:          6 percent
+active cycles (id_rf):      16016, utilization:         53 percent
+active cycles (id_alu):      18000, utilization:         59 percent
+active cycles (id_abu_contr):      30052, utilization:         99 percent
+active cycles (imm_y):      10016, utilization:         33 percent

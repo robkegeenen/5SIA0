@@ -1,4 +1,4 @@
-// Generated on 2017-12-06 00:08:14
+// Generated on 2017-12-07 17:54:32
 
 //////////////////////////////////////////////////////////
 //inst      	// Source Code         	% Comment          
@@ -25,8 +25,8 @@
 001000000001	//  and out0, in0, in1 	% 
 000000000000	// nop                 	% auto inserted nop
 001101111110	//  sub out1, in3, in2 	% 
+000000000000	// nop                 	% auto inserted nop
+000000000000	// nop                 	% auto inserted nop
 001000000001	//  and out0, in0, in1 	% 
-000000000000	// nop                 	% auto inserted nop
-000000000000	// nop                 	% auto inserted nop
 000000000000	// nop                 	% auto inserted nop
 000000000000	//  nop                	% 
