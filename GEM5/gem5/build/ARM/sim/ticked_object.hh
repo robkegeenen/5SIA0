@@ -1,1 +1,0 @@
-/home/eca/gem5/src/sim/ticked_object.hh
